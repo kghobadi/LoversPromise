@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &186520
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 490262}
+  - 114: {fileID: 11467872}
+  - 136: {fileID: 13699264}
+  m_Layer: 0
+  m_Name: Collider Customization
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &490262
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186520}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9999, y: -9999, z: -9999}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11467872
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 610542428efeee948971411ba568fe6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  treeScript: {fileID: 0}
+  data:
+    SeasonTreesGameObjects:
+    - prefab: {fileID: 0}
+    - prefab: {fileID: 0}
+    - prefab: {fileID: 0}
+    - prefab: {fileID: 0}
+    show: 1
+    prototypeName: 42726f61646c6561665f4d6f62696c65
+    terrain: {fileID: 0}
+    isNetworkedObject: 0
+    isTrigger: 0
+    colliderType: 0
+    colliderHeight: 10
+    colliderRadius: 0.5
+    colliderSize: {x: 0, y: 0, z: 0}
+    colliderCenter: {x: 0, y: 5, z: 0}
+  colliderType: 0
+  viewedResourceInstance: {fileID: 0}
+  lastSceneCameraPivot: {x: 401.7137, y: 213.46321, z: 1160.9382}
+--- !u!136 &13699264
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186520}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 10
+  m_Direction: 1
+  m_Center: {x: 0, y: 5, z: 0}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 186520}
+  m_IsPrefabParent: 1
