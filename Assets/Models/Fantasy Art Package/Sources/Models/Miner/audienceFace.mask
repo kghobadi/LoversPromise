@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1011 &101100000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: audienceFace
+  m_Mask: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Bip01
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Footsteps
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Chest
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Chest/Bip01 L Thigh
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Chest/Bip01 L Thigh/Bip01 L Calf
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Chest/Bip01 L Thigh/Bip01 L Calf/Bip01 L Foot
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Chest/Bip01 L Thigh/Bip01 L Calf/Bip01 L Foot/Bip01
+      L Toe0
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Chest/Bip01 L Thigh/Bip01 L Calf/Bip01 L Foot/Bip01
+      L Toe0/Bip01 L Toe0Nub
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Chest/Bip01 L Thigh/Bip01 L Calf/L_Shin
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Chest/Bip01 Neck
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Chest/Bip01 Neck/Bip01 L Clavicle
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Chest/Bip01 Neck/Bip01 L Clavicle/Bip01 L UpperArm
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Chest/Bip01 Neck/Bip01 L Clavicle/Bip01 L UpperArm/Bip01
+      L Forearm
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Chest/Bip01 Neck/Bip01 L Clavicle/Bip01 L UpperArm/Bip01
+      L Forearm/Bip01 L Hand
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Chest/Bip01 Neck/Bip01 L Clavicle/Bip01 L UpperArm/Bip01
+      L Forearm/Bip01 L Hand/L_Hand
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Chest/Bip01 Neck/Bip01 L Clavicle/Bip01 L UpperArm/Bip01
+      L Forearm/L_Forearm
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Chest/Bip01 Neck/Bip01 R Clavicle
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Chest/Bip01 Neck/Bip01 R Clavicle/Bip01 R UpperArm
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Chest/Bip01 Neck/Bip01 R Clavicle/Bip01 R UpperArm/Bip01
+      R Forearm
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Chest/Bip01 Neck/Bip01 R Clavicle/Bip01 R UpperArm/Bip01
+      R Forearm/Bip01 R Hand
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Chest/Bip01 Neck/Bip01 R Clavicle/Bip01 R UpperArm/Bip01
+      R Forearm/Bip01 R Hand/R_Hand
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Chest/Bip01 Neck/Bip01 R Clavicle/Bip01 R UpperArm/Bip01
+      R Forearm/R_Forearm
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Chest/Bip01 Neck/Head
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Chest/Bip01 Neck/Head/Bip01 HeadNub
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Chest/Bip01 R Thigh
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Chest/Bip01 R Thigh/Bip01 R Calf
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Chest/Bip01 R Thigh/Bip01 R Calf/Bip01 R Foot
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Chest/Bip01 R Thigh/Bip01 R Calf/Bip01 R Foot/Bip01
+      R Toe0
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Chest/Bip01 R Thigh/Bip01 R Calf/Bip01 R Foot/Bip01
+      R Toe0/Bip01 R Toe0Nub
+    m_Weight: 1
+  - m_Path: Bip01/Bip01 Pelvis/Chest/Bip01 R Thigh/Bip01 R Calf/R_Shin
+    m_Weight: 1
+  - m_Path: merchant02
+    m_Weight: 1

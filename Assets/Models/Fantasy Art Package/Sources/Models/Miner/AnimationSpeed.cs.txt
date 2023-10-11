@@ -1,0 +1,24 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class AnimationSpeed : MonoBehaviour {
+
+    private float NextChange;
+    public Animation dig;
+
+	void Start () {
+	
+	}
+	
+	void Update () {
+	
+	}
+    void FixedUpdate()
+    {
+        if (NextChange < Time.time)
+        {
+            //dig.GetComponent<Animation>().speed = Random.Range(0.4, 1.1);
+            //NextChange = Time.time + 1.5;
+        }
+    }
+}
