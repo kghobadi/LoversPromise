@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1105 &110500000
+HumanTemplate:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: audiencemember
+  m_BoneTemplate:
+    Chest: Chest
+    Head: Bip01 HeadNub
+    Hips: Bip01 Pelvis
+    Jaw: Jaw
+    LeftEye: Left Eye
+    LeftFoot: Bip01 L Foot
+    LeftHand: Bip01 L Hand
+    LeftLowerArm: Bip01 L Forearm
+    LeftLowerLeg: Bip01 L Calf
+    LeftShoulder: Bip01 L Clavicle
+    LeftToes: Bip01 L Toe0Nub
+    LeftUpperArm: Bip01 L UpperArm
+    LeftUpperLeg: Bip01 L Thigh
+    Neck: Head
+    RightEye: Right EYe
+    RightFoot: Bip01 R Foot
+    RightHand: Bip01 R Hand
+    RightLowerArm: Bip01 R Forearm
+    RightLowerLeg: Bip01 R Calf
+    RightShoulder: Bip01 R Clavicle
+    RightToes: Bip01 R Toe0Nub
+    RightUpperArm: Bip01 R UpperArm
+    RightUpperLeg: Bip01 R Thigh
+    Spine: Bip01Spine
