@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace>
+    </RootNamespace>
+    <ProjectGuid>{04C08104-BB5E-A289-C7B2-2EE28DAD4D7F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>Assets</BaseDirectory>
+    <LangVersion>4</LangVersion>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <DisableHandlePackageFileConflicts>true</DisableHandlePackageFileConflicts>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_5_6_0;UNITY_5_6;UNITY_5;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;INCLUDE_DYNAMIC_GI;INCLUDE_GI;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_SCRIPTING_NEW_CSHARP_COMPILER;ENABLE_VIDEO;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_EVENT_QUEUE;ENABLE_CLUSTERINPUT;ENABLE_VR;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;CROSS_PLATFORM_INPUT</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="UnityEngine">
+      <HintPath>C:/UnityEditors/5.6.0f3/Editor/Data/Managed/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>C:/UnityEditors/5.6.0f3/Editor/Data/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>C:\UnityEditors\5.6.0f3\Editor\Data\MonoBleedingEdge\lib\mono\unity\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml">
+      <HintPath>C:\UnityEditors\5.6.0f3\Editor\Data\MonoBleedingEdge\lib\mono\unity\System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>C:\UnityEditors\5.6.0f3\Editor\Data\MonoBleedingEdge\lib\mono\unity\System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <HintPath>C:\UnityEditors\5.6.0f3\Editor\Data\MonoBleedingEdge\lib\mono\unity\System.Runtime.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <HintPath>C:\UnityEditors\5.6.0f3\Editor\Data\MonoBleedingEdge\lib\mono\unity\System.Xml.Linq.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\Scripts\ActivateText.cs" />
+    <Compile Include="Assets\Scripts\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\ControllerMoveDemo.cs" />
+    <Compile Include="Assets\Scripts\Crash.cs" />
+    <Compile Include="Assets\Scripts\Crows.cs" />
+    <Compile Include="Assets\Scripts\EnemyEndScene.cs" />
+    <Compile Include="Assets\Scripts\EnemyMovement.cs" />
+    <Compile Include="Assets\Scripts\Flashlight.cs" />
+    <Compile Include="Assets\Scripts\Footsteps.cs" />
+    <Compile Include="Assets\Scripts\LoadingScreenManager.cs" />
+    <Compile Include="Assets\Scripts\Moon.cs" />
+    <Compile Include="Assets\Scripts\PauseGame.cs" />
+    <Compile Include="Assets\Scripts\PlayVideo.cs" />
+    <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\PlayerControllerTheFall.cs" />
+    <Compile Include="Assets\Scripts\SceneTrigger.cs" />
+    <Compile Include="Assets\Scripts\Starship.cs" />
+    <Compile Include="Assets\Scripts\Sun.cs" />
+    <Compile Include="Assets\Scripts\TextBoxManager.cs" />
+    <Compile Include="Assets\Scripts\Wind.cs" />
+    <Compile Include="Assets\Scripts\playtext.cs" />
+    <Compile Include="Assets\TreeManagerSystem\Scripts\Demo\Bolt\DemoMPPlayerAttacher.cs" />
+    <Compile Include="Assets\TreeManagerSystem\Scripts\Demo\Bolt\DemoPlayerController.cs" />
+    <Compile Include="Assets\TreeManagerSystem\Scripts\Demo\Bolt\DemoPlayerMotor.cs" />
+    <Compile Include="Assets\TreeManagerSystem\Scripts\Demo\Forge\DemoForgePlayerController.cs" />
+    <Compile Include="Assets\TreeManagerSystem\Scripts\Demo\Forge\ForgeDemoInstantiater.cs" />
+    <Compile Include="Assets\TreeManagerSystem\Scripts\Demo\MenuHUD.cs" />
+    <Compile Include="Assets\TreeManagerSystem\Scripts\Demo\Photon\DemoPhotonController.cs" />
+    <Compile Include="Assets\TreeManagerSystem\Scripts\Demo\Photon\DemoPhotonServerConnector.cs" />
+    <Compile Include="Assets\TreeManagerSystem\Scripts\Demo\Photon\DemoPhotonSyncer.cs" />
+    <Compile Include="Assets\TreeManagerSystem\Scripts\Demo\PlayerInstantiater.cs" />
+    <Compile Include="Assets\TreeManagerSystem\Scripts\Demo\PlayerMaterialChanger.cs" />
+    <Compile Include="Assets\TreeManagerSystem\Scripts\Demo\TreeMaterialChangeManager.cs" />
+    <Compile Include="Assets\TreeManagerSystem\Scripts\Demo\UNet\DemoUNetPlayerController.cs" />
+    <Compile Include="Assets\TreeManagerSystem\Scripts\Manager\HittableInterface.cs" />
+    <Compile Include="Assets\TreeManagerSystem\Scripts\Manager\TMSThreadingManager.cs" />
+    <Compile Include="Assets\TreeManagerSystem\Scripts\Manager\TreeColliderCustomization.cs" />
+    <Compile Include="Assets\TreeManagerSystem\Scripts\Manager\TreesManager.cs" />
+    <Compile Include="Assets\TreeManagerSystem\Scripts\Manager\WorldTreeScript.cs" />
+    <Compile Include="Assets\TreeManagerSystem\Scripts\Networking\BoltTreesCallbacksManager.cs" />
+    <Compile Include="Assets\TreeManagerSystem\Scripts\Networking\ForgeTreesCallbacksManager.cs" />
+    <Compile Include="Assets\TreeManagerSystem\Scripts\Networking\PhotonTreesCallbacksManager.cs" />
+    <Compile Include="Assets\TreeManagerSystem\Scripts\Networking\UNetTreesCallbackManager.cs" />
+    <Compile Include="Assets\TreeManagerSystem\Scripts\Networking\UNetTreesNetworkingManager.cs" />
+    <Compile Include="Assets\TreeManagerSystem\Scripts\Player\TreeAOI.cs" />
+    <Compile Include="Assets\TreeManagerSystem\Scripts\Polling\IPollable.cs" />
+    <Compile Include="Assets\TreeManagerSystem\Scripts\Polling\PollManager.cs" />
+    <Compile Include="Assets\TreeManagerSystem\Scripts\Tree\AOITreeDetection.cs" />
+    <Compile Include="Assets\TreeManagerSystem\Scripts\Tree\NetworkedTreeScripts\BoltNetworkedObjectAttacher.cs" />
+    <Compile Include="Assets\TreeManagerSystem\Scripts\Tree\NetworkedTreeScripts\ForgeNetworkedObjectAttacher.cs" />
+    <Compile Include="Assets\TreeManagerSystem\Scripts\Tree\NetworkedTreeScripts\PhotonNetworkedObjectAttacher.cs" />
+    <Compile Include="Assets\TreeManagerSystem\Scripts\Tree\NetworkedTreeScripts\UNetNetworkedObjectAttacher.cs" />
+    <Compile Include="Assets\TreeManagerSystem\Scripts\Tree\TreeScript.cs" />
+    <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
+    <None Include="Assets\Models\WM_2\ReadMe.txt" />
+    <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
+    <None Include="Assets\Models\Fantasy Art Package\Sources\Models\Miner\AnimationSpeed.cs.txt" />
+    <None Include="Assets\Sprites\readme.txt" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ShowAlphaChannel.shader" />
+    <None Include="Assets\Text\cnrMonologue.txt" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\SunShaftsComposite.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionCurves.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ScreenSpaceAmbientObscurance.shader" />
+    <None Include="Assets\Text\Midnight in the Garden\theDeath.txt" />
+    <None Include="Assets\Text\Midnight in the Garden\charlotte.txt" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\NFAA.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ScreenSpaceRaytrace.cginc" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\TiltShiftHdrLensBlur.shader" />
+    <None Include="Assets\Sprites\Wood texture floor_01\readme.txt" />
+    <None Include="Assets\Text\Blackbeach\dialogue5.txt" />
+    <None Include="Assets\Text\GlenGoo\dialogue8.txt" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\VignetteShader.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfFieldScatter.shader" />
+    <None Include="Assets\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularSmooth.shader" />
+    <None Include="Assets\Standard Assets\Effects\Projectors\Guidelines.txt" />
+    <None Include="Assets\Sprites\GalaxyBox1\instructions.txt" />
+    <None Include="Assets\Models\Spaceship Corvus\Scenes\Scripts\Menu.cs.txt" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\MotionBlur.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBloom.shader" />
+    <None Include="Assets\Text\SplitInfinity\dialogue4.txt" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\MinMaxReduction.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\SSAA.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\RadialBlur.shader" />
+    <None Include="Assets\Text\SplitInfinity\dialogue3.txt" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfFieldDX11.shader" />
+    <None Include="Assets\Text\SplitInfinity\dialogue2.txt" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ContrastComposite.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset3.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\FisheyeShader.shader" />
+    <None Include="Assets\Text\Blackbeach\dialogue4.txt" />
+    <None Include="Assets\Text\Midnight in the Garden\MarvinHeart.txt" />
+    <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\DiffuseReflectiveShader.shader" />
+    <None Include="Assets\Text\Midnight in the Garden\MrGreyConversationstart.txt" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Apply.shader" />
+    <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\frag_ao.cginc" />
+    <None Include="Assets\Standard Assets\Vehicles\Aircraft\AircraftGuidelines.txt" />
+    <None Include="Assets\Text\Blackbeach\dialogue 1.txt" />
+    <None Include="Assets\Text\Midnight in the Garden\AlanCows.txt" />
+    <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpecTransp.shader" />
+    <None Include="Assets\Text\GlenGoo\dialogue6.txt" />
+    <None Include="Assets\Text\Midnight in the Garden\zanzabar.txt" />
+    <None Include="Assets\Text\Midnight in the Garden\Sylvie.txt" />
+    <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
+    <None Include="Assets\Text\Midnight in the Garden\Seamus.txt" />
+    <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfField34.shader" />
+    <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpec.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBlur.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\SSAOShader.shader" />
+    <None Include="Assets\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
+    <None Include="Assets\Materials\Transparent.shader" />
+    <None Include="Assets\Text\Blackbeach\dialogue3.txt" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ConvertDepth.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionCurvesSimple.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderYUV.shader" />
+    <None Include="Assets\Text\GlenGoo\dialogue4.txt" />
+    <None Include="Assets\Models\Alien\ALien Info.txt" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\CreaseApply.shader" />
+    <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
+    <None Include="Assets\Standard Assets\Fonts\OpenSans\License!.txt" />
+    <None Include="Assets\Text\GlenGoo\dialogue2.txt" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ChromaticAberrationShader.shader" />
+    <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\GlobalFog.shader" />
+    <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
+    <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Luminance.shader" />
+    <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionSelective.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\Bokeh34.shader" />
+    <None Include="Assets\Text\GlenGoo\dialogue7.txt" />
+    <None Include="Assets\Dialoguer_README.txt" />
+    <None Include="Assets\Text\theCuriousCaseofJackSchiller.txt" />
+    <None Include="Assets\Text\GlenGoo\dialgoue 3.txt" />
+    <None Include="Assets\Text\Midnight in the Garden\the pod.txt" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlurDX11.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\SeparableBlurPlus.shader" />
+    <None Include="Assets\Text\SplitInfinity\dialogue 1.txt" />
+    <None Include="Assets\Standard Assets\Effects\Projectors\Shaders\ProjectorLight.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MultiPassHollywoodFlares.shader" />
+    <None Include="Assets\Text\Midnight in the Garden\SeanDeath.txt" />
+    <None Include="Assets\Text\Midnight in the Garden\Sheryl.txt" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\BlurEffectConeTaps.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlur.shader" />
+    <None Include="Assets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\DLAA.shader" />
+    <None Include="Assets\Text\spritefont_and_other\document_and_picturelist\readme.txt" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseAndGrainDX11.shader" />
+    <None Include="Assets\Text\GlenGoo\dialogue5.txt" />
+    <None Include="Assets\Sprites\GalaxyBox1\examplescene.cs.txt" />
+    <None Include="Assets\Text\Midnight in the Garden\ethanStars.txt" />
+    <None Include="Assets\Text\Midnight in the Garden\finalgoodbye.txt" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BrightPassFilter2.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableBlur.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\MotionBlurClear.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionEffect.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\GrayscaleEffect.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\SepiaToneEffect.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\TwirlEffect.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\VortexEffect.shader" />
+    <None Include="Assets\Text\Midnight in the Garden\theRadio.txt" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Adaptation.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseAndGrain.shader" />
+    <None Include="Assets\Text\SplitInfinity\dialogue 5.txt" />
+    <None Include="Assets\Standard Assets\Vehicles\Car\CarGuidelines.txt" />
+    <None Include="Assets\Standard Assets\Effects\Projectors\Shaders\ProjectorMultiply.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\VignettingShader.shader" />
+    <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\Tonemapper.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BrightPassFilter.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA2.shader" />
+    <None Include="Assets\Standard Assets\Cameras\CameraGuidelines.txt" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrection3DLut.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\LensFlareCreate.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\EdgeDetectNormals.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\PrepareSunShaftsBlur.shader" />
+    <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\Blend.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
+    <None Include="Assets\Text\GlenGoo\dialogue 1.txt" />
+    <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
+    <None Include="Assets\PlayerAnimator.cs.txt" />
+    <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
+    <None Include="Assets\Text\Poem.txt" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\SimpleClear.shader" />
+    <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
+    <None Include="Assets\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
+    <None Include="Assets\Models\Spaceship Corvus\Scenes\Scripts\sSinRotate.cs.txt" />
+    <None Include="Assets\Text\Blackbeach\dialogue2.txt" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA3Console.shader" />
+    <None Include="Assets\Text\alien_league\alienleague_v2.txt" />
+    <None Include="Assets\Text\Midnight in the Garden\sandy.txt" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset2.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
+    <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendForBloom.shader" />
+    <Reference Include="UnityEngine.UI">
+      <HintPath>C:/UnityEditors/5.6.0f3/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>C:/UnityEditors/5.6.0f3/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TestRunner">
+      <HintPath>C:/UnityEditors/5.6.0f3/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>C:/UnityEditors/5.6.0f3/Editor/Data/UnityExtensions/Unity/TestRunner/nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Analytics">
+      <HintPath>C:/UnityEditors/5.6.0f3/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.HoloLens">
+      <HintPath>C:/UnityEditors/5.6.0f3/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VR">
+      <HintPath>C:/UnityEditors/5.6.0f3/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{62D02EFF-0629-8B0F-592D-4AE933D99226}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

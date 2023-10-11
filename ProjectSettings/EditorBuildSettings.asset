@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/A Lovers Promise Menu.unity
+    guid: aaed033ab60433f41b4724263cf1eb72
+  - enabled: 1
+    path: Assets/Scenes/jamieDay.unity
+    guid: bf7f4737e3ba08040bff2af08b85d847
+  - enabled: 1
+    path: Assets/Scenes/SplitYourInfinities.unity
+    guid: 7f18dd75fb38dfd4a8b06317fab2821a
+  - enabled: 1
+    path: Assets/Scenes/Midnight in the Garden.unity
+    guid: fc04da7279c6673429f79c47977dfa9f
+  - enabled: 1
+    path: Assets/Scenes/The Windmill.unity
+    guid: b5c3f112a6bd7d342b3536fd9ad063b0
+  - enabled: 1
+    path: Assets/Scenes/The Bedroom Ocean.unity
+    guid: a5f8fb08ff60eea4b935fa64657c8f4a
+  - enabled: 1
+    path: Assets/Scenes/LoadingScene.unity
+    guid: f4f42637b69f48d4ebfad22aca7332dc
