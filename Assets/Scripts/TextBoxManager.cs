@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
@@ -8,7 +9,7 @@ public class TextBoxManager : MonoBehaviour {
 
     public GameObject textBox;
 
-    public Text theText;
+    public TMP_Text theText;
 
     public TextAsset textFile;
     public string[] textLines;
@@ -37,7 +38,6 @@ public class TextBoxManager : MonoBehaviour {
         if (textFile != null)
         {
             textLines = (textFile.text.Split('\n'));
-
         }
 
         if(endAtLine == 0)

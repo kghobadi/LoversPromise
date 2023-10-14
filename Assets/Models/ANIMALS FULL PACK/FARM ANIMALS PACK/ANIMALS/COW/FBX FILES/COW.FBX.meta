@@ -1,102 +1,262 @@
 fileFormatVersion: 2
 guid: 53a1be773c98b7a4f81d8701e01ccf20
 ModelImporter:
-  serializedVersion: 19
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: COW
-    100004: COW_
-    100006: COW_ Head
-    100008: COW_ L Calf
-    100010: COW_ L Clavicle
-    100012: COW_ L Finger0
-    100014: COW_ L Foot
-    100016: COW_ L Forearm
-    100018: COW_ L Hand
-    100020: COW_ L HorseLink
-    100022: COW_ L Thigh
-    100024: COW_ L UpperArm
-    100026: COW_ Neck
-    100028: COW_ Neck1
-    100030: COW_ Neck2
-    100032: COW_ Pelvis
-    100034: COW_ Queue de cheval 1
-    100036: COW_ R Calf
-    100038: COW_ R Clavicle
-    100040: COW_ R Finger0
-    100042: COW_ R Foot
-    100044: COW_ R Forearm
-    100046: COW_ R Hand
-    100048: COW_ R HorseLink
-    100050: COW_ R Thigh
-    100052: COW_ R UpperArm
-    100054: COW_ Spine
-    100056: COW_ Spine1
-    100058: COW_ Tail
-    100060: COW_ Tail1
-    100062: COW_ Tail2
-    100064: COW_ Tail3
-    100066: COW_ Tail4
-    100068: COW_ Tail5
-    400000: //RootNode
-    400002: COW
-    400004: COW_
-    400006: COW_ Head
-    400008: COW_ L Calf
-    400010: COW_ L Clavicle
-    400012: COW_ L Finger0
-    400014: COW_ L Foot
-    400016: COW_ L Forearm
-    400018: COW_ L Hand
-    400020: COW_ L HorseLink
-    400022: COW_ L Thigh
-    400024: COW_ L UpperArm
-    400026: COW_ Neck
-    400028: COW_ Neck1
-    400030: COW_ Neck2
-    400032: COW_ Pelvis
-    400034: COW_ Queue de cheval 1
-    400036: COW_ R Calf
-    400038: COW_ R Clavicle
-    400040: COW_ R Finger0
-    400042: COW_ R Foot
-    400044: COW_ R Forearm
-    400046: COW_ R Hand
-    400048: COW_ R HorseLink
-    400050: COW_ R Thigh
-    400052: COW_ R UpperArm
-    400054: COW_ Spine
-    400056: COW_ Spine1
-    400058: COW_ Tail
-    400060: COW_ Tail1
-    400062: COW_ Tail2
-    400064: COW_ Tail3
-    400066: COW_ Tail4
-    400068: COW_ Tail5
-    4300000: COW
-    7400000: Take 001
-    11100000: //RootNode
-    13700000: COW
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: COW
+  - first:
+      1: 100004
+    second: COW_
+  - first:
+      1: 100006
+    second: COW_ Head
+  - first:
+      1: 100008
+    second: COW_ L Calf
+  - first:
+      1: 100010
+    second: COW_ L Clavicle
+  - first:
+      1: 100012
+    second: COW_ L Finger0
+  - first:
+      1: 100014
+    second: COW_ L Foot
+  - first:
+      1: 100016
+    second: COW_ L Forearm
+  - first:
+      1: 100018
+    second: COW_ L Hand
+  - first:
+      1: 100020
+    second: COW_ L HorseLink
+  - first:
+      1: 100022
+    second: COW_ L Thigh
+  - first:
+      1: 100024
+    second: COW_ L UpperArm
+  - first:
+      1: 100026
+    second: COW_ Neck
+  - first:
+      1: 100028
+    second: COW_ Neck1
+  - first:
+      1: 100030
+    second: COW_ Neck2
+  - first:
+      1: 100032
+    second: COW_ Pelvis
+  - first:
+      1: 100034
+    second: COW_ Queue de cheval 1
+  - first:
+      1: 100036
+    second: COW_ R Calf
+  - first:
+      1: 100038
+    second: COW_ R Clavicle
+  - first:
+      1: 100040
+    second: COW_ R Finger0
+  - first:
+      1: 100042
+    second: COW_ R Foot
+  - first:
+      1: 100044
+    second: COW_ R Forearm
+  - first:
+      1: 100046
+    second: COW_ R Hand
+  - first:
+      1: 100048
+    second: COW_ R HorseLink
+  - first:
+      1: 100050
+    second: COW_ R Thigh
+  - first:
+      1: 100052
+    second: COW_ R UpperArm
+  - first:
+      1: 100054
+    second: COW_ Spine
+  - first:
+      1: 100056
+    second: COW_ Spine1
+  - first:
+      1: 100058
+    second: COW_ Tail
+  - first:
+      1: 100060
+    second: COW_ Tail1
+  - first:
+      1: 100062
+    second: COW_ Tail2
+  - first:
+      1: 100064
+    second: COW_ Tail3
+  - first:
+      1: 100066
+    second: COW_ Tail4
+  - first:
+      1: 100068
+    second: COW_ Tail5
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: COW
+  - first:
+      4: 400004
+    second: COW_
+  - first:
+      4: 400006
+    second: COW_ Head
+  - first:
+      4: 400008
+    second: COW_ L Calf
+  - first:
+      4: 400010
+    second: COW_ L Clavicle
+  - first:
+      4: 400012
+    second: COW_ L Finger0
+  - first:
+      4: 400014
+    second: COW_ L Foot
+  - first:
+      4: 400016
+    second: COW_ L Forearm
+  - first:
+      4: 400018
+    second: COW_ L Hand
+  - first:
+      4: 400020
+    second: COW_ L HorseLink
+  - first:
+      4: 400022
+    second: COW_ L Thigh
+  - first:
+      4: 400024
+    second: COW_ L UpperArm
+  - first:
+      4: 400026
+    second: COW_ Neck
+  - first:
+      4: 400028
+    second: COW_ Neck1
+  - first:
+      4: 400030
+    second: COW_ Neck2
+  - first:
+      4: 400032
+    second: COW_ Pelvis
+  - first:
+      4: 400034
+    second: COW_ Queue de cheval 1
+  - first:
+      4: 400036
+    second: COW_ R Calf
+  - first:
+      4: 400038
+    second: COW_ R Clavicle
+  - first:
+      4: 400040
+    second: COW_ R Finger0
+  - first:
+      4: 400042
+    second: COW_ R Foot
+  - first:
+      4: 400044
+    second: COW_ R Forearm
+  - first:
+      4: 400046
+    second: COW_ R Hand
+  - first:
+      4: 400048
+    second: COW_ R HorseLink
+  - first:
+      4: 400050
+    second: COW_ R Thigh
+  - first:
+      4: 400052
+    second: COW_ R UpperArm
+  - first:
+      4: 400054
+    second: COW_ Spine
+  - first:
+      4: 400056
+    second: COW_ Spine1
+  - first:
+      4: 400058
+    second: COW_ Tail
+  - first:
+      4: 400060
+    second: COW_ Tail1
+  - first:
+      4: 400062
+    second: COW_ Tail2
+  - first:
+      4: 400064
+    second: COW_ Tail3
+  - first:
+      4: 400066
+    second: COW_ Tail4
+  - first:
+      4: 400068
+    second: COW_ Tail5
+  - first:
+      43: 4300000
+    second: COW
+  - first:
+      74: 7400000
+    second: Take 001
+  - first:
+      111: 11100000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: COW
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: COW
+    second: {fileID: 2100000, guid: bad6b0429d159f744a3f43ab8892d9de, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
-    resampleRotations: 1
+    resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations: []
     isReadable: 1
   meshes:
@@ -104,13 +264,24 @@ ModelImporter:
     globalScale: 0.01
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
@@ -120,9 +291,24 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 4
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips:
+  - bf3e7c2da124a024585bab4bec11209a
+  - c06a23b8f6b551b43a4824c7991b630e
+  - 1894cbf905e621a458a58dd279818bc9
+  - d9172320d0c95b0448efe2b7ae5e5e43
+  - 0629cae5fe8cd5d458a57ad6a2e510e4
+  - ed31164ed43c25d47850ff90e683091a
+  - 98eea2f3001703846a1c15d7ac9b9b9c
+  - 1d104c417c488944ebad16c0850ce9a5
+  - 9aeb1a3d13556a84391cbeb29dd48765
+  - 9a09c62c3ac56bf49bd6ef8317b0226a
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -132,11 +318,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 0.01
     rootMotionBoneName: 
     hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 1
   humanoidOversampling: 1
+  avatarSetup: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

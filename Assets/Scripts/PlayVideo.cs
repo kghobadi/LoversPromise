@@ -1,22 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 
-public class PlayVideo : MonoBehaviour {
-
-    public MovieTexture movie;
+public class PlayVideo : MonoBehaviour 
+{
+    public VideoPlayer movie;
     public float waitTime = 0.1f;
     public float end = 10;
 
-
-	void Start () {
-        GetComponent<RawImage>().texture = movie as MovieTexture;
+	void Start () 
+	{
         movie.Play();
-	
 	}
 	
-	void Update () {
+	void Update () 
+	{
 	    if(movie.isPlaying == false)
         {
             if(end > 0)
@@ -28,7 +28,6 @@ public class PlayVideo : MonoBehaviour {
 
                 Application.Quit();
             }
-            
         }
 	}
 }
