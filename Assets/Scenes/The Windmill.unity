@@ -11080,7 +11080,8 @@ Prefab:
   m_IsPrefabParent: 0
 --- !u!1 &1165143968 stripped
 GameObject:
-  m_PrefabParentObject: {fileID: 168024, guid: 676634aef71734a46bfdb00b10bbf367, type: 2}
+  m_PrefabParentObject: {fileID: 1887657921513876, guid: 676634aef71734a46bfdb00b10bbf367,
+    type: 2}
   m_PrefabInternal: {fileID: 1165143967}
 --- !u!114 &1165143969 stripped
 MonoBehaviour:

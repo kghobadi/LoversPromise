@@ -57733,7 +57733,8 @@ MonoBehaviour:
   m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &1455061544 stripped
 GameObject:
-  m_PrefabParentObject: {fileID: 183488, guid: 676634aef71734a46bfdb00b10bbf367, type: 2}
+  m_PrefabParentObject: {fileID: 1887657921513876, guid: 676634aef71734a46bfdb00b10bbf367,
+    type: 2}
   m_PrefabInternal: {fileID: 1455061542}
 --- !u!1001 &1473003552
 Prefab:
