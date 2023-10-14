@@ -19,7 +19,7 @@ public class PetAnimal : Interactable
     private void Start()
     {
         animalAudio = GetComponent<AnimalSounds>();
-        p_Animator = GetComponentInParent<Animator>();
+        p_Animator = GetComponent<Animator>();
 
         //set random idle anim 
         randomIdle = Random.Range(0, idleMax);
