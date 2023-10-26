@@ -1290,8 +1290,10 @@ MonoBehaviour:
   voices: []
   currentSound: 0
   animalSounds:
-  - {fileID: 8300000, guid: dcf91509b37a6044bb6faf100d8537fa, type: 3}
-  - {fileID: 8300000, guid: 4e73029d2f1b39645b801ff5313afe51, type: 3}
+  - {fileID: 8300000, guid: 571bba0350a8e9749b8bf8c99ef14233, type: 3}
+  - {fileID: 8300000, guid: 195654cdb53ccb44387c8b78aab5d6e5, type: 3}
+  - {fileID: 8300000, guid: 44f27f3c36fa3d84699ff9b39c0a3891, type: 3}
+  - {fileID: 8300000, guid: 6b407fce6de1f174ea70ef691449b665, type: 3}
 --- !u!114 &8630941542160923112
 MonoBehaviour:
   m_ObjectHideFlags: 0

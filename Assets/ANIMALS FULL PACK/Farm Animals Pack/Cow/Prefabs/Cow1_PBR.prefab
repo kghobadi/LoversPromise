@@ -919,6 +919,8 @@ MonoBehaviour:
   animalSounds:
   - {fileID: 8300000, guid: dcf91509b37a6044bb6faf100d8537fa, type: 3}
   - {fileID: 8300000, guid: 4e73029d2f1b39645b801ff5313afe51, type: 3}
+  - {fileID: 8300000, guid: e813c817fe245e344a05b930548b895c, type: 3}
+  - {fileID: 8300000, guid: e9a85f8a017899d429c0b50fd11b4655, type: 3}
 --- !u!114 &1465757729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1983,17 +1985,17 @@ PrefabInstance:
     - target: {fileID: 7496968335997380323, guid: cd80953f486244549807ff8a02621408,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.037
       objectReference: {fileID: 0}
     - target: {fileID: 7496968335997380323, guid: cd80953f486244549807ff8a02621408,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.361
       objectReference: {fileID: 0}
     - target: {fileID: 7496968335997380323, guid: cd80953f486244549807ff8a02621408,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.097
       objectReference: {fileID: 0}
     - target: {fileID: 7496968335997380323, guid: cd80953f486244549807ff8a02621408,
         type: 3}

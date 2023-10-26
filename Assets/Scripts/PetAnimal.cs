@@ -12,15 +12,16 @@ public class PetAnimal : Interactable
     private AnimalSounds animalAudio;
     private Animator p_Animator;
 
+    public bool hasBeenPetted;
     public string pettedTrigger = "petted";
     private int randomIdle;
     [SerializeField] private int idleMax;
 
+    [Header("Animal Audio Settings")]
     [Tooltip("Check this to make animal produce audio over time")]
     public bool audioIdleSounds;
     [Tooltip("range for audio interval")]
     public Vector2 audioIntervalRange = new Vector2(15f, 25f);
-
     public ParticleSystem audioParticles;
  
     private void Start()
@@ -48,7 +49,14 @@ public class PetAnimal : Interactable
         //play sound!
         if(!animalAudio.myAudioSource.isPlaying)
             animalAudio.PlayRandomSoundRandomPitch(animalAudio.animalSounds, animalAudio.myAudioSource.volume);
-        p_Animator.SetTrigger(pettedTrigger); 
+        p_Animator.SetTrigger(pettedTrigger);
+
+        //first time petted today?
+        if (!hasBeenPetted)
+        {
+            hasBeenPetted = true;
+            AnimalMgr.Instance.CheckPettedCount();
+        }
     }
     
     /// <summary>
