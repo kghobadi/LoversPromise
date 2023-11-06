@@ -12,6 +12,14 @@ public class OffsetAnimator : MonoBehaviour
     public bool randomOffsetOrder;
     public Vector2 waitIntervalRange = new Vector2(0.25f, 0.5f);
 
+    /// <summary>
+    /// Can be called by editor button. 
+    /// </summary>
+    public void GetAllAnimatorChildren()
+    {
+        animatorGroup = GetComponentsInChildren<Animator>();
+    }
+    
     private void OnEnable()
     {
         OffsetAnimators(waitIntervalRange);

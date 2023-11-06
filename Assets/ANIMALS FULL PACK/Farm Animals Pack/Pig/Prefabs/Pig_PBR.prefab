@@ -1269,7 +1269,7 @@ MonoBehaviour:
   withinClickDist: 10
   hasBeenPetted: 0
   pettedTrigger: petted
-  idleMax: 3
+  idleMax: 4
   audioIdleSounds: 1
   audioIntervalRange: {x: 15, y: 25}
   audioParticles: {fileID: 0}
