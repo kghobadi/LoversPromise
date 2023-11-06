@@ -29,14 +29,19 @@ public class PetAnimal : Interactable
         animalAudio = GetComponent<AnimalSounds>();
         p_Animator = GetComponent<Animator>();
 
-        //set random idle anim 
-        randomIdle = Random.Range(0, idleMax);
-        p_Animator.SetFloat("idleType", randomIdle);
+        RandomizeIdle();
 
         if (audioIdleSounds)
         {
             AudioIdles();
         }
+    }
+    
+    void RandomizeIdle()
+    {
+        //set random idle anim 
+        randomIdle = Random.Range(0, idleMax);
+        p_Animator.SetFloat("idleType", randomIdle);
     }
 
     /// <summary>
@@ -50,6 +55,8 @@ public class PetAnimal : Interactable
         if(!animalAudio.myAudioSource.isPlaying)
             animalAudio.PlayRandomSoundRandomPitch(animalAudio.animalSounds, animalAudio.myAudioSource.volume);
         p_Animator.SetTrigger(pettedTrigger);
+        
+        RandomizeIdle();
 
         //first time petted today?
         if (!hasBeenPetted)
