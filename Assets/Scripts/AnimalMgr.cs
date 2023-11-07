@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 /// <summary>
 /// Lets us know how many animals have been petted by the player throughout the level.
@@ -9,6 +10,8 @@ using UnityEngine;
 public class AnimalMgr : NonInstantiatingSingleton<AnimalMgr>
 {
     protected override AnimalMgr GetInstance(){ return this; }
+    [SerializeField] private FirstPersonController playerFarmer;
+    public FirstPersonController PlayerController => playerFarmer;
     
     public PetAnimal[] allAnimals;
     public int pettedCount;
@@ -28,19 +31,40 @@ public class AnimalMgr : NonInstantiatingSingleton<AnimalMgr>
 
     public void CheckPettedCount()
     {
+        //will store animals left 
+        List<string> animalsNeedingPets = new List<string>();
         int petted = 0;
+        //loop through all animals
         foreach (var animal in allAnimals)
         {
+            //check if they were pet 
             if (animal.hasBeenPetted)
             {
                 petted++;
             }
+            else
+            {
+                //add to animal name list 
+                animalsNeedingPets.Add(animal.gameObject.name);
+            }
         }
 
         pettedCount = petted;
+        //get animals left count 
+        int animalsLeft = allAnimals.Length - pettedCount;
         if (pettedCount >= allAnimals.Length)
         {
             ActivateLevelExit();
+        }
+
+        //Tells us how many and which animals are left
+        if (animalsLeft < 5)
+        {
+            Debug.LogFormat("Animals left: {0}", animalsLeft);
+            foreach (var animal in animalsNeedingPets)
+            {
+                Debug.LogFormat("Please Pet: {0}", animal);
+            }
         }
     }
 
