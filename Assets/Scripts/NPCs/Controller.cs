@@ -11,7 +11,10 @@ namespace NPC
 
         public enum NPCStates
         {
-            IDLE, MOVING, TALKING, WAVING, ACTING, TRADING
+            IDLE = 0, 
+            MOVING = 1, 
+            ACTING = 2, 
+            SLEEPING = 3,
         }
 
         public LayerMask npcLayer;
@@ -23,14 +26,14 @@ namespace NPC
         private Animations npcAnimations;
         private Movement npcMovement;
         private AnimalSounds npcSounds;
-        private Interactable interactable;
+        private PetAnimal interactable;
         #region Properties
 
         public string NpcName => gameObject.name;
         public Animations Animation => npcAnimations;
         public Movement Movement => npcMovement;
         public AnimalSounds Sounds => npcSounds;
-        public Interactable Interactable => interactable;
+        public PetAnimal Interactable => interactable;
 
 
         #endregion
@@ -59,10 +62,10 @@ namespace NPC
             }
 
             //get interactable
-            interactable = GetComponent<Interactable>();
+            interactable = GetComponent<PetAnimal>();
             if (interactable == null)
             {
-                interactable = GetComponentInChildren<Interactable>(true);
+                interactable = GetComponentInChildren<PetAnimal>(true);
             }
         }
 

@@ -160,8 +160,6 @@ namespace NPC
             {
                 CheckEmotionType();
 
-                //Stop wait for dialogue behavior. 
-                Controller.Movement.DisableWaitForDialogue();
             }
 
             if (HasParameter(talkState))

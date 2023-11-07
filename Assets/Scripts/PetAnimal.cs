@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using NPC;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -11,6 +12,7 @@ public class PetAnimal : Interactable
 {
     private AnimalSounds animalAudio;
     private Animator p_Animator;
+    private Controller npcController;
 
     public bool hasBeenPetted;
     public string pettedTrigger = "petted";
@@ -28,6 +30,7 @@ public class PetAnimal : Interactable
     {
         animalAudio = GetComponent<AnimalSounds>();
         p_Animator = GetComponent<Animator>();
+        npcController = GetComponent<Controller>();
 
         RandomizeIdle();
 
@@ -54,7 +57,17 @@ public class PetAnimal : Interactable
         //play sound!
         if(!animalAudio.myAudioSource.isPlaying)
             animalAudio.PlayRandomSoundRandomPitch(animalAudio.animalSounds, animalAudio.myAudioSource.volume);
-        p_Animator.SetTrigger(pettedTrigger);
+
+        //if they are sleeping, return to Idle
+        if (npcController.npcState == Controller.NPCStates.SLEEPING)
+        {
+            npcController.Movement.SetIdle();
+        }
+        //otherwise, petted anim 
+        else
+        {
+            p_Animator.SetTrigger(pettedTrigger);
+        }
         
         RandomizeIdle();
 

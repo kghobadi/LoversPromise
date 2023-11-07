@@ -20,6 +20,8 @@ public struct Behavior
     public Movement.MoveType moveType;
     [Tooltip("For follower NPC behavior")]
     public Transform followObject;
+    [Tooltip("For follower NPC behavior")]
+    public Transform lookAt;
     [Tooltip("For pathfinder NPC behavior")]
     public bool checksAgainstPlayer;
 }

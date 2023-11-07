@@ -67,16 +67,18 @@ namespace NPC
         //state timers 
         [Tooltip("Current time of a state")]
         public float stateTimer, actionTimer;
-        [Tooltip("Amount of time a state will take")]
-        public float idleTime, actionTime;
+        [Tooltip("Amount of time an action state will take")]
+        public float actionTime;
+        public Vector2 idleTimeRange = new Vector2(5f, 10f);
+        public Vector2 sleepRange = new Vector2(25f, 50f);
+        private bool _canSleep = false;
 
         [Header("Look At Settings")]
         public Transform lookAtTransform;
         public float lookSmooth = 5f;
 
-        [Header("Monologue Wait")]
-        public bool waitForDialogue;
-        public float dialogueWaitTimer = 0f, dialogueWaitTime = 30f;
+        [Header("Sleep Settings")] 
+        public float sleepChance = 15f;
 
         [Header("Wanderer Settings")]
         public Transform[] waypoints;
@@ -90,11 +92,6 @@ namespace NPC
 
         [Header("Follower Logic")]
         public Transform followObject;
-        public bool holdingPlayer;
-
-        [Header("Move Direction")]
-        [Tooltip("Is the character flipped (facing left) on start?")]
-        public bool flipOnStart;
 
         [Header("Move Speed")]
         [SerializeField]
@@ -175,6 +172,10 @@ namespace NPC
                 Idle();
                 //moving state
                 Moving();
+                //sleep state
+                Sleep();
+                //Look at the look at transform if there is one
+                LookAtObject();
                 //finding player
                 FindPlayer();
                 //following player
@@ -191,166 +192,145 @@ namespace NPC
         {
             if (controller.npcState == Controller.NPCStates.IDLE)
             {
+                //tick state timer
                 stateTimer -= Time.deltaTime;
-
-                LockControllerRotationToZero();
 
                 //NPC will perform its action 
                 //ActionCountdown();
-
-                //if we are not IDLE npc, idle state has a countdown until movement 
-                if (npcType == NPCMovementTypes.IDLE || npcType == NPCMovementTypes.GOTOTransform)
+                
+                //When idle state reaches 0
+                if (stateTimer < 0)
                 {
-                    //play a sound
-                    if (stateTimer < 0)
+                    //create fell asleep condition
+                    bool fellAsleep = false;
+                    if (_canSleep)
                     {
-                        //idle action?
-
-                        stateTimer = idleTime;
+                        //try falling asleep...
+                        fellAsleep = CheckFallAsleep();
                     }
-                }
-                //Set destination based on npc type 
-                else if (npcType == NPCMovementTypes.RANDOM)
-                {
-                    if (stateTimer < 0)
+                    
+                    //We're awake, what's next?
+                    if (!fellAsleep)
                     {
-                        //Debug.Log("calling radials");
-                        SetRandomDestination();
-                    }
-
-                }
-                //looping waypoints npc 
-                else if (npcType == NPCMovementTypes.WAYPOINT)
-                {
-                    //wait for monologue 
-                    if (!waitForDialogue)
-                    {
-                        if (stateTimer < 0)
+                        //if we are IDLE npc, idle state has a countdown until movement 
+                        if (npcType == NPCMovementTypes.IDLE || npcType == NPCMovementTypes.GOTOTransform)
+                        {
+                            //idle action?
+                            stateTimer = Random.Range(idleTimeRange.x, idleTimeRange.y);
+                        }
+                        //Set destination based on npc type 
+                        else if (npcType == NPCMovementTypes.RANDOM)
+                        {
+                            //Debug.Log("calling radials");
+                            SetRandomDestination();
+                        }
+                        //looping waypoints npc 
+                        else if (npcType == NPCMovementTypes.WAYPOINT)
                         {
                             //Debug.Log("calling waypoints");
                             SetWaypoint(true);
                         }
-                    }
-                    //waiting to give monologue -- look at player 
-                    else
-                    {
-                        WaitToGiveDialogue();
-                    }
-                }
-                //waits until player is near then walks to next point 
-                else if (npcType == NPCMovementTypes.PATHFINDER)
-                {
-                    //goes to next point if timer reaches 0 or player is near 
-                    //Only does this if there are currenltly points in my list 
-                    if (!waitForDialogue)
-                    {
-                        //make sure there is more waypoints!
-                        if (waypointCounter < waypoints.Length - 1)
+                        //waits until player is near then walks to next point 
+                        else if (npcType == NPCMovementTypes.PATHFINDER)
                         {
-                            float playerDist = Mathf.Infinity;
-                            float myDist = 0;
-
-                            //only if check against player is set do we change the above dists
-                            if (checkAgainstPlayer)
-                            {
-                                //must be before final waypoint 
-                                if (waypointCounter + 1 < waypoints.Length - 1 && waypoints.Length > 1)
-                                {
-                                    //player dist from next waypoint
-                                    playerDist = Vector3.Distance(AnimalMgr.Instance.PlayerController.transform.position, waypoints[waypointCounter + 1].position);
-
-                                    //my dist from next waypoint
-                                    myDist = Vector3.Distance(transform.position, waypoints[waypointCounter + 1].position);
-                                }
-
-                                //if my stateTimer ended, or player is closer to my next dest
-                                if ( stateTimer < 0 || playerDist < myDist)
-                                {
-                                    SetWaypoint(false);
-                                }
-                            }
-                            //don't worry about player, just idle for idle time.
-                            else
-                            {
-                                //if idle time is up, move to next waypoint.
-                                if (stateTimer < 0)
-                                {
-                                    SetWaypoint(false);
-                                }
-                            }
+                            //goes to next point if timer reaches 0 
+                            SetWaypoint(false);
                         }
                     }
-                    //waiting to give monologue -- look at player 
-                    else
+                }
+                
+                //waits until player is near then walks to next point 
+                if (npcType == NPCMovementTypes.PATHFINDER)
+                {
+                    //Only does this if there are currently points in my list 
+                    //make sure there is more waypoints!
+                    if (waypointCounter < waypoints.Length - 1)
                     {
-                        WaitToGiveDialogue();
+                        float playerDist = Mathf.Infinity;
+                        float myDist = 0;
+
+                        //only if check against player is set do we change the above dists
+                        if (checkAgainstPlayer)
+                        {
+                            //must be before final waypoint 
+                            if (waypointCounter + 1 < waypoints.Length - 1 && waypoints.Length > 1)
+                            {
+                                //player dist from next waypoint
+                                playerDist = Vector3.Distance(AnimalMgr.Instance.PlayerController.transform.position, waypoints[waypointCounter + 1].position);
+
+                                //my dist from next waypoint
+                                myDist = Vector3.Distance(transform.position, waypoints[waypointCounter + 1].position);
+                            }
+
+                            //if player is closer to my next dest
+                            if ( playerDist < myDist)
+                            {
+                                SetWaypoint(false);
+                            }
+                        }
                     }
                 }
             }
         }
 
         //stops movement
-        public virtual void SetIdle()
+        public virtual void SetIdle(bool canSleep = true)
         {
             if (myNavMesh && myNavMesh.isOnNavMesh)
                 myNavMesh.isStopped = true;
-            stateTimer = idleTime;
+            stateTimer = Random.Range(idleTimeRange.x, idleTimeRange.y);;
             controller.Animation.SetTalking(false);
             //disable emotions if it is not set to manual. 
             if (!controller.Animation.ManualDisableEmotions)
             {
                 controller.Animation.DisableEmotions();
             }
-            CheckIdleType();
+            
             controller.Animation.SetAnimatorByParameter("idle");
             controller.npcState = Controller.NPCStates.IDLE;
+            _canSleep = canSleep;
         }
 
         /// <summary>
-        /// Switch idle type in animator!
+        /// Checks if animal decided to sleep. 
         /// </summary>
-        void CheckIdleType()
+        bool CheckFallAsleep()
         {
-            if (controller.Animation.HasParameter("IdleType"))
+            bool slept = false;
+            float sleepPercent = Random.Range(0f, 100f);
+            if (sleepPercent < sleepChance)
             {
-                controller.Animation.SetIdleFloat((float)idleType);
+                slept = true;
+                FallAsleep();
             }
-        }
 
+            return slept;
+        }
+        
         /// <summary>
-        /// Allows you to set wait for dialogue with a specified wait time. 
+        /// Animals can fall asleep during idle state. 
         /// </summary>
-        /// <param name="wait"></param>
-        public void SetWaitForDialogue(float wait)
+        void FallAsleep()
         {
-            dialogueWaitTime = wait;
-            waitForDialogue = true;
+            stateTimer = Random.Range(sleepRange.x, sleepRange.y);
+            controller.Animation.SetAnimatorByParameter("sleep");
+            controller.npcState = Controller.NPCStates.SLEEPING;
         }
-
-        //TODO GC-2688 check why Hunter is still moving during Dialogues.
-        //Just want to make sure we are able to set this easily. 
-        //called from within Idle state only 
-        void WaitToGiveDialogue()
+        
+        //can be called during IDLE state 
+        void Sleep()
         {
-            LockControllerRotationToZero();
-
-            //dont want this to count until start view is inactive 
-            dialogueWaitTimer += Time.deltaTime;
-
-            //stop waiting for monologue IF not in monologue 
-            if (dialogueWaitTimer > dialogueWaitTime)
+            if (controller.npcState == Controller.NPCStates.SLEEPING)
             {
-                DisableWaitForDialogue();
-            }
-        }
+                //sleep countdown
+                stateTimer -= Time.deltaTime;
 
-        /// <summary>
-        /// Disables wait for dialogue. 
-        /// </summary>
-        public void DisableWaitForDialogue()
-        {
-            waitForDialogue = false;
-            dialogueWaitTimer = 0;
+                if (stateTimer < 0)
+                {
+                    //wake up!
+                    SetIdle(false);
+                }
+            }
         }
 
         //can be called during IDLE state 
@@ -371,7 +351,7 @@ namespace NPC
             }
         }
 
-
+       
         #endregion
 
         #region State Management
@@ -403,6 +383,8 @@ namespace NPC
             SetMoveType(moveType);
 
             followObject = path.followObject;
+            
+            SetLook(path.lookAt);
 
             //random npc move type 
             if (npcType == NPCMovementTypes.RANDOM)
@@ -420,7 +402,6 @@ namespace NPC
                 waypoints = path.movementPoints;
                 waypointCounter = 0;
 
-                waitForDialogue = false;
                 checkAgainstPlayer = path.checksAgainstPlayer;
             }
 
@@ -454,31 +435,16 @@ namespace NPC
                 GetDistFromPlayer();
                 if (distFromPlayer < myNavMesh.stoppingDistance + 3f)
                 {
-                    PickUpPlayer();
+                    //do something?
                 }
                 //keep loooking
                 else
                 {
-                    NavigateToPoint(AnimalMgr.Instance.PlayerController.transform.position, false);
+                    NavigateToPoint(AnimalMgr.Instance.PlayerController.transform.position);
                 }
             }
         }
-
-        /// <summary>
-        /// Could write a function to pick up the player :)
-        /// </summary>
-        void PickUpPlayer()
-        {
-            //
-        }
-
-        /// <summary>
-        /// Drops player and lets them move
-        /// </summary>
-        public void DropPlayer()
-        {
-
-        }
+        
         #endregion
 
         #region Look At Logic
@@ -495,6 +461,43 @@ namespace NPC
 
             lookAtTransform = point;
         }
+
+        void LookAtObject()
+        {
+            if (lookAtTransform != null)
+            {
+                Vector3 lookPoint = new Vector3(lookAtTransform.position.x, transform.position.y, lookAtTransform.position.z);
+                
+                LookAtObject(lookPoint, true);
+            }
+        }
+
+        //looks at object
+        void LookAtObject(Vector3 pos, bool useMyY)
+        {
+            //empty Vector 3
+            Vector3 direction;
+
+            //use my y Pos in Look pos
+            if (useMyY)
+            {
+                //find direction from me to obj
+                Vector3 posWithMyY = new Vector3(pos.x, transform.position.y, pos.z);
+                direction = posWithMyY - transform.position;
+            }
+            //use obj y pos in Look pos
+            else
+            {
+                //find direction from me to obj
+                direction = pos - transform.position;
+            }
+           
+            //find target look
+            Quaternion targetLook = Quaternion.LookRotation(direction);
+            //actually rotate the character 
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetLook, lookSmooth * Time.deltaTime);
+        }
+
 
         //looks at object
         //TODO this will need revisions for 2d logic. 
@@ -515,15 +518,15 @@ namespace NPC
             if (controller.npcState == Controller.NPCStates.MOVING)
             {
                 //looks at targetPos when not waving 
-                LockControllerRotationToZero();
-
-                //check holding
-                if (holdingPlayer)
+                if (lookAtTransform == null)
                 {
-
+                    //look where you're going!
+                    LookAtObject(targetPosition, true);
                 }
-                GetDistFromPlayer();
-                if (distFromPlayer < myNavMesh.stoppingDistance )
+
+                //get dist from target 
+                float distFromTarget = Vector3.Distance(transform.position, targetPosition);
+                if (distFromTarget < myNavMesh.stoppingDistance)
                 {
                     //can be called by triggers or smth
                     if (resetsMovement)
@@ -567,11 +570,12 @@ namespace NPC
                 //null check
                 if (followObject != null)
                 {
+                    float distFromObject = Vector3.Distance(transform.position, followObject.transform.position);
                     //are we not yet at the follow obj and still not moving?
-                    if (Vector3.Distance(transform.position, followObject.position) > myNavMesh.stoppingDistance + 1f
+                    if (distFromObject > myNavMesh.stoppingDistance + 3f
                         && controller.npcState != Controller.NPCStates.MOVING)
                     {
-                        NavigateToPoint(followObject.position, false);
+                        NavigateToPoint(followObject.position);
                     }
                 }
             }
@@ -586,10 +590,10 @@ namespace NPC
             {
                 GetDistFromPlayer();
                 //are we not yet at the player and still not moving?
-                if (distFromPlayer > myNavMesh.stoppingDistance + 1f
+                if (distFromPlayer > myNavMesh.stoppingDistance + 3f
                     && controller.npcState != Controller.NPCStates.MOVING)
                 {
-                    NavigateToPoint( AnimalMgr.Instance.PlayerController.transform.position, false);
+                    NavigateToPoint( AnimalMgr.Instance.PlayerController.transform.position);
                 }
             }
         }
@@ -626,13 +630,13 @@ namespace NPC
             if (waypoints[waypointCounter] != null)
             {
                 Vector3 castPoint = waypoints[waypointCounter].position;
-                NavigateToPoint(castPoint, false);
+                NavigateToPoint(castPoint);
 
                 //try getting Transform from the waypoint. 
-                Transform Transform = waypoints[waypointCounter].GetComponent<Transform>();
-                if (Transform)
+                Transform locator = waypoints[waypointCounter].transform;
+                if (locator)
                 {
-                    lastTransform = Transform;
+                    lastTransform = locator;
                 }
             }
             else
@@ -650,11 +654,11 @@ namespace NPC
 
             Vector3 castPoint = new Vector3(xz.x + origPosition.x, transform.position.y + 10, xz.y + origPosition.z);
 
-            NavigateToPoint(castPoint, false);
+            NavigateToPoint(castPoint);
         }
 
         //base function for actually navigating to a point 
-        public virtual void NavigateToPoint(Vector3 castPoint, bool hasMono)
+        public virtual void NavigateToPoint(Vector3 castPoint)
         {
             targetPosition = Tools.General.GetGroundedPoint(castPoint);
 
@@ -665,12 +669,6 @@ namespace NPC
             //set moving 
             controller.npcState = Controller.NPCStates.MOVING;
             controller.Animation.SetAnimatorByParameter("moving");
-
-            //character will wait when it arrives at point 
-            if (hasMono)
-            {
-                waitForDialogue = true;
-            }
         }
 
         /// <summary>
@@ -683,7 +681,7 @@ namespace NPC
             {
                 ResetMovement(goToTransform, overrideMoveType);
 
-                NavigateToPoint(locator.transform.position, false);
+                NavigateToPoint(locator.transform.position);
 
                 lastTransform = locator;
             }
@@ -725,12 +723,7 @@ namespace NPC
 
                 StartCoroutine(TeleportCoroutine(teleportPos));
 
-                //try getting Transform from the teleport location. 
-                Transform locator = location.GetComponent<Transform>();
-                if (locator)
-                {
-                    lastTransform = locator;
-                }
+                lastTransform = location;
             }
         }
 
