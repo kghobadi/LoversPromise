@@ -1313,6 +1313,10 @@ GameObject:
   - component: {fileID: 2098824273}
   - component: {fileID: 2098824272}
   - component: {fileID: 2098824271}
+  - component: {fileID: 7275387758233366570}
+  - component: {fileID: 5888669983270253539}
+  - component: {fileID: 2740882211563130322}
+  - component: {fileID: 7554253925051069497}
   m_Layer: 0
   m_Name: Chicken3_PBR
   m_TagString: Untagged
@@ -1347,7 +1351,7 @@ Animator:
   m_GameObject: {fileID: 4395013997357495530}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: d3412d9a75167e541b11c8b9ec1ce1e6, type: 3}
-  m_Controller: {fileID: 9100000, guid: 005b4044a94bb3e4bbad3da6ba65ff72, type: 2}
+  m_Controller: {fileID: 9100000, guid: 99eaa64e75ffbdf4e962a394e766f319, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -1414,7 +1418,7 @@ AudioSource:
   Priority: 18
   DopplerLevel: 0
   MinDistance: 5
-  MaxDistance: 150
+  MaxDistance: 100
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -1535,6 +1539,125 @@ MonoBehaviour:
   audioIdleSounds: 1
   audioIntervalRange: {x: 15, y: 25}
   audioParticles: {fileID: 0}
+--- !u!114 &7275387758233366570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4395013997357495530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ec3c5736da68664fa3264775619b213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcState: 0
+  npcLayer:
+    serializedVersion: 2
+    m_Bits: 1
+  initializeAfterAwake: 0
+--- !u!114 &5888669983270253539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4395013997357495530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72bd1cd76be71a34bae324c7d92c56f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcType: 0
+  idleType: 0
+  moveType: 0
+  startBehavior: {fileID: 11400000, guid: 5fbcb719c7ff06d48aaa938e43c4701a, type: 2}
+  currentBehavior:
+    pathName: 
+    movementType: 0
+    movementPoints: []
+    moveRadius: 0
+    idleType: 0
+    moveType: 0
+    followObject: {fileID: 0}
+    lookAt: {fileID: 0}
+    checksAgainstPlayer: 0
+  goToTransform:
+    pathName: 
+    movementType: 0
+    movementPoints: []
+    moveRadius: 0
+    idleType: 0
+    moveType: 0
+    followObject: {fileID: 0}
+    lookAt: {fileID: 0}
+    checksAgainstPlayer: 0
+  AIenabled: 1
+  targetPosition: {x: 0, y: 0, z: 0}
+  myNavMesh: {fileID: 0}
+  resetsMovement: 0
+  newMovement: {fileID: 0}
+  stateTimer: 0
+  actionTimer: 0
+  actionTime: 0
+  idleTimeRange: {x: 5, y: 10}
+  sleepRange: {x: 25, y: 50}
+  lookAtTransform: {fileID: 0}
+  lookSmooth: 5
+  sleepChance: 0
+  waypoints: []
+  waypointCounter: 0
+  checkAgainstPlayer: 0
+  movementRadius: 0
+  followObject: {fileID: 0}
+  useMoveTypeSpeeds: 0
+  moveTypeSpeeds:
+  - 3
+  - 3
+--- !u!114 &2740882211563130322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4395013997357495530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c55fda03143eca4ebc251794ef67fbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationBools:
+  - idle
+  - moving
+  - sleep
+  animationBoolHashes: 15b524dc86e0303facc2330f
+  characterAnimator: {fileID: 4395013997364873074}
+  emoteType: 0
+  manualDisableEmotions: 0
+  useCustomFacialEmotes: 0
+  combinedEmotes: []
+--- !u!195 &7554253925051069497
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4395013997357495530}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.35
+  m_Speed: 10
+  m_Acceleration: 35
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 5
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &4395013997357495536
 GameObject:
   m_ObjectHideFlags: 0

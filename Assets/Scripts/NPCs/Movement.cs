@@ -590,7 +590,7 @@ namespace NPC
             {
                 GetDistFromPlayer();
                 //are we not yet at the player and still not moving?
-                if (distFromPlayer > myNavMesh.stoppingDistance + 3f
+                if (distFromPlayer > myNavMesh.stoppingDistance + 5f
                     && controller.npcState != Controller.NPCStates.MOVING)
                 {
                     NavigateToPoint( AnimalMgr.Instance.PlayerController.transform.position);

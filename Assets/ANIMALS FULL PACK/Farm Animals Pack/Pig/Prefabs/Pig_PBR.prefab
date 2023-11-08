@@ -1041,6 +1041,10 @@ GameObject:
   - component: {fileID: 921837616}
   - component: {fileID: 921837615}
   - component: {fileID: 921837614}
+  - component: {fileID: 4377251458280254601}
+  - component: {fileID: 2879800762377354789}
+  - component: {fileID: 6730054619964859525}
+  - component: {fileID: 7119913799967317514}
   m_Layer: 0
   m_Name: Pig_PBR
   m_TagString: Untagged
@@ -1077,7 +1081,7 @@ Animator:
   m_GameObject: {fileID: 6149793772180955747}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 7cce7c32a6f9b2b4181f2ea08d2a469d, type: 3}
-  m_Controller: {fileID: 9100000, guid: 9623b200f917a6248ba3f0a49da82b55, type: 2}
+  m_Controller: {fileID: 9100000, guid: 180bb61f3ec57584b8e9df03307d671a, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -1152,7 +1156,7 @@ AudioSource:
   Priority: 18
   DopplerLevel: 0
   MinDistance: 5
-  MaxDistance: 150
+  MaxDistance: 100
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -1273,6 +1277,125 @@ MonoBehaviour:
   audioIdleSounds: 1
   audioIntervalRange: {x: 15, y: 25}
   audioParticles: {fileID: 0}
+--- !u!114 &4377251458280254601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6149793772180955747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ec3c5736da68664fa3264775619b213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcState: 0
+  npcLayer:
+    serializedVersion: 2
+    m_Bits: 1
+  initializeAfterAwake: 0
+--- !u!114 &2879800762377354789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6149793772180955747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72bd1cd76be71a34bae324c7d92c56f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcType: 0
+  idleType: 0
+  moveType: 0
+  startBehavior: {fileID: 11400000, guid: f93cdacb86e2211428063f68edb031d4, type: 2}
+  currentBehavior:
+    pathName: 
+    movementType: 0
+    movementPoints: []
+    moveRadius: 0
+    idleType: 0
+    moveType: 0
+    followObject: {fileID: 0}
+    lookAt: {fileID: 0}
+    checksAgainstPlayer: 0
+  goToTransform:
+    pathName: 
+    movementType: 0
+    movementPoints: []
+    moveRadius: 0
+    idleType: 0
+    moveType: 0
+    followObject: {fileID: 0}
+    lookAt: {fileID: 0}
+    checksAgainstPlayer: 0
+  AIenabled: 1
+  targetPosition: {x: 0, y: 0, z: 0}
+  myNavMesh: {fileID: 0}
+  resetsMovement: 0
+  newMovement: {fileID: 0}
+  stateTimer: 0
+  actionTimer: 0
+  actionTime: 0
+  idleTimeRange: {x: 10, y: 15}
+  sleepRange: {x: 25, y: 50}
+  lookAtTransform: {fileID: 0}
+  lookSmooth: 5
+  sleepChance: 25
+  waypoints: []
+  waypointCounter: 0
+  checkAgainstPlayer: 0
+  movementRadius: 0
+  followObject: {fileID: 0}
+  useMoveTypeSpeeds: 0
+  moveTypeSpeeds:
+  - 3
+  - 3
+--- !u!114 &6730054619964859525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6149793772180955747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c55fda03143eca4ebc251794ef67fbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationBools:
+  - idle
+  - moving
+  - sleep
+  animationBoolHashes: 15b524dc86e0303facc2330f
+  characterAnimator: {fileID: 6149793772173529573}
+  emoteType: 0
+  manualDisableEmotions: 0
+  useCustomFacialEmotes: 0
+  combinedEmotes: []
+--- !u!195 &7119913799967317514
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6149793772180955747}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 1
+  m_Speed: 7
+  m_Acceleration: 30
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 8
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &6149793772180955749
 GameObject:
   m_ObjectHideFlags: 0
