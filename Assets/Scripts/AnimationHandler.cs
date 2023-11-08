@@ -12,7 +12,7 @@ public abstract class AnimationHandler : MonoBehaviour
 
     #region Serialized Properties: Cached Components
     [Header("AnimationHandler Cached Components")]
-    [SerializeField] protected Animator characterAnimator;
+    protected Animator characterAnimator;
     #endregion
 
     #region Properties
@@ -71,10 +71,7 @@ public abstract class AnimationHandler : MonoBehaviour
 
     protected virtual void Awake()
     {
-        if (characterAnimator)
-        {
-            characterAnimator = GetComponent<Animator>();
-        }
+        characterAnimator = GetComponent<Animator>();
 
         //  AnimationHandler so the hashes can get serialized
         if (animationBoolHashes == null || animationBoolHashes.Length != animationBools.Length)

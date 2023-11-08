@@ -10198,6 +10198,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pig_PBR (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6149793772180955747, guid: 4df2e49761b937f4fa67a6fec0e147c4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Animal
+      objectReference: {fileID: 0}
     - target: {fileID: 6149793772181323331, guid: 4df2e49761b937f4fa67a6fec0e147c4,
         type: 3}
       propertyPath: m_RootOrder
@@ -21751,6 +21756,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cow3_PBR
       objectReference: {fileID: 0}
+    - target: {fileID: 6910526367953040335, guid: b97e9ca7ea6e6e84998bee2f5a813472,
+        type: 3}
+      propertyPath: m_TagString
+      value: Animal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b97e9ca7ea6e6e84998bee2f5a813472, type: 3}
 --- !u!4 &1126302744 stripped
@@ -31174,6 +31184,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cow1_PBR
       objectReference: {fileID: 0}
+    - target: {fileID: 5371905011013219356, guid: d32b56c0c114f8046ae2e7ffbde22cb4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Animal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d32b56c0c114f8046ae2e7ffbde22cb4, type: 3}
 --- !u!4 &1465757725 stripped
@@ -31383,6 +31398,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cow2_PBR
+      objectReference: {fileID: 0}
+    - target: {fileID: 8422629037930525759, guid: 31745cbd211b5444aa6042d3837f2955,
+        type: 3}
+      propertyPath: m_TagString
+      value: Animal
       objectReference: {fileID: 0}
     - target: {fileID: 9125496573713402317, guid: 31745cbd211b5444aa6042d3837f2955,
         type: 3}
