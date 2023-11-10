@@ -56,11 +56,10 @@ GameObject:
   - component: {fileID: 431366}
   - component: {fileID: 3336186}
   - component: {fileID: 2309312}
-  - component: {fileID: 11428134}
   - component: {fileID: -7203563617939903302}
   - component: {fileID: -3021688497970723869}
   - component: {fileID: -8649183941471097522}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CornT3
   m_TagString: Tree
   m_Icon: {fileID: 0}
@@ -129,19 +128,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &11428134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 198432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e580f9d23df0f146ba425f903d4e19d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TopTreeTransform: {fileID: 453822}
 --- !u!65 &-7203563617939903302
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -169,7 +155,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationBools: []
   animationBoolHashes: 
-  characterAnimator: {fileID: -8649183941471097522}
 --- !u!95 &-8649183941471097522
 Animator:
   serializedVersion: 3

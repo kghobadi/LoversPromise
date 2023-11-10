@@ -1045,7 +1045,7 @@ GameObject:
   - component: {fileID: 2879800762377354789}
   - component: {fileID: 6730054619964859525}
   - component: {fileID: 7119913799967317514}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Pig_PBR
   m_TagString: Animal
   m_Icon: {fileID: 0}
@@ -1369,7 +1369,6 @@ MonoBehaviour:
   - moving
   - sleep
   animationBoolHashes: 15b524dc86e0303facc2330f
-  characterAnimator: {fileID: 6149793772173529573}
   emoteType: 0
   manualDisableEmotions: 0
   useCustomFacialEmotes: 0

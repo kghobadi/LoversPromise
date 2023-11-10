@@ -1246,7 +1246,7 @@ GameObject:
   - component: {fileID: 9125496573713402317}
   - component: {fileID: 5061160779474995944}
   - component: {fileID: 4031147525501473091}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cow2_PBR
   m_TagString: Animal
   m_Icon: {fileID: 0}
@@ -1566,7 +1566,6 @@ MonoBehaviour:
   - moving
   - sleep
   animationBoolHashes: 15b524dc86e0303facc2330f
-  characterAnimator: {fileID: 8422629037921028025}
   emoteType: 0
   manualDisableEmotions: 0
   useCustomFacialEmotes: 0

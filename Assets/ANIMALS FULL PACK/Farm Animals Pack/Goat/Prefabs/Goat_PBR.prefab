@@ -859,7 +859,7 @@ GameObject:
   - component: {fileID: 8190645762297345833}
   - component: {fileID: 601137720460363142}
   - component: {fileID: 5189590611428488444}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Goat_PBR
   m_TagString: Animal
   m_Icon: {fileID: 0}
@@ -1181,7 +1181,6 @@ MonoBehaviour:
   - moving
   - sleep
   animationBoolHashes: 15b524dc86e0303facc2330f
-  characterAnimator: {fileID: 6539962888411129768}
   emoteType: 0
   manualDisableEmotions: 0
   useCustomFacialEmotes: 0

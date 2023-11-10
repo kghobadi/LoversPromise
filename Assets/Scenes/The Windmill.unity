@@ -10146,46 +10146,46 @@ MonoBehaviour:
     checksAgainstPlayer: 0
   lookAtObjects: []
   npcControllers:
-  - {fileID: 1223826673}
-  - {fileID: 260582588}
-  - {fileID: 1220816519}
-  - {fileID: 673213534}
-  - {fileID: 602159441}
-  - {fileID: 748057209}
-  - {fileID: 570785197}
-  - {fileID: 979820166}
-  - {fileID: 1816211525}
   - {fileID: 7387434}
-  - {fileID: 1616931230}
-  - {fileID: 619695691}
-  - {fileID: 976376710}
-  - {fileID: 1989054069}
   - {fileID: 201281734}
-  - {fileID: 597922248}
-  - {fileID: 1499245240}
-  - {fileID: 639035559}
-  - {fileID: 339732229}
-  - {fileID: 1450033808}
-  - {fileID: 1988797853}
-  - {fileID: 2107812710}
-  - {fileID: 1870453252}
-  - {fileID: 441822861}
+  - {fileID: 260582588}
   - {fileID: 265178039}
-  - {fileID: 581380096}
-  - {fileID: 1825250388}
-  - {fileID: 1033006351}
-  - {fileID: 924301183}
-  - {fileID: 1877720918}
+  - {fileID: 339732229}
+  - {fileID: 441822861}
   - {fileID: 509841664}
-  - {fileID: 1100128690}
+  - {fileID: 570785197}
+  - {fileID: 581380096}
+  - {fileID: 597922248}
+  - {fileID: 602159441}
+  - {fileID: 619695691}
+  - {fileID: 639035559}
+  - {fileID: 673213534}
   - {fileID: 720635098}
+  - {fileID: 748057209}
   - {fileID: 814465806}
+  - {fileID: 924301183}
+  - {fileID: 976376710}
+  - {fileID: 979820166}
+  - {fileID: 1033006351}
+  - {fileID: 1100128690}
   - {fileID: 1126302745}
+  - {fileID: 1220816519}
+  - {fileID: 1223826673}
   - {fileID: 1325435244}
   - {fileID: 1427777051}
+  - {fileID: 1450033808}
   - {fileID: 1465757727}
+  - {fileID: 1499245240}
   - {fileID: 1504316986}
+  - {fileID: 1616931230}
+  - {fileID: 1816211525}
+  - {fileID: 1825250388}
   - {fileID: 1855327402}
+  - {fileID: 1870453252}
+  - {fileID: 1877720918}
+  - {fileID: 1988797853}
+  - {fileID: 1989054069}
+  - {fileID: 2107812710}
 --- !u!1001 &253545988
 PrefabInstance:
   m_ObjectHideFlags: 0

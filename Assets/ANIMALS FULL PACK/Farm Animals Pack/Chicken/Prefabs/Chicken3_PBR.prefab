@@ -1317,7 +1317,7 @@ GameObject:
   - component: {fileID: 5888669983270253539}
   - component: {fileID: 2740882211563130322}
   - component: {fileID: 7554253925051069497}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Chicken3_PBR
   m_TagString: Animal
   m_Icon: {fileID: 0}
@@ -1631,7 +1631,6 @@ MonoBehaviour:
   - moving
   - sleep
   animationBoolHashes: 15b524dc86e0303facc2330f
-  characterAnimator: {fileID: 4395013997364873074}
   emoteType: 0
   manualDisableEmotions: 0
   useCustomFacialEmotes: 0

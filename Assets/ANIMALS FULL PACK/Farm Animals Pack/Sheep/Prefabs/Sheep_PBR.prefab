@@ -326,7 +326,7 @@ GameObject:
   - component: {fileID: 5879632966816655269}
   - component: {fileID: 8722493865021826701}
   - component: {fileID: 5193278080226461966}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sheep_PBR
   m_TagString: Animal
   m_Icon: {fileID: 0}
@@ -655,7 +655,6 @@ MonoBehaviour:
   - moving
   - sleep
   animationBoolHashes: 15b524dc86e0303facc2330f
-  characterAnimator: {fileID: 7864948647172896299}
   emoteType: 0
   manualDisableEmotions: 0
   useCustomFacialEmotes: 0
