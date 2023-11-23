@@ -26,6 +26,8 @@ public class TextBoxManager : MonoBehaviour {
     private bool isTyping = false;
     private bool cancelTyping = false;
     public float typeSpeed;
+    [Tooltip("Check this if you want to add each line to the document rather than one line at a time.")]
+    public bool showAllLinesTogether;
 
     public bool transitionSceneAfterNoText;
     public int currentCount;
@@ -79,7 +81,6 @@ public class TextBoxManager : MonoBehaviour {
                 {
                     DisableTextBox();
                 }
-
                 else
                 {
                     StartCoroutine(TextScroll(textLines[currentLine]));
@@ -90,14 +91,25 @@ public class TextBoxManager : MonoBehaviour {
                 cancelTyping = true;
             }
         }
-
-       
     }
 
     private IEnumerator TextScroll (string lineOfText)
     {
         int letter = 0;
-        theText.text = "";
+        //reset text 
+        if (!showAllLinesTogether)
+        {
+            theText.text = "";
+        }
+        //add new line
+        else
+        {
+            if (currentLine > 0)
+            {
+                theText.text += "\n";
+            }
+        }
+       
         isTyping = true;
         cancelTyping = false;
         while (isTyping && !cancelTyping && (letter < lineOfText.Length - 1))
@@ -106,14 +118,16 @@ public class TextBoxManager : MonoBehaviour {
             letter += 1;
             yield return new WaitForSeconds(typeSpeed);
         }
-        theText.text = lineOfText;
+        if (!showAllLinesTogether)
+        {
+            theText.text = lineOfText;
+        }
         isTyping = false;
         cancelTyping = false;
     }
 
     public void EnableTextBox()
     {
-
         isActive = true;
         textBox.SetActive(true);
 
@@ -124,7 +138,6 @@ public class TextBoxManager : MonoBehaviour {
 
     public void DisableTextBox()
     {
-
         isActive = false;
         textBox.SetActive(false);
 
@@ -135,14 +148,16 @@ public class TextBoxManager : MonoBehaviour {
         }
     }
 
-    public void ReloadScript(TextAsset theText)
+    public void ReloadScript(TextAsset _text)
     {
-        if(theText != null)
+        if(_text != null)
         {
+            theText.text = "";
             textLines = new string[1];
-            textLines = (theText.text.Split('\n'));
+            textLines = _text.text.Split('\n');
+            currentLine = 0;
+            endAtLine = textLines.Length;
         }
-
     }
 
     void CheckSceneTransition()
