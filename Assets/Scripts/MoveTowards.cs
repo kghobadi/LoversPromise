@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -77,7 +78,12 @@ public class MoveTowards : MonoBehaviour
         {
             MoveToWorldTransform(moveToThisObjectOnStart);
         }
-        else if(moveToThisObjectOnStart == null && moveToThisObjectOnStart)
+    }
+
+    private void OnEnable()
+    {
+        //For spawned boats 
+        if(moveToThisObjectOnStart == null && moveToThisObjectOnStart)
         {
             //just find player 
             moveToThisObjectOnStart = FindObjectOfType<FirstPersonController>().transform;
@@ -230,5 +236,10 @@ public class MoveTowards : MonoBehaviour
         movingLocal = false;
         movingWorld = false;
         currentMoveSpeed = moveSpeed;
+    }
+
+    private void OnDisable()
+    {
+        AbortMove();
     }
 }

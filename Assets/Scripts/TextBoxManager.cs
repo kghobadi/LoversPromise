@@ -24,7 +24,7 @@ public class TextBoxManager : MonoBehaviour {
     public bool stopPlayerMovement;
 
     private bool isTyping = false;
-    private bool cancelTyping = false;
+    private bool skipLine;
     public float typeSpeed;
     [Tooltip("Check this if you want to add each line to the document rather than one line at a time.")]
     public bool showAllLinesTogether;
@@ -84,9 +84,9 @@ public class TextBoxManager : MonoBehaviour {
                         StartCoroutine(TextScroll(textLines[currentLine]));
                     }
                 }
-                else if(isTyping && !cancelTyping)
+                else if(isTyping)
                 {
-                    cancelTyping = true;
+                    skipLine = true;
                 }
             }
         }
@@ -95,6 +95,7 @@ public class TextBoxManager : MonoBehaviour {
     private IEnumerator TextScroll (string lineOfText)
     {
         int letter = 0;
+        skipLine = false;
         //reset text 
         if (!showAllLinesTogether)
         {
@@ -110,9 +111,19 @@ public class TextBoxManager : MonoBehaviour {
         }
        
         isTyping = true;
-        cancelTyping = false;
-        while (isTyping && !cancelTyping && (letter < lineOfText.Length - 1))
+        while (isTyping && letter < lineOfText.Length - 1)
         {
+            //User hit skip line. Add remaining letters of this line and break while loop.
+            if (skipLine)
+            {
+                for (int i = letter; i < lineOfText.Length; i++)
+                {
+                    theText.text += lineOfText[i];
+                }
+
+                break;
+            }
+            
             theText.text += lineOfText[letter];
             letter += 1;
             yield return new WaitForSeconds(typeSpeed);
@@ -122,7 +133,7 @@ public class TextBoxManager : MonoBehaviour {
             theText.text = lineOfText;
         }
         isTyping = false;
-        cancelTyping = false;
+        skipLine = false;
     }
 
     public void EnableTextBox()
@@ -151,12 +162,37 @@ public class TextBoxManager : MonoBehaviour {
     {
         if(_text != null)
         {
-            theText.text = "";
-            textLines = new string[1];
-            textLines = _text.text.Split('\n');
-            currentLine = 0;
-            endAtLine = textLines.Length;
+            if (!isActive)
+            {
+                theText.text = "";
+                textLines = new string[1];
+                textLines = _text.text.Split('\n');
+                currentLine = 0;
+                endAtLine = textLines.Length;
+            }
+            else
+            {
+                
+            }
         }
+        
+    }
+
+    /// <summary>
+    /// While active, we will wait to reload text script. 
+    /// </summary>
+    /// <param name="_text"></param>
+    /// <returns></returns>
+    IEnumerator WaitToReloadScript(TextAsset _text)
+    {
+        while (isActive)
+        {
+            yield return null;
+        }
+       
+        ReloadScript(_text);
+        
+        EnableTextBox();
     }
 
     void CheckSceneTransition()

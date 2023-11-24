@@ -56,8 +56,12 @@ public class ActivateText : MonoBehaviour
     void TriggerDialogue()
     {
         theTextBox.ReloadScript(theText);
-          
-        theTextBox.EnableTextBox();
+
+        //only enable if not already active
+        if (!theTextBox.isActive)
+        {
+            theTextBox.EnableTextBox();
+        }
         
         if (destroyWhenFinished)
         {

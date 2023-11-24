@@ -142,6 +142,8 @@ public class Spawner : MonoBehaviour
         GameObject spawnedObj = objectPooler.GrabObject();
         spawnedObj.transform.position = spawnPos;
 
+        AdjustHeight(spawnedObj);
+        
         if (useTextAssignments)
         {
             ActivateText textScript = spawnedObj.GetComponent<ActivateText>();
@@ -151,6 +153,9 @@ public class Spawner : MonoBehaviour
                 textScript.AssignText(randomText);
             }
         }
+
+        //set the parent to the spawner 
+        spawnedObj.transform.SetParent(transform);
 
         return spawnedObj;
     }
@@ -176,16 +181,11 @@ public class Spawner : MonoBehaviour
 
         if (Physics.Raycast(obj.transform.position, Vector3.down, out hit, Mathf.Infinity, grounded))
         {
-            if (hit.transform.gameObject.CompareTag("Ground") )
-            {
-                obj.transform.position = new Vector3(obj.transform.position.x, hit.point.y + heightAdjust, obj.transform.position.z);
-            }
-            else
-            {
-                objectPooler.ReturnObject(obj);
-            }
-            Debug.DrawLine(obj.transform.position, hit.point);
+            obj.transform.position = new Vector3(obj.transform.position.x, hit.point.y + heightAdjust, obj.transform.position.z);
         }
-        
+        else
+        {
+            objectPooler.ReturnObject(obj);
+        }
     }
 }
