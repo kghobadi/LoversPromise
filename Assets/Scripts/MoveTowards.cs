@@ -88,7 +88,7 @@ public class MoveTowards : MonoBehaviour
     void Update()
     {
         //moving the object in world space
-        if (movingWorld)
+        if (movingWorld && gameObject.activeSelf)
         {
             //moving to this since start, continually update destination.
             if (moveToThisObjectOnStart != null)
@@ -116,7 +116,7 @@ public class MoveTowards : MonoBehaviour
         }
 
         //moving the object in local space
-        if (movingLocal)
+        if (movingLocal && gameObject.activeSelf)
         {
             SwitchStyleLocal();
 

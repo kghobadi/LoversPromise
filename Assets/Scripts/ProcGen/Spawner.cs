@@ -42,6 +42,12 @@ public class Spawner : MonoBehaviour
 
     void Awake () 
     {
+        //force gen amt to be count of text possibilities 
+        if (useTextAssignments && allUnique)
+        {
+            generationAmount = allTextPossibilities.Count;
+        }
+        
         Random.InitState(System.DateTime.Now.Millisecond);
         generatedObjs = new GameObject[generationAmount];
 
@@ -50,6 +56,13 @@ public class Spawner : MonoBehaviour
 
     void Start()
     {
+        StartCoroutine(WaitToSpawn());
+    }
+
+    IEnumerator WaitToSpawn()
+    {
+        yield return new WaitForSeconds(0.1f);
+        
         GenerateObjects();
     }
 
