@@ -5,7 +5,8 @@ using System.Collections;
 public class ActivateText : MonoBehaviour 
 {
     private TextBoxManager theTextBox;
-    public TextAsset theText;
+    [SerializeField]
+    private TextAsset theText;
 
     public bool requiredButtonPress;
     private bool waitForPress;
@@ -24,6 +25,11 @@ public class ActivateText : MonoBehaviour
             TriggerDialogue();
         }
 	}
+
+    public void AssignText(TextAsset textAsset)
+    {
+        theText = textAsset;
+    }
 
     void OnTriggerEnter(Collider other)
     {

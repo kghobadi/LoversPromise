@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
+using UnityStandardAssets.Characters.FirstPerson;
 
 /// <summary>
 /// A generalized implementation of Vector3.MoveTowards, Lerp, & Slerp with public calls to move the object in world/local space. 
@@ -36,7 +38,11 @@ public class MoveTowards : MonoBehaviour
     [SerializeField] Transform transformToCheck;
     
     [Tooltip("If you set this, the object will move towards it on start.")]
+    [SerializeField] bool moveToObjOnStart;
+    [Tooltip("If you set this, the object will move towards it on start.")]
     [SerializeField] Transform moveToThisObjectOnStart;
+    [Tooltip("If you set this, the object will move towards it on start.")]
+    [SerializeField] bool lookAtDest;
 
     /// <summary>
     /// Property for checking if the component is actively moving its object. 
@@ -67,15 +73,20 @@ public class MoveTowards : MonoBehaviour
         }
 
         //move on start 
-        if (moveToThisObjectOnStart != null)
+        if (moveToThisObjectOnStart != null && moveToObjOnStart)
         {
+            MoveToWorldTransform(moveToThisObjectOnStart);
+        }
+        else if(moveToThisObjectOnStart == null && moveToThisObjectOnStart)
+        {
+            //just find player 
+            moveToThisObjectOnStart = FindObjectOfType<FirstPersonController>().transform;
             MoveToWorldTransform(moveToThisObjectOnStart);
         }
     }
 
     void Update()
     {
-        
         //moving the object in world space
         if (movingWorld)
         {
@@ -141,6 +152,11 @@ public class MoveTowards : MonoBehaviour
         movingWorld = true;
         movingLocal = false;
         totalDistToDest = Vector3.Distance(transformToCheck.position, destination);
+
+        if (lookAtDest)
+        {
+            transform.LookAt(destination, Vector3.up);
+        }
     }
 
     public void MoveToLocalPos(Vector3 pos) => MoveToLocalPos(pos, moveSpeed);

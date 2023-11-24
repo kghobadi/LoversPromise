@@ -64,31 +64,30 @@ public class TextBoxManager : MonoBehaviour {
 
     void Update()
     {
-        if (!isActive)
+        if (isActive)
         {
-            return;
-        }
+            //theText.text = textLines[currentLine];
 
-        //theText.text = textLines[currentLine];
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (!isTyping)
+            //Press E or left click 
+            if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
             {
-                currentLine += 1;
+                if (!isTyping)
+                {
+                    currentLine += 1;
 
-                if (currentLine >= endAtLine)
-                {
-                    DisableTextBox();
+                    if (currentLine >= endAtLine)
+                    {
+                        DisableTextBox();
+                    }
+                    else
+                    {
+                        StartCoroutine(TextScroll(textLines[currentLine]));
+                    }
                 }
-                else
+                else if(isTyping && !cancelTyping)
                 {
-                    StartCoroutine(TextScroll(textLines[currentLine]));
+                    cancelTyping = true;
                 }
-            }
-            else if(isTyping && !cancelTyping)
-            {
-                cancelTyping = true;
             }
         }
     }
