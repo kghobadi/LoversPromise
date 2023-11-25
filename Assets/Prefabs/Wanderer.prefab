@@ -727,6 +727,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1b008fe1b6236a143a127eaed28275b4, type: 3}
   m_JumpSound: {fileID: 8300000, guid: 9b37f2a2d99f74048bd0b02e82b659f8, type: 3}
   m_LandSound: {fileID: 8300000, guid: 33ebf9e77e4af63458e798705eeb5043, type: 3}
+  holdingSpot: {x: 1, y: 0.25, z: 1.5}
 --- !u!54 &5499250
 Rigidbody:
   m_ObjectHideFlags: 0

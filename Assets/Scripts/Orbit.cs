@@ -113,4 +113,9 @@ public class Orbit : MonoBehaviour
             }
         }
     }
+
+    public void ToggleOrbit(bool state)
+    {
+        orbiting = state;
+    }
 }

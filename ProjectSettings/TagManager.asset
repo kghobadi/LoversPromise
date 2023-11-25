@@ -8,6 +8,8 @@ TagManager:
   - Tree
   - Cursor
   - Animal
+  - Hook
+  - Boat
   layers:
   - Default
   - TransparentFX

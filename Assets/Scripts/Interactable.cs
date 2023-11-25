@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public abstract class Interactable : MonoBehaviour 
 {
@@ -17,6 +18,10 @@ public abstract class Interactable : MonoBehaviour
     void Awake () 
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        if (player == null)
+        {
+            player = FindObjectOfType<FirstPersonController>().gameObject;
+        }
         cursorObj = GameObject.FindGameObjectWithTag("Cursor");
         cursorImg = cursorObj.GetComponent<Image>();
         originalCursor = cursorImg.sprite;
