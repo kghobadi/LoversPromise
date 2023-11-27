@@ -33,9 +33,14 @@ public class TextBoxManager : MonoBehaviour {
     public int currentCount;
     private ActivateText[] dialoguesTexts;
 
+    [SerializeField] private bool disableCursor;
+    private GameObject cursorObj;
+    
+
     void Start()
     {
         player = FindObjectOfType<FirstPersonController>();
+        cursorObj = GameObject.FindGameObjectWithTag("Cursor");
 
         if (textFile != null)
         {
@@ -142,6 +147,10 @@ public class TextBoxManager : MonoBehaviour {
         textBox.SetActive(true);
 
         //player.canMove = false;
+        if (cursorObj && disableCursor)
+        {
+            cursorObj.SetActive(false);
+        }
 
         StartCoroutine(TextScroll(textLines[currentLine]));
     }
@@ -150,6 +159,11 @@ public class TextBoxManager : MonoBehaviour {
     {
         isActive = false;
         textBox.SetActive(false);
+        
+        if (cursorObj && disableCursor)
+        {
+            cursorObj.SetActive(true);
+        }
 
         //player.canMove = true;
         if (transitionSceneAfterNoText)

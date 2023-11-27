@@ -15,7 +15,7 @@ public abstract class Interactable : MonoBehaviour
 
     protected bool changedSprites;
 
-    void Awake () 
+    protected virtual void Awake () 
     {
         player = GameObject.FindGameObjectWithTag("Player");
         if (player == null)

@@ -20,6 +20,8 @@ public class PaperBoatMovement : MonoBehaviour
     private void Awake()
     {
         boatBody = GetComponent<Rigidbody>();
+        mover = GetComponent<MoveTowards>();
+        orbit = GetComponent<Orbit>();
     }
 
     void Start()

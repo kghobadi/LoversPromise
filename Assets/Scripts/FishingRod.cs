@@ -13,6 +13,7 @@ public class FishingRod : Interactable
 {
     private Rigidbody hookBody;
     private FirstPersonController fpc;
+    private TextBoxManager tbm;
 
     [SerializeField] private LayerMask waterLayer;
     [SerializeField] private FishingStates fishingState;
@@ -33,22 +34,31 @@ public class FishingRod : Interactable
     [Tooltip("Actual throw force")]
     [SerializeField] private float trueThrow;
 
+    [SerializeField]
     private float chargeTimer;
+    [Tooltip("Min value for time length of a Charge for throw")]
+    [SerializeField] private float chargeMin;
     [Tooltip("Max value for time length of a Charge for throw")]
     [SerializeField] private float chargeMax;
-    
+
+    [SerializeField] private ParticleSystem splashParticles;
     [SerializeField]
     private float reelSpeed = 15f;
 
-    private void Awake()
+    private TrailRenderer hookTrail;
+
+    protected override void Awake()
     {
+        base.Awake();
         hookBody = GetComponent<Rigidbody>();
         fpc = FindObjectOfType<FirstPersonController>();
+        tbm = FindObjectOfType<TextBoxManager>();
+        hookTrail = GetComponent<TrailRenderer>();
     }
 
     void Start()
     {
-        fishingState = FishingStates.INACTIVE;
+        DropRod();
     }
 
     public override void Interact()
@@ -61,96 +71,204 @@ public class FishingRod : Interactable
         }
     }
 
+    #region MouseInteractions
+
+    protected override void OnMouseOver()
+    {
+        if (fishingState == FishingStates.INACTIVE)
+        {
+            base.OnMouseOver();
+        }
+    }
+
+    protected override void OnMouseDown()
+    {
+        if (fishingState == FishingStates.INACTIVE)
+        {
+            base.OnMouseDown();
+        }
+    }
+
+    protected override void OnMouseExit()
+    {
+        base.OnMouseExit();
+    }
+
+    #endregion
+
+
+    #region Interaction/Physics Toggles
+
     void PickUpRod()
     {
         fishingState = FishingStates.ACTIVE;
+        chargeTimer = 0;
         transform.SetParent(fpc.transform);
         transform.localPosition = fpc.holdingSpot;
-        hookBody.useGravity = false;
+        DisablePhysics();
+        hookBody.velocity = Vector3.zero;
     }
     
     void DropRod()
     {
         fishingState = FishingStates.INACTIVE;
         transform.SetParent(null);
-        hookBody.useGravity = true;
+        hookTrail.emitting = false;
+        
+        EnablePhysics();
     }
 
+    void EnablePhysics()
+    {
+        hookBody.useGravity = true;
+        hookBody.isKinematic = false;
+    }
+
+    void DisablePhysics()
+    {
+        hookBody.useGravity = false;
+        hookBody.isKinematic = true;
+    }
+
+    #endregion
+   
+
+    /// <summary>
+    /// Detects our inputs, driving state changes. 
+    /// </summary>
     private void Update()
     {
-        if (fishingState == FishingStates.ACTIVE)
+        //reload rod to held position
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            //grab input
-            if (Input.GetMouseButtonDown(0))
+            PickUpRod();
+        }
+        
+        //Only when dialogue is in inactive
+        if (!tbm.isActive)
+        {
+            //Rod in use by player 
+            if (fishingState == FishingStates.ACTIVE )
             {
-                chargeTimer = 0;
-            }
-            if (Input.GetMouseButton(0))
-            {
-                chargeTimer += Time.deltaTime;
-            }
-            if (Input.GetMouseButtonUp(0))
-            {
-                ThrowLine();
-            }
+                //grab input
+                if (Input.GetMouseButtonDown(0))
+                {
+                    chargeTimer = 0;
+                }
+                if (Input.GetMouseButton(0))
+                {
+                    chargeTimer += Time.deltaTime;
+                }
+                if (Input.GetMouseButtonUp(0))
+                {
+                    ThrowLine();
+                }
             
-            //drop rod
-            if (Input.GetMouseButtonDown(1))
+                //drop rod
+                if (Input.GetMouseButtonDown(1))
+                {
+                    DropRod();
+                }
+            }
+        
+            //Idling or Reeling?
+            if (fishingState == FishingStates.IDLING)
             {
-                DropRod();
+                //press lmb - reeling
+                if (Input.GetMouseButtonDown(0))
+                {
+                    fishingState = FishingStates.REELING;
+                }
             }
         }
-    }
-
-    void FixedUpdate()
-    {
-        //apply physics
-        if (fishingState == FishingStates.THROWN)
-        {
-            hookBody.AddForce(fpc.transform.forward * trueThrow);
-        }
-        //apply physics
+       
+        //Reeling..
         if (fishingState == FishingStates.REELING)
         {
-            if (Input.GetMouseButton(0))
+            //Release lmb to return to idling
+            if (Input.GetMouseButtonUp(0))
             {
-                //get dir of player
-                Vector3 dirToPlayer = transform.position - fpc.transform.position;
-                hookBody.AddForce(dirToPlayer * reelSpeed);
+                fishingState = FishingStates.IDLING;
             }
         }
     }
 
-    void ThrowLine()
+    /// <summary>
+    ///  Apply physics
+    /// </summary>
+    void FixedUpdate()
     {
-        chargeTimer = Mathf.Clamp(chargeTimer, 0, chargeMax);
-        trueThrow = throwForceBase + chargeTimer * throwForceMultiplier;
-        hookBody.AddForce(fpc.transform.forward * trueThrow);
-
-        fishingState = FishingStates.THROWN;
+        //Once throw, add forward force.
+        if (fishingState == FishingStates.THROWN)
+        {
+            hookBody.AddForce(fpc.transform.forward *(trueThrow * Time.fixedDeltaTime));
+            //TODO need to find some way to add in Y velocity arc so it goes up rather than straight line into the water.
+        }
+        if (fishingState == FishingStates.IDLING)
+        {
+            //get pulled to player slowly
+            transform.position = Vector3.MoveTowards(transform.position, fpc.transform.position, Time.fixedDeltaTime);
+        }
+        if (fishingState == FishingStates.REELING)
+        {
+            //get pulled to player reeling
+            transform.position = Vector3.MoveTowards(transform.position, fpc.transform.position, reelSpeed * Time.fixedDeltaTime);
+        }
     }
 
+    /// <summary>
+    /// When player successfully releases charged throw. 
+    /// </summary>
+    void ThrowLine()
+    {
+        if (chargeTimer > chargeMin)
+        {
+            chargeTimer = Mathf.Clamp(chargeTimer, 0, chargeMax);
+            trueThrow = throwForceBase + chargeTimer * throwForceMultiplier;
+            hookBody.AddForce(fpc.transform.forward * trueThrow);
+            hookTrail.emitting = true;
+
+            transform.SetParent(null);
+            fishingState = FishingStates.THROWN;
+            EnablePhysics();
+        }
+        else
+        {
+            Debug.Log("Charge timer of " + chargeTimer + " was too low! Must be " + chargeMin + " or greater!");
+        }
+    }
+
+    /// <summary>
+    /// When the hook hits the water. 
+    /// </summary>
     void Plop()
     {
         fishingState = FishingStates.IDLING;
-        transform.SetParent(null);
+        //expunge gravity and velocity
+        hookBody.useGravity = false;
+        hookBody.velocity = Vector3.zero;
+        hookBody.angularVelocity = Vector3.zero;
+        hookTrail.emitting = false;
         //do water splash particles n sound 
+        splashParticles.Play();
     }
-
-    private void OnCollisionEnter(Collision other)
+    
+    /// <summary>
+    /// Handles collision detection. 
+    /// </summary>
+    /// <param name="other"></param>
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == waterLayer)
+        //Once throw, look out for water. 
+        if (fishingState == FishingStates.THROWN)
         {
-            if (fishingState == FishingStates.THROWN)
+            if (other.gameObject.CompareTag("Water"))
             {
                 Plop();
             }
         }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        //am i in water?
+      
+        //Am i in water?
         bool inWater = fishingState == FishingStates.IDLING || fishingState == FishingStates.REELING;
         if (inWater)
         {
@@ -164,7 +282,7 @@ public class FishingRod : Interactable
                 boatMovement.EndMovement();
             }
             //when hit the player from water
-            else if (other.gameObject.CompareTag("Player"))
+            else if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Bed"))
             {
                 PickUpRod();
             }
