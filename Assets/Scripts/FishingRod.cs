@@ -12,6 +12,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class FishingRod : Interactable
 {
     private Rigidbody hookBody;
+    private Transform mainCam;
     private FirstPersonController fpc;
     private TextBoxManager tbm;
 
@@ -25,7 +26,8 @@ public class FishingRod : Interactable
         IDLING = 3,
         REELING = 4,
     }
-    
+
+    private Vector3 throwDir;
     private float throwForce;
     [SerializeField]
     private float throwForceMultiplier = 5f;
@@ -52,6 +54,7 @@ public class FishingRod : Interactable
         base.Awake();
         hookBody = GetComponent<Rigidbody>();
         fpc = FindObjectOfType<FirstPersonController>();
+        mainCam = Camera.main.transform;
         tbm = FindObjectOfType<TextBoxManager>();
         hookTrail = GetComponent<TrailRenderer>();
     }
@@ -201,18 +204,20 @@ public class FishingRod : Interactable
         //Once throw, add forward force.
         if (fishingState == FishingStates.THROWN)
         {
-            hookBody.AddForce(fpc.transform.forward *(trueThrow * Time.fixedDeltaTime));
+            hookBody.AddForce(throwDir * (trueThrow * Time.fixedDeltaTime));
             //TODO need to find some way to add in Y velocity arc so it goes up rather than straight line into the water.
         }
         if (fishingState == FishingStates.IDLING)
         {
+            Vector3 moveDest = new Vector3(fpc.transform.position.x, transform.position.y, fpc.transform.position.z);
             //get pulled to player slowly
-            transform.position = Vector3.MoveTowards(transform.position, fpc.transform.position, Time.fixedDeltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, moveDest, Time.fixedDeltaTime);
         }
         if (fishingState == FishingStates.REELING)
         {
+            Vector3 moveDest = new Vector3(fpc.transform.position.x, transform.position.y, fpc.transform.position.z);
             //get pulled to player reeling
-            transform.position = Vector3.MoveTowards(transform.position, fpc.transform.position, reelSpeed * Time.fixedDeltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, moveDest, reelSpeed * Time.fixedDeltaTime);
         }
     }
 
@@ -225,6 +230,7 @@ public class FishingRod : Interactable
         {
             chargeTimer = Mathf.Clamp(chargeTimer, 0, chargeMax);
             trueThrow = throwForceBase + chargeTimer * throwForceMultiplier;
+            throwDir = fpc.transform.forward + mainCam.forward;
             hookBody.AddForce(fpc.transform.forward * trueThrow);
             hookTrail.emitting = true;
 
