@@ -13,6 +13,9 @@ public class ActivateText : MonoBehaviour
 
     public bool destroyWhenFinished;
     
+    public bool usesInteractable;
+
+    public TextBoxManager TextBoxManager => theTextBox;
     void Start () 
     {
         theTextBox = FindObjectOfType<TextBoxManager>();
@@ -35,13 +38,16 @@ public class ActivateText : MonoBehaviour
     {
         if(other.name == "Wanderer")
         {
-            if (requiredButtonPress)
+            if (!usesInteractable)
             {
-                waitForPress = true;
-                return;
-            }
+                if (requiredButtonPress)
+                {
+                    waitForPress = true;
+                    return;
+                }
 
-            TriggerDialogue();
+                TriggerDialogue();
+            }
         }
     }
     
@@ -53,7 +59,7 @@ public class ActivateText : MonoBehaviour
         }
     }
 
-    void TriggerDialogue()
+    public void TriggerDialogue()
     {
         theTextBox.ReloadScript(theText);
 

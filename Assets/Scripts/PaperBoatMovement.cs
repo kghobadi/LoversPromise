@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class PaperBoatMovement : MonoBehaviour
+public class PaperBoatMovement : Interactable
 {
+    private ActivateText activateText;
     private Rigidbody boatBody;
     [SerializeField] private Vector2 speedRange = new Vector2(1f, 5f);
     private float speed;
@@ -17,8 +18,10 @@ public class PaperBoatMovement : MonoBehaviour
     public MoveTowards MoveTowards => mover;
     public Orbit Orbital => orbit;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+        activateText = GetComponent<ActivateText>();
         boatBody = GetComponent<Rigidbody>();
         mover = GetComponent<MoveTowards>();
         orbit = GetComponent<Orbit>();
@@ -38,6 +41,26 @@ public class PaperBoatMovement : MonoBehaviour
         moving = true;
     }
     
+    #region MouseInteractions
+
+    protected override void OnMouseOver()
+    {
+        if (!activateText.TextBoxManager.isActive)
+        {
+            base.OnMouseOver();
+        }
+    }
+
+    protected override void OnMouseDown()
+    {
+        base.OnMouseDown();
+        
+        activateText.TriggerDialogue();
+        
+        base.OnMouseExit();
+    }
+    #endregion
+    
     private void FixedUpdate()
     {
         if (moving)
@@ -53,6 +76,7 @@ public class PaperBoatMovement : MonoBehaviour
         //disable all movements 
         mover.AbortMove();
         orbit.ToggleOrbit(false);
+        boatBody.velocity = Vector3.zero;
     }
     
     public void RestartMovement()

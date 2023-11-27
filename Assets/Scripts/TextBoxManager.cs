@@ -186,7 +186,7 @@ public class TextBoxManager : MonoBehaviour {
             }
             else
             {
-                
+                Debug.Log("Cannot reload text box script when active.");
             }
         }
         
