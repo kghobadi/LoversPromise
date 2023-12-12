@@ -16,6 +16,7 @@ public class PetAnimal : Interactable
 
     public bool hasBeenPetted;
     public string pettedTrigger = "petted";
+    public string audioTrigger = "audio";
     private int randomIdle;
     [SerializeField] private int idleMax;
 
@@ -99,8 +100,11 @@ public class PetAnimal : Interactable
             yield return new WaitForSeconds(time);
                 
             //play sound!
-            if(!animalAudio.myAudioSource.isPlaying)
+            if (!animalAudio.myAudioSource.isPlaying)
+            {
                 animalAudio.PlayRandomSoundRandomPitch(animalAudio.animalSounds, animalAudio.myAudioSource.volume);
+                p_Animator.SetTrigger(audioTrigger);
+            }
 
             //and particles 
             if (audioParticles)

@@ -14,6 +14,8 @@ public class PaperBoatMovement : Interactable
     private bool moving;
     private MoveTowards mover;
     private Orbit orbit;
+    
+    //create enum for Boat States to handle transformation from movement to Readable/Interactive to returning to the water 
 
     public MoveTowards MoveTowards => mover;
     public Orbit Orbital => orbit;

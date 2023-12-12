@@ -47,6 +47,8 @@ namespace NPC
 
         [Tooltip("The behavior which will be assigned to this NPC on start.")]
         public MovementPath startBehavior;
+        [Tooltip("The behavior which will be assigned to this NPC on Whistle.")]
+        public MovementPath whistleBehavior;
         [Tooltip("The current behavior the NPC is using.")]
         public Behavior currentBehavior;
         [Tooltip("Go to Transform behavior type.")]
@@ -289,6 +291,8 @@ namespace NPC
             controller.Animation.SetAnimatorByParameter("idle");
             controller.npcState = Controller.NPCStates.IDLE;
             _canSleep = canSleep;
+            
+            //TODO check if behavior is whistle, if so determine when to revert back to Old start behavior 
         }
 
         /// <summary>
@@ -409,6 +413,14 @@ namespace NPC
             currentBehavior = path;
 
             resetsMovement = false;
+        }
+
+        /// <summary>
+        /// Called when the player whistles and I am found in range. 
+        /// </summary>
+        public void OnWhistle()
+        {
+            ResetMovement(whistleBehavior);
         }
 
         //resets state timer to float time + random range 
