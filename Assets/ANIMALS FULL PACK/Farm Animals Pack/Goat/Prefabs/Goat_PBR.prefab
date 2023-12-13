@@ -1085,6 +1085,7 @@ MonoBehaviour:
   withinClickDist: 10
   hasBeenPetted: 0
   pettedTrigger: petted
+  audioTrigger: audio
   idleMax: 3
   audioIdleSounds: 1
   audioIntervalRange: {x: 15, y: 25}
@@ -1121,7 +1122,8 @@ MonoBehaviour:
   npcType: 0
   idleType: 0
   moveType: 0
-  startBehavior: {fileID: 11400000, guid: f37c2a4e950b43b48b78771841dfd219, type: 2}
+  startBehavior: {fileID: 11400000, guid: f93cdacb86e2211428063f68edb031d4, type: 2}
+  whistleBehavior: {fileID: 11400000, guid: f37c2a4e950b43b48b78771841dfd219, type: 2}
   currentBehavior:
     pathName: 
     movementType: 0

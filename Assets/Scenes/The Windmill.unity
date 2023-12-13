@@ -352,6 +352,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2356639258851925984, guid: 2e3f2484d97b9ba4397b3c5c57b9bb45,
+        type: 3}
+      propertyPath: whistleBehavior
+      value: 
+      objectReference: {fileID: 11400000, guid: bce5910866da0b645b4f7fef4491f2a3,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e3f2484d97b9ba4397b3c5c57b9bb45, type: 3}
 --- !u!4 &143726413 stripped
@@ -10008,12 +10014,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerFarmer: {fileID: 1316900795}
   allAnimals:
-  - {fileID: 783778614}
-  - {fileID: 931106021}
-  - {fileID: 1394192517}
-  - {fileID: 789017443}
-  - {fileID: 1897283977}
-  - {fileID: 1087661022}
   - {fileID: 16306127}
   - {fileID: 37330220}
   - {fileID: 143726415}
@@ -10023,11 +10023,15 @@ MonoBehaviour:
   - {fileID: 439480352}
   - {fileID: 494456343}
   - {fileID: 509841663}
+  - {fileID: 783778614}
+  - {fileID: 789017443}
   - {fileID: 861498709}
   - {fileID: 921837614}
   - {fileID: 924301182}
+  - {fileID: 931106021}
   - {fileID: 1033006350}
   - {fileID: 1066112764}
+  - {fileID: 1087661022}
   - {fileID: 1100128689}
   - {fileID: 1103119976}
   - {fileID: 1138267054}
@@ -10038,6 +10042,7 @@ MonoBehaviour:
   - {fileID: 1301345610}
   - {fileID: 1325114084}
   - {fileID: 1378010994}
+  - {fileID: 1394192517}
   - {fileID: 1460098457}
   - {fileID: 1465757729}
   - {fileID: 1483448218}
@@ -10047,6 +10052,7 @@ MonoBehaviour:
   - {fileID: 1825250387}
   - {fileID: 1833607169}
   - {fileID: 1877720917}
+  - {fileID: 1897283977}
   - {fileID: 1945355010}
   - {fileID: 1977734959}
   - {fileID: 1999828733}
@@ -10142,6 +10148,51 @@ MonoBehaviour:
     followObject: {fileID: 814465805}
     lookAt: {fileID: 0}
     checksAgainstPlayer: 0
+  - pathName: FollowPigLeader
+    movementType: 6
+    movementPoints: []
+    moveRadius: 0
+    idleType: 0
+    moveType: 0
+    followObject: {fileID: 921837612}
+    lookAt: {fileID: 0}
+    checksAgainstPlayer: 0
+  - pathName: FollowChickenLeader
+    movementType: 6
+    movementPoints: []
+    moveRadius: 0
+    idleType: 0
+    moveType: 0
+    followObject: {fileID: 1583849162}
+    lookAt: {fileID: 0}
+    checksAgainstPlayer: 0
+  - pathName: FollowChickenLeader1
+    movementType: 6
+    movementPoints: []
+    moveRadius: 0
+    idleType: 0
+    moveType: 0
+    followObject: {fileID: 1163727308}
+    lookAt: {fileID: 0}
+    checksAgainstPlayer: 0
+  - pathName: FollowSheepLeader
+    movementType: 6
+    movementPoints: []
+    moveRadius: 0
+    idleType: 0
+    moveType: 0
+    followObject: {fileID: 3142319736003269065}
+    lookAt: {fileID: 0}
+    checksAgainstPlayer: 0
+  - pathName: FollowDonkeyLeader
+    movementType: 6
+    movementPoints: []
+    moveRadius: 0
+    idleType: 0
+    moveType: 0
+    followObject: {fileID: 1634600868}
+    lookAt: {fileID: 0}
+    checksAgainstPlayer: 0
   - pathName: RandomCircleRun
     movementType: 1
     movementPoints: []
@@ -10153,12 +10204,6 @@ MonoBehaviour:
     checksAgainstPlayer: 0
   lookAtObjects: []
   npcControllers:
-  - {fileID: 783778613}
-  - {fileID: 931106020}
-  - {fileID: 1394192516}
-  - {fileID: 789017442}
-  - {fileID: 1897283976}
-  - {fileID: 1087661021}
   - {fileID: 7387434}
   - {fileID: 201281734}
   - {fileID: 260582588}
@@ -10175,16 +10220,21 @@ MonoBehaviour:
   - {fileID: 673213534}
   - {fileID: 720635098}
   - {fileID: 748057209}
+  - {fileID: 783778613}
+  - {fileID: 789017442}
   - {fileID: 814465806}
   - {fileID: 924301183}
+  - {fileID: 931106020}
   - {fileID: 976376710}
   - {fileID: 979820166}
   - {fileID: 1033006351}
+  - {fileID: 1087661021}
   - {fileID: 1100128690}
   - {fileID: 1126302745}
   - {fileID: 1220816519}
   - {fileID: 1223826673}
   - {fileID: 1325435244}
+  - {fileID: 1394192516}
   - {fileID: 1427777051}
   - {fileID: 1450033808}
   - {fileID: 1465757727}
@@ -10196,6 +10246,7 @@ MonoBehaviour:
   - {fileID: 1855327402}
   - {fileID: 1870453252}
   - {fileID: 1877720918}
+  - {fileID: 1897283976}
   - {fileID: 1988797853}
   - {fileID: 1989054069}
   - {fileID: 2107812710}
@@ -10248,14 +10299,17 @@ MonoBehaviour:
   voiceCounter: 0
   voices: []
   currentSound: 0
-  whistleSounds: []
+  whistleSounds:
+  - {fileID: 8300000, guid: 792b35798e37b9449b108235b046e500, type: 3}
+  - {fileID: 8300000, guid: f1cf82d8f0488f64c8da41473ac87489, type: 3}
+  - {fileID: 8300000, guid: 379d877577883614d88b0697672db9b8, type: 3}
   OnWhistle:
     m_PersistentCalls:
       m_Calls: []
-  whistleRange: 50
+  whistleRange: 25
   affectedLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
 --- !u!82 &250482220
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10360,6 +10414,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1186389745}
     m_Modifications:
+    - target: {fileID: 2879800762377354789, guid: 4df2e49761b937f4fa67a6fec0e147c4,
+        type: 3}
+      propertyPath: whistleBehavior
+      value: 
+      objectReference: {fileID: 11400000, guid: 6386bac43fba9e548bb70453f600f3fb,
+        type: 2}
     - target: {fileID: 6149793772180955747, guid: 4df2e49761b937f4fa67a6fec0e147c4,
         type: 3}
       propertyPath: m_Name
@@ -10687,6 +10747,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 920067842}
     m_Modifications:
+    - target: {fileID: 5879632966816655269, guid: 3c77d3b982404e143942a0808ed1fc15,
+        type: 3}
+      propertyPath: whistleBehavior
+      value: 
+      objectReference: {fileID: 11400000, guid: 4376e4597f9799d46ae18bc6ca2c7774,
+        type: 2}
     - target: {fileID: 7864948647172896299, guid: 3c77d3b982404e143942a0808ed1fc15,
         type: 3}
       propertyPath: m_Controller
@@ -11264,6 +11330,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1186389745}
     m_Modifications:
+    - target: {fileID: 2879800762377354789, guid: 4df2e49761b937f4fa67a6fec0e147c4,
+        type: 3}
+      propertyPath: whistleBehavior
+      value: 
+      objectReference: {fileID: 11400000, guid: 6386bac43fba9e548bb70453f600f3fb,
+        type: 2}
     - target: {fileID: 6149793772180955747, guid: 4df2e49761b937f4fa67a6fec0e147c4,
         type: 3}
       propertyPath: m_Name
@@ -12020,6 +12092,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -63.709957
       objectReference: {fileID: 0}
+    - target: {fileID: 2771079169815344095, guid: ff528f4f08a0eca4d862d49eb16988ae,
+        type: 3}
+      propertyPath: whistleBehavior
+      value: 
+      objectReference: {fileID: 11400000, guid: bce5910866da0b645b4f7fef4491f2a3,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff528f4f08a0eca4d862d49eb16988ae, type: 3}
 --- !u!4 &439480350 stripped
@@ -17355,6 +17433,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: f93cdacb86e2211428063f68edb031d4,
         type: 2}
+    - target: {fileID: 8190645762297345833, guid: 9629c42775e22c042a1712c23b891b7c,
+        type: 3}
+      propertyPath: whistleBehavior
+      value: 
+      objectReference: {fileID: 11400000, guid: 74f682c626407ce4391df9e8fe4de777,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9629c42775e22c042a1712c23b891b7c, type: 3}
 --- !u!4 &509841661 stripped
@@ -17703,6 +17787,12 @@ PrefabInstance:
       propertyPath: startBehavior
       value: 
       objectReference: {fileID: 11400000, guid: f93cdacb86e2211428063f68edb031d4,
+        type: 2}
+    - target: {fileID: 1259446638446084915, guid: b97e9ca7ea6e6e84998bee2f5a813472,
+        type: 3}
+      propertyPath: whistleBehavior
+      value: 
+      objectReference: {fileID: 11400000, guid: 46f1f8dd9cf356e418e6321100c5d9a6,
         type: 2}
     - target: {fileID: 6910526367952547713, guid: b97e9ca7ea6e6e84998bee2f5a813472,
         type: 3}
@@ -18960,6 +19050,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2356639258851925984, guid: 2e3f2484d97b9ba4397b3c5c57b9bb45,
+        type: 3}
+      propertyPath: whistleBehavior
+      value: 
+      objectReference: {fileID: 11400000, guid: 6d4dd67e1d85a124e908086b95d67bab,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e3f2484d97b9ba4397b3c5c57b9bb45, type: 3}
 --- !u!4 &752615220 stripped
@@ -20399,6 +20495,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: f93cdacb86e2211428063f68edb031d4,
         type: 2}
+    - target: {fileID: 8190645762297345833, guid: 9629c42775e22c042a1712c23b891b7c,
+        type: 3}
+      propertyPath: whistleBehavior
+      value: 
+      objectReference: {fileID: 11400000, guid: 74f682c626407ce4391df9e8fe4de777,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9629c42775e22c042a1712c23b891b7c, type: 3}
 --- !u!4 &924301180 stripped
@@ -20558,6 +20660,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: f93cdacb86e2211428063f68edb031d4,
         type: 2}
+    - target: {fileID: 8190645762297345833, guid: 9629c42775e22c042a1712c23b891b7c,
+        type: 3}
+      propertyPath: whistleBehavior
+      value: 
+      objectReference: {fileID: 11400000, guid: 74f682c626407ce4391df9e8fe4de777,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9629c42775e22c042a1712c23b891b7c, type: 3}
 --- !u!4 &1033006348 stripped
@@ -20603,6 +20711,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 920067842}
     m_Modifications:
+    - target: {fileID: 5879632966816655269, guid: 3c77d3b982404e143942a0808ed1fc15,
+        type: 3}
+      propertyPath: whistleBehavior
+      value: 
+      objectReference: {fileID: 11400000, guid: 4376e4597f9799d46ae18bc6ca2c7774,
+        type: 2}
     - target: {fileID: 7864948647172896299, guid: 3c77d3b982404e143942a0808ed1fc15,
         type: 3}
       propertyPath: m_Controller
@@ -21335,6 +21449,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.88884115
       objectReference: {fileID: 0}
+    - target: {fileID: 1196443186659818460, guid: 003996017387cd04983db7b7c46bdd73,
+        type: 3}
+      propertyPath: whistleBehavior
+      value: 
+      objectReference: {fileID: 11400000, guid: 9d27f083de2c7284f8d37a6d34079182,
+        type: 2}
     - target: {fileID: 1206365740307632219, guid: 003996017387cd04983db7b7c46bdd73,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -22960,12 +23080,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8190645762297345833, guid: 9629c42775e22c042a1712c23b891b7c,
-        type: 3}
-      propertyPath: startBehavior
-      value: 
-      objectReference: {fileID: 11400000, guid: f93cdacb86e2211428063f68edb031d4,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9629c42775e22c042a1712c23b891b7c, type: 3}
 --- !u!4 &1100128687 stripped
@@ -23011,6 +23125,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 920067842}
     m_Modifications:
+    - target: {fileID: 5879632966816655269, guid: 3c77d3b982404e143942a0808ed1fc15,
+        type: 3}
+      propertyPath: whistleBehavior
+      value: 
+      objectReference: {fileID: 11400000, guid: 4376e4597f9799d46ae18bc6ca2c7774,
+        type: 2}
     - target: {fileID: 7864948647172896299, guid: 3c77d3b982404e143942a0808ed1fc15,
         type: 3}
       propertyPath: m_Controller
@@ -23685,6 +23805,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: f93cdacb86e2211428063f68edb031d4,
         type: 2}
+    - target: {fileID: 1259446638446084915, guid: b97e9ca7ea6e6e84998bee2f5a813472,
+        type: 3}
+      propertyPath: whistleBehavior
+      value: 
+      objectReference: {fileID: 11400000, guid: 77710d7e16bbe6d4f861802b8c3d3ba1,
+        type: 2}
     - target: {fileID: 6910526367952547823, guid: b97e9ca7ea6e6e84998bee2f5a813472,
         type: 3}
       propertyPath: m_RootOrder
@@ -24091,6 +24217,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1186389745}
     m_Modifications:
+    - target: {fileID: 2879800762377354789, guid: 4df2e49761b937f4fa67a6fec0e147c4,
+        type: 3}
+      propertyPath: whistleBehavior
+      value: 
+      objectReference: {fileID: 11400000, guid: 6386bac43fba9e548bb70453f600f3fb,
+        type: 2}
     - target: {fileID: 6149793772180955747, guid: 4df2e49761b937f4fa67a6fec0e147c4,
         type: 3}
       propertyPath: m_Name
@@ -24324,6 +24456,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 920067842}
     m_Modifications:
+    - target: {fileID: 5879632966816655269, guid: 3c77d3b982404e143942a0808ed1fc15,
+        type: 3}
+      propertyPath: whistleBehavior
+      value: 
+      objectReference: {fileID: 11400000, guid: 4376e4597f9799d46ae18bc6ca2c7774,
+        type: 2}
     - target: {fileID: 7864948647172896299, guid: 3c77d3b982404e143942a0808ed1fc15,
         type: 3}
       propertyPath: m_Controller
@@ -29884,6 +30022,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.88884115
       objectReference: {fileID: 0}
+    - target: {fileID: 1196443186659818460, guid: 003996017387cd04983db7b7c46bdd73,
+        type: 3}
+      propertyPath: whistleBehavior
+      value: 
+      objectReference: {fileID: 11400000, guid: 9d27f083de2c7284f8d37a6d34079182,
+        type: 2}
     - target: {fileID: 1206365740307632219, guid: 003996017387cd04983db7b7c46bdd73,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -31425,6 +31569,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 920067842}
     m_Modifications:
+    - target: {fileID: 5879632966816655269, guid: 3c77d3b982404e143942a0808ed1fc15,
+        type: 3}
+      propertyPath: whistleBehavior
+      value: 
+      objectReference: {fileID: 11400000, guid: 4376e4597f9799d46ae18bc6ca2c7774,
+        type: 2}
     - target: {fileID: 7864948647172896299, guid: 3c77d3b982404e143942a0808ed1fc15,
         type: 3}
       propertyPath: m_Controller
@@ -32106,6 +32256,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1186389745}
     m_Modifications:
+    - target: {fileID: 2879800762377354789, guid: 4df2e49761b937f4fa67a6fec0e147c4,
+        type: 3}
+      propertyPath: whistleBehavior
+      value: 
+      objectReference: {fileID: 11400000, guid: 6386bac43fba9e548bb70453f600f3fb,
+        type: 2}
     - target: {fileID: 6149793772180955747, guid: 4df2e49761b937f4fa67a6fec0e147c4,
         type: 3}
       propertyPath: m_Name
@@ -32204,6 +32360,12 @@ PrefabInstance:
       propertyPath: startBehavior
       value: 
       objectReference: {fileID: 11400000, guid: f93cdacb86e2211428063f68edb031d4,
+        type: 2}
+    - target: {fileID: 3472588405663907396, guid: d32b56c0c114f8046ae2e7ffbde22cb4,
+        type: 3}
+      propertyPath: whistleBehavior
+      value: 
+      objectReference: {fileID: 11400000, guid: 77710d7e16bbe6d4f861802b8c3d3ba1,
         type: 2}
     - target: {fileID: 5371905011013052472, guid: d32b56c0c114f8046ae2e7ffbde22cb4,
         type: 3}
@@ -33322,6 +33484,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1186389745}
     m_Modifications:
+    - target: {fileID: 2879800762377354789, guid: 4df2e49761b937f4fa67a6fec0e147c4,
+        type: 3}
+      propertyPath: whistleBehavior
+      value: 
+      objectReference: {fileID: 11400000, guid: 6386bac43fba9e548bb70453f600f3fb,
+        type: 2}
     - target: {fileID: 6149793772180955747, guid: 4df2e49761b937f4fa67a6fec0e147c4,
         type: 3}
       propertyPath: m_Name
@@ -33634,6 +33802,12 @@ PrefabInstance:
       propertyPath: startBehavior
       value: 
       objectReference: {fileID: 11400000, guid: f93cdacb86e2211428063f68edb031d4,
+        type: 2}
+    - target: {fileID: 3472588405663907396, guid: d32b56c0c114f8046ae2e7ffbde22cb4,
+        type: 3}
+      propertyPath: whistleBehavior
+      value: 
+      objectReference: {fileID: 11400000, guid: 46f1f8dd9cf356e418e6321100c5d9a6,
         type: 2}
     - target: {fileID: 5371905011013052472, guid: d32b56c0c114f8046ae2e7ffbde22cb4,
         type: 3}
@@ -34949,6 +35123,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.88884115
       objectReference: {fileID: 0}
+    - target: {fileID: 1196443186659818460, guid: 003996017387cd04983db7b7c46bdd73,
+        type: 3}
+      propertyPath: whistleBehavior
+      value: 
+      objectReference: {fileID: 11400000, guid: 9d27f083de2c7284f8d37a6d34079182,
+        type: 2}
     - target: {fileID: 1206365740307632219, guid: 003996017387cd04983db7b7c46bdd73,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -36550,6 +36730,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2356639258851925984, guid: 2e3f2484d97b9ba4397b3c5c57b9bb45,
+        type: 3}
+      propertyPath: whistleBehavior
+      value: 
+      objectReference: {fileID: 11400000, guid: bce5910866da0b645b4f7fef4491f2a3,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e3f2484d97b9ba4397b3c5c57b9bb45, type: 3}
 --- !u!4 &1460098455 stripped
@@ -36759,6 +36945,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2356639258851925984, guid: 2e3f2484d97b9ba4397b3c5c57b9bb45,
+        type: 3}
+      propertyPath: whistleBehavior
+      value: 
+      objectReference: {fileID: 11400000, guid: 6d4dd67e1d85a124e908086b95d67bab,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e3f2484d97b9ba4397b3c5c57b9bb45, type: 3}
 --- !u!4 &1483448216 stripped
@@ -36874,6 +37066,12 @@ PrefabInstance:
       propertyPath: startBehavior
       value: 
       objectReference: {fileID: 11400000, guid: f93cdacb86e2211428063f68edb031d4,
+        type: 2}
+    - target: {fileID: 9125496573713402317, guid: 31745cbd211b5444aa6042d3837f2955,
+        type: 3}
+      propertyPath: whistleBehavior
+      value: 
+      objectReference: {fileID: 11400000, guid: 77710d7e16bbe6d4f861802b8c3d3ba1,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31745cbd211b5444aa6042d3837f2955, type: 3}
@@ -37145,6 +37343,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.88884115
       objectReference: {fileID: 0}
+    - target: {fileID: 1196443186659818460, guid: 003996017387cd04983db7b7c46bdd73,
+        type: 3}
+      propertyPath: whistleBehavior
+      value: 
+      objectReference: {fileID: 11400000, guid: 9d27f083de2c7284f8d37a6d34079182,
+        type: 2}
     - target: {fileID: 1206365740307632219, guid: 003996017387cd04983db7b7c46bdd73,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -38746,6 +38950,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chicken3_PBR (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5888669983270253539, guid: 13b13629a1557094f8d755e639a8546d,
+        type: 3}
+      propertyPath: whistleBehavior
+      value: 
+      objectReference: {fileID: 11400000, guid: 6d4dd67e1d85a124e908086b95d67bab,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13b13629a1557094f8d755e639a8546d, type: 3}
 --- !u!4 &1536212933 stripped
@@ -50396,6 +50606,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chicken3_PBR (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5888669983270253539, guid: 13b13629a1557094f8d755e639a8546d,
+        type: 3}
+      propertyPath: whistleBehavior
+      value: 
+      objectReference: {fileID: 11400000, guid: bce5910866da0b645b4f7fef4491f2a3,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13b13629a1557094f8d755e639a8546d, type: 3}
 --- !u!4 &1809492448 stripped
@@ -50509,9 +50725,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8190645762297345833, guid: 9629c42775e22c042a1712c23b891b7c,
         type: 3}
-      propertyPath: startBehavior
+      propertyPath: whistleBehavior
       value: 
-      objectReference: {fileID: 11400000, guid: f93cdacb86e2211428063f68edb031d4,
+      objectReference: {fileID: 11400000, guid: 74f682c626407ce4391df9e8fe4de777,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9629c42775e22c042a1712c23b891b7c, type: 3}
@@ -50558,6 +50774,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1186389745}
     m_Modifications:
+    - target: {fileID: 2879800762377354789, guid: 4df2e49761b937f4fa67a6fec0e147c4,
+        type: 3}
+      propertyPath: whistleBehavior
+      value: 
+      objectReference: {fileID: 11400000, guid: 6386bac43fba9e548bb70453f600f3fb,
+        type: 2}
     - target: {fileID: 6149793772180955747, guid: 4df2e49761b937f4fa67a6fec0e147c4,
         type: 3}
       propertyPath: m_Name
@@ -51747,6 +51969,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: f93cdacb86e2211428063f68edb031d4,
         type: 2}
+    - target: {fileID: 9125496573713402317, guid: 31745cbd211b5444aa6042d3837f2955,
+        type: 3}
+      propertyPath: whistleBehavior
+      value: 
+      objectReference: {fileID: 11400000, guid: 46f1f8dd9cf356e418e6321100c5d9a6,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31745cbd211b5444aa6042d3837f2955, type: 3}
 --- !u!4 &1855327401 stripped
@@ -51846,6 +52074,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2771079169815344095, guid: ff528f4f08a0eca4d862d49eb16988ae,
+        type: 3}
+      propertyPath: whistleBehavior
+      value: 
+      objectReference: {fileID: 11400000, guid: 6d4dd67e1d85a124e908086b95d67bab,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff528f4f08a0eca4d862d49eb16988ae, type: 3}
 --- !u!4 &1873918764 stripped
@@ -51938,6 +52172,12 @@ PrefabInstance:
       propertyPath: startBehavior
       value: 
       objectReference: {fileID: 11400000, guid: f93cdacb86e2211428063f68edb031d4,
+        type: 2}
+    - target: {fileID: 8190645762297345833, guid: 9629c42775e22c042a1712c23b891b7c,
+        type: 3}
+      propertyPath: whistleBehavior
+      value: 
+      objectReference: {fileID: 11400000, guid: 74f682c626407ce4391df9e8fe4de777,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9629c42775e22c042a1712c23b891b7c, type: 3}
@@ -57005,6 +57245,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chicken3_PBR (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5888669983270253539, guid: 13b13629a1557094f8d755e639a8546d,
+        type: 3}
+      propertyPath: whistleBehavior
+      value: 
+      objectReference: {fileID: 11400000, guid: bce5910866da0b645b4f7fef4491f2a3,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13b13629a1557094f8d755e639a8546d, type: 3}
 --- !u!4 &1999828731 stripped
@@ -57056,6 +57302,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1186389745}
     m_Modifications:
+    - target: {fileID: 2879800762377354789, guid: 4df2e49761b937f4fa67a6fec0e147c4,
+        type: 3}
+      propertyPath: whistleBehavior
+      value: 
+      objectReference: {fileID: 11400000, guid: 6386bac43fba9e548bb70453f600f3fb,
+        type: 2}
     - target: {fileID: 6149793772180955747, guid: 4df2e49761b937f4fa67a6fec0e147c4,
         type: 3}
       propertyPath: m_Name
@@ -57383,6 +57635,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.88884115
       objectReference: {fileID: 0}
+    - target: {fileID: 1196443186659818460, guid: 003996017387cd04983db7b7c46bdd73,
+        type: 3}
+      propertyPath: whistleBehavior
+      value: 
+      objectReference: {fileID: 11400000, guid: 9d27f083de2c7284f8d37a6d34079182,
+        type: 2}
     - target: {fileID: 1206365740307632219, guid: 003996017387cd04983db7b7c46bdd73,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -59047,6 +59305,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chicken3_PBR
       objectReference: {fileID: 0}
+    - target: {fileID: 5888669983270253539, guid: 13b13629a1557094f8d755e639a8546d,
+        type: 3}
+      propertyPath: whistleBehavior
+      value: 
+      objectReference: {fileID: 11400000, guid: 6d4dd67e1d85a124e908086b95d67bab,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13b13629a1557094f8d755e639a8546d, type: 3}
 --- !u!4 &2098824269 stripped
