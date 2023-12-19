@@ -1,0 +1,29 @@
+# Material file for barn.obj
+
+newmtl Shape.212
+	Ns 0
+	d 1
+	illum 2
+	Kd 0.7875 0.7875 0.7875
+	Ks 0.0 0.0 0.0
+	Ka 1.0 1.0 1.0
+	map_Kd 1A093D20_c.png
+
+newmtl Shape.213
+	Ns 0
+	d 1
+	illum 2
+	Kd 0.61875 0.61875 0.61875
+	Ks 0.0 0.0 0.0
+	Ka 1.0 1.0 1.0
+	map_Kd 62ED03DF_c.png
+
+newmtl Shape.214
+	Ns 0
+	d 1
+	illum 2
+	Kd 0.190625 0.171875 0.1375
+	Ks 0.0 0.0 0.0
+	Ka 1.0 1.0 1.0
+	map_Kd 63A7B30C_c.png
+
