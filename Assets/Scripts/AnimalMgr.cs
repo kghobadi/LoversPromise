@@ -28,7 +28,12 @@ public class AnimalMgr : NonInstantiatingSingleton<AnimalMgr>
     {
         levelExit.SetActive(false);
     }
+    
+    //Need way to call Level exit just because all animals have been put to sleep for the night. 
 
+    /// <summary>
+    /// Allows us to exit the level if we have petted every animal. 
+    /// </summary>
     public void CheckPettedCount()
     {
         //will store animals left 
