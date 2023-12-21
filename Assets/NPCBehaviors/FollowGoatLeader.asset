@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: FollowGoatLeader
   m_EditorClassIdentifier: 
   pathName: FollowGoatLeader
-  pathIndex: 7
+  pathIndex: 6

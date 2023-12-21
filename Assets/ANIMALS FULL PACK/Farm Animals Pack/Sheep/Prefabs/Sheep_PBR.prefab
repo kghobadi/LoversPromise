@@ -593,6 +593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72bd1cd76be71a34bae324c7d92c56f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animalType: 3
   npcType: 0
   idleType: 0
   moveType: 0

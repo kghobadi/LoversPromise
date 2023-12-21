@@ -19,10 +19,22 @@ namespace NPC
         [Header("AI Movement Settings")]
         //chosen in editor 
         [Tooltip("Chosen by the Movement Path assigned to the NPC")]
+        public AnimalType animalType;
+        public enum AnimalType
+        {
+            COW,
+            PIG,
+            CHICKEN,
+            SHEEP,
+            GOAT,
+            DONKEY,
+        }
+        
+        [Tooltip("Chosen by the Movement Path assigned to the NPC")]
         public NPCMovementTypes npcType;
         public enum NPCMovementTypes
         {
-            WAYPOINT, RANDOM, IDLE, PATHFINDER, FINDPLAYER, FOLLOWPLAYER, FOLLOWER, GOTOTransform,
+            WAYPOINT, RANDOM, IDLE, PATHFINDER, FINDPLAYER, FOLLOWPLAYER, FOLLOWER, GOTOTransform, SLEEP,
         }
 
         [Tooltip("Various Animation Types!")]
@@ -207,6 +219,12 @@ namespace NPC
                     bool fellAsleep = false;
                     if (_canSleep)
                     {
+                        //Just fall asleep already. 
+                        if (npcType == NPCMovementTypes.SLEEP)
+                        {
+                            FallAsleep();
+                            return;
+                        }
                         //try falling asleep...
                         fellAsleep = CheckFallAsleep();
                     }
@@ -329,7 +347,7 @@ namespace NPC
                 //sleep countdown
                 stateTimer -= Time.deltaTime;
 
-                if (stateTimer < 0)
+                if (stateTimer < 0 && npcType != NPCMovementTypes.SLEEP)
                 {
                     //wake up!
                     SetIdle(false);
@@ -452,7 +470,7 @@ namespace NPC
                 //keep loooking
                 else
                 {
-                    NavigateToPoint(AnimalMgr.Instance.PlayerController.transform.position);
+                    NavigateToPoint(AnimalMgr.Instance.PlayerController.transform.position + new Vector3(0f, 3f, 0f));
                 }
             }
         }
@@ -665,6 +683,18 @@ namespace NPC
             Vector2 xz = Random.insideUnitCircle * movementRadius;
 
             Vector3 castPoint = new Vector3(xz.x + origPosition.x, transform.position.y + 10, xz.y + origPosition.z);
+
+            NavigateToPoint(castPoint);
+        }
+        
+        //this function sets a random point as the nav mesh destination
+        //checks if the NPC can walk there before setting it
+        //sets animator correctly
+        public virtual void SetRandomDestinationAtPosition(Vector3 position, float radius)
+        {
+            Vector2 xz = Random.insideUnitCircle * radius;
+
+            Vector3 castPoint = new Vector3(xz.x + position.x, transform.position.y + 10, xz.y + position.z);
 
             NavigateToPoint(castPoint);
         }

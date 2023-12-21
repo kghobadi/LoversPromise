@@ -43,6 +43,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private AudioSource m_AudioSource;
 
         public Vector3 holdingSpot;
+        public bool IsJumping => m_Jumping;
+        private float origJump;
 
         [SerializeField] private bool lockState;
 
@@ -59,11 +61,21 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+            origJump = m_JumpSpeed;
         }
 
         public void SetLock(bool state)
         {
             lockState = state;
+        }
+
+        public void SetJump(float force)
+        {
+            if (!m_Jump)
+            {
+                m_JumpSpeed = force;
+                m_Jump = true;
+            }
         }
 
         // Update is called once per frame
@@ -85,6 +97,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     PlayLandingSound();
                     m_MoveDir.y = 0f;
                     m_Jumping = false;
+                    m_JumpSpeed = origJump;
                 }
                 if (!m_CharacterController.isGrounded && !m_Jumping && m_PreviouslyGrounded)
                 {
@@ -95,14 +108,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
         }
 
-
         private void PlayLandingSound()
         {
             m_AudioSource.clip = m_LandSound;
             m_AudioSource.Play();
             m_NextStep = m_StepCycle + .5f;
         }
-
 
         private void FixedUpdate()
         {
