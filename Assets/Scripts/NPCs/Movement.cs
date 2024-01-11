@@ -426,6 +426,11 @@ namespace NPC
 
                 checkAgainstPlayer = path.checksAgainstPlayer;
             }
+            else if (npcType == NPCMovementTypes.SLEEP)
+            {
+                //check sleeping count :)
+                AnimalMgr.Instance.CheckSleepingCount();
+            }
 
             //set current
             currentBehavior = path;
@@ -444,9 +449,6 @@ namespace NPC
                 && currentBehavior.movementType != NPCMovementTypes.SLEEP)
             {
                 ResetMovement(whistleBehavior);
-                
-                //check sleeping count :)
-                AnimalMgr.Instance.CheckSleepingCount();
             }
         }
 

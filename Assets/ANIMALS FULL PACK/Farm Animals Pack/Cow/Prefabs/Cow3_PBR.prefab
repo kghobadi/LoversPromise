@@ -1311,7 +1311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b43da207a4d9ed4b8783f40692fa33f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactCursor: {fileID: 21300000, guid: 07650a2ec67478f418b8d88e070d85fa, type: 3}
+  interactCursor: {fileID: 21300212, guid: 388e8eb6de557964999d88f8d42114db, type: 3}
   withinClickDist: 10
   hasBeenPetted: 0
   pettedTrigger: petted
@@ -1349,6 +1349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72bd1cd76be71a34bae324c7d92c56f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animalType: 0
   npcType: 0
   idleType: 0
   moveType: 0
