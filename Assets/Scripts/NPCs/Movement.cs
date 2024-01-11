@@ -438,7 +438,16 @@ namespace NPC
         /// </summary>
         public void OnWhistle()
         {
-            ResetMovement(whistleBehavior);
+            //Only proceed to Whistle behavior (follow) if NOT already following/sleeping. We don't sleeping animals to follow us. 
+            if (currentBehavior.movementType != NPCMovementTypes.FOLLOWPLAYER
+                && currentBehavior.movementType != NPCMovementTypes.FOLLOWER
+                && currentBehavior.movementType != NPCMovementTypes.SLEEP)
+            {
+                ResetMovement(whistleBehavior);
+                
+                //check sleeping count :)
+                AnimalMgr.Instance.CheckSleepingCount();
+            }
         }
 
         //resets state timer to float time + random range 

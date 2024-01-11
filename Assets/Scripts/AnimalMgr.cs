@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using NPC;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
 
@@ -15,6 +16,7 @@ public class AnimalMgr : NonInstantiatingSingleton<AnimalMgr>
     
     public PetAnimal[] allAnimals;
     public int pettedCount;
+    public int sleepingCount;
     public GameObject levelExit;
     public bool playerCanExit;
 #if UNITY_EDITOR
@@ -29,8 +31,28 @@ public class AnimalMgr : NonInstantiatingSingleton<AnimalMgr>
         levelExit.SetActive(false);
     }
     
-    //Need way to call Level exit just because all animals have been put to sleep for the night. 
+    /// <summary>
+    /// Allows us to exit the level if we have walked every animal to its sleeping place and it's time for night night. 
+    /// </summary>
+    public void CheckSleepingCount()
+    {
+        int sleeping = 0;
+        //loop through all animals
+        foreach (var animal in allAnimals)
+        {
+            //check if they were pet 
+            if (animal.AnimalController.Movement.currentBehavior.movementType == Movement.NPCMovementTypes.SLEEP)
+            {
+                sleeping++;
+            }
+        }
 
+        sleepingCount = sleeping;
+        if (sleepingCount >= allAnimals.Length)
+        {
+            ActivateLevelExit();
+        }
+    }
     /// <summary>
     /// Allows us to exit the level if we have petted every animal. 
     /// </summary>

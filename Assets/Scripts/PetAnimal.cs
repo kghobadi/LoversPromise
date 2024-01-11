@@ -14,6 +14,8 @@ public class PetAnimal : Interactable
     private Animator p_Animator;
     private Controller npcController;
 
+    public Controller AnimalController => npcController;
+
     public bool hasBeenPetted;
     public string pettedTrigger = "petted";
     public string audioTrigger = "audio";
