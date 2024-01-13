@@ -5574,6 +5574,95 @@ MonoBehaviour:
   - {fileID: 1460098456}
   randomOffsetOrder: 1
   waitIntervalRange: {x: 0.25, y: 0.5}
+--- !u!1 &184056709
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 184056710}
+  - component: {fileID: 184056714}
+  - component: {fileID: 184056713}
+  - component: {fileID: 184056712}
+  - component: {fileID: 184056711}
+  m_Layer: 0
+  m_Name: ChickenBedEndTrigger (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &184056710
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184056709}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -40.4, y: -8.9, z: -68.7}
+  m_LocalScale: {x: 8.4355, y: 8.4355, z: 13.9283695}
+  m_Children: []
+  m_Father: {fileID: 1724822404}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &184056711
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184056709}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &184056712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184056709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fe0960fef1a5074dad52c0071c4601e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animalType: 2
+  bedBehavior: {fileID: 11400000, guid: 76fdbc6179417e04c9755fe86fc6c1ce, type: 2}
+  randomRadius: 15
+  bedSpots:
+  - {fileID: 1760288936}
+  - {fileID: 1320654725}
+--- !u!65 &184056713
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184056709}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &184056714
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184056709}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &200925008 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100002, guid: d87cc6378eb8c41e3941696e60cc7466,
@@ -11319,7 +11408,7 @@ Transform:
   - {fileID: 705523289}
   - {fileID: 179184584}
   m_Father: {fileID: 1724822404}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &344310944
 Rigidbody:
@@ -12103,7 +12192,7 @@ Transform:
   - {fileID: 15370634}
   - {fileID: 782034606}
   m_Father: {fileID: 1724822404}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &427246986
 Rigidbody:
@@ -24022,6 +24111,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Donkey (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6365968185880897237, guid: 003996017387cd04983db7b7c46bdd73,
+        type: 3}
+      propertyPath: m_TagString
+      value: Animal
+      objectReference: {fileID: 0}
     - target: {fileID: 6474468014761370663, guid: 003996017387cd04983db7b7c46bdd73,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -32864,6 +32958,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Donkey (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 6365968185880897237, guid: 003996017387cd04983db7b7c46bdd73,
+        type: 3}
+      propertyPath: m_TagString
+      value: Animal
+      objectReference: {fileID: 0}
     - target: {fileID: 6474468014761370663, guid: 003996017387cd04983db7b7c46bdd73,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -33971,7 +34070,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1320654724}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.985, y: 1.937, z: 0.7849996}
+  m_LocalPosition: {x: -9.985, y: 1.937, z: 0.1658}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1600274023}
@@ -38188,6 +38287,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Donkey (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6365968185880897237, guid: 003996017387cd04983db7b7c46bdd73,
+        type: 3}
+      propertyPath: m_TagString
+      value: Animal
+      objectReference: {fileID: 0}
     - target: {fileID: 6474468014761370663, guid: 003996017387cd04983db7b7c46bdd73,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -40593,6 +40697,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Donkey (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6365968185880897237, guid: 003996017387cd04983db7b7c46bdd73,
+        type: 3}
+      propertyPath: m_TagString
+      value: Animal
+      objectReference: {fileID: 0}
     - target: {fileID: 6474468014761370663, guid: 003996017387cd04983db7b7c46bdd73,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -41249,6 +41358,95 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1543853168}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1569629560
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1569629561}
+  - component: {fileID: 1569629565}
+  - component: {fileID: 1569629564}
+  - component: {fileID: 1569629563}
+  - component: {fileID: 1569629562}
+  m_Layer: 0
+  m_Name: CowBedEndTrigger (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1569629561
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569629560}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -114.32, y: -8.9, z: -62.05}
+  m_LocalScale: {x: 8.4355, y: 8.4355, z: 8.4355}
+  m_Children: []
+  m_Father: {fileID: 1724822404}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1569629562
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569629560}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1569629563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569629560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fe0960fef1a5074dad52c0071c4601e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animalType: 0
+  bedBehavior: {fileID: 11400000, guid: 76fdbc6179417e04c9755fe86fc6c1ce, type: 2}
+  randomRadius: 15
+  bedSpots:
+  - {fileID: 1399296880}
+  - {fileID: 1030220738}
+--- !u!65 &1569629564
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569629560}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1569629565
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569629560}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1579292124 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8902910814370353431, guid: eb6ac1a5687939040b4241f259f1e78f,
@@ -41414,7 +41612,7 @@ Transform:
   - {fileID: 1760288936}
   - {fileID: 1320654725}
   m_Father: {fileID: 1724822404}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1600274024
 Rigidbody:
@@ -48394,8 +48592,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 77438111}
+  - {fileID: 1569629561}
   - {fileID: 2020632286}
   - {fileID: 1600274023}
+  - {fileID: 184056710}
   - {fileID: 344310943}
   - {fileID: 1800148411}
   - {fileID: 427246985}
@@ -53290,7 +53490,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1760288935}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.015, y: 1.937, z: 0.785}
+  m_LocalPosition: {x: -8.015, y: 1.937, z: 0.129}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1600274023}
@@ -53336,7 +53536,7 @@ Transform:
   - {fileID: 745769552}
   - {fileID: 1689434941}
   m_Father: {fileID: 1724822404}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1800148412
 Rigidbody:
@@ -60116,7 +60316,7 @@ Transform:
   - {fileID: 107670806}
   - {fileID: 962625287}
   m_Father: {fileID: 1724822404}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &2020632287
 Rigidbody:

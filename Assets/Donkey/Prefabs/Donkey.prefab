@@ -3387,7 +3387,7 @@ GameObject:
   - component: {fileID: 3889349426275759690}
   m_Layer: 10
   m_Name: Donkey
-  m_TagString: Untagged
+  m_TagString: Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
