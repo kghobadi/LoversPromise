@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PauseGame : MonoBehaviour {
 
@@ -19,12 +20,16 @@ public class PauseGame : MonoBehaviour {
         canvas.enabled = false;
     }
 	
-	void Update () {
+	void Update () 
+    {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Pause();
         }
-
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            NextScene();
+        }
     }
     public void Pause ()
     {
@@ -39,6 +44,10 @@ public class PauseGame : MonoBehaviour {
             Time.timeScale = 1;
         }
     }
+    void NextScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
     public void ExitGame()
     {
         Application.Quit();
@@ -48,5 +57,4 @@ public class PauseGame : MonoBehaviour {
         canvas.enabled = false;
         Time.timeScale = 1;
     }
-
 }

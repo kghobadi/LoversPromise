@@ -5,6 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using System.Linq;
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(OffsetAnimator))]
 public class OffsetAnimatorEditor : UnityEditor.Editor
 {
@@ -22,3 +23,4 @@ public class OffsetAnimatorEditor : UnityEditor.Editor
         base.OnInspectorGUI();
     }
 }
+#endif
