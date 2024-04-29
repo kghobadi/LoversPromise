@@ -56,7 +56,10 @@ public class ActivateText : MonoBehaviour
                     return;
                 }
 
-                TriggerDialogue();
+                if (!theTextBox.isActive)
+                {
+                    TriggerDialogue();
+                }
             }
         }
     }
