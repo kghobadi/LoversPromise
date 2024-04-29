@@ -41,6 +41,7 @@ public class TextBoxManager : MonoBehaviour {
     {
         player = FindObjectOfType<FirstPersonController>();
         cursorObj = GameObject.FindGameObjectWithTag("Cursor");
+        dialoguesTexts = FindObjectsOfType<ActivateText>();
 
         if (textFile != null)
         {
@@ -211,8 +212,14 @@ public class TextBoxManager : MonoBehaviour {
 
     void CheckSceneTransition()
     {
-        dialoguesTexts = FindObjectsOfType<ActivateText>();
-        currentCount = dialoguesTexts.Length;
+        currentCount = 0;
+        foreach (var dialogue in dialoguesTexts)
+        {
+            if (!dialogue.HasActivated)
+            {
+                currentCount++;
+            }
+        }
         if (currentCount <= 0)
         {
             LoadingScreenManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

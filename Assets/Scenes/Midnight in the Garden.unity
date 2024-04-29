@@ -50,7 +50,7 @@ LightmapSettings:
     m_BounceScale: 1
     m_IndirectOutputScale: 1
     m_AlbedoBoost: 1
-    m_EnvironmentLightingMode: 0
+    m_EnvironmentLightingMode: 1
     m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000002, guid: f6e211dc5ba437140b9dcb880b00c687,
+  m_LightingDataAsset: {fileID: 112000000, guid: f6e211dc5ba437140b9dcb880b00c687,
     type: 2}
   m_UseShadowmask: 0
 --- !u!196 &4
@@ -173,8 +173,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 9f3080141f1f64197825663e067f94f8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5101,8 +5100,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!136 &32024626
-CapsuleCollider:
+--- !u!64 &32024626
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5111,10 +5110,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &32024627
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5170,7 +5169,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 32024625}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -148, y: 42.5, z: 174.9}
+  m_LocalPosition: {x: -145.4, y: 42.5, z: 174.9}
   m_LocalScale: {x: 10, y: 0.25, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5227,8 +5226,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 9f3080141f1f64197825663e067f94f8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10384,8 +10382,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 9f3080141f1f64197825663e067f94f8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15415,8 +15412,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 9f3080141f1f64197825663e067f94f8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20273,6 +20269,14 @@ PrefabInstance:
       propertyPath: theText
       value: 
       objectReference: {fileID: 4900000, guid: 4eb33557ad52e014f904fbf24e33c056, type: 3}
+    - target: {fileID: 11449050, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
+      propertyPath: destroyWhenFinished
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11449050, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
+      propertyPath: requiredButtonPress
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
 --- !u!1001 &279408387
@@ -20346,6 +20350,14 @@ PrefabInstance:
       propertyPath: theText
       value: 
       objectReference: {fileID: 4900000, guid: ae225cbb782c1a145a65186b09cd229c, type: 3}
+    - target: {fileID: 11449050, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
+      propertyPath: destroyWhenFinished
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11449050, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
+      propertyPath: requiredButtonPress
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
 --- !u!1 &279408388 stripped
@@ -20490,6 +20502,18 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11461252, guid: c7fdc77d71f3d6d49ab1d81718160920, type: 3}
+      propertyPath: destroyWhenFinished
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461252, guid: c7fdc77d71f3d6d49ab1d81718160920, type: 3}
+      propertyPath: requiredButtonPress
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19943494, guid: c7fdc77d71f3d6d49ab1d81718160920, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9f3080141f1f64197825663e067f94f8, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7fdc77d71f3d6d49ab1d81718160920, type: 3}
 --- !u!4 &305517975 stripped
@@ -20614,8 +20638,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!136 &342644293
-CapsuleCollider:
+--- !u!64 &342644293
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -20624,10 +20648,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &342644294
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20831,8 +20855,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 9f3080141f1f64197825663e067f94f8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -25755,6 +25778,14 @@ PrefabInstance:
       propertyPath: theText
       value: 
       objectReference: {fileID: 4900000, guid: 08a59c7ab46387c41a9e035d22caa1ee, type: 3}
+    - target: {fileID: 11449050, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
+      propertyPath: destroyWhenFinished
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11449050, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
+      propertyPath: requiredButtonPress
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
 --- !u!4 &423642983 stripped
@@ -25820,7 +25851,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9f3080141f1f64197825663e067f94f8, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -30580,8 +30611,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 9f3080141f1f64197825663e067f94f8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -35340,8 +35370,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 015c7e793a5ceef4ca523f431cbe6d48, type: 2}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 9f3080141f1f64197825663e067f94f8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -40201,6 +40230,14 @@ PrefabInstance:
       propertyPath: theText
       value: 
       objectReference: {fileID: 4900000, guid: 7d8f6e42ce342b0459ee4d6bf35eb009, type: 3}
+    - target: {fileID: 11449050, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
+      propertyPath: destroyWhenFinished
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11449050, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
+      propertyPath: requiredButtonPress
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
 --- !u!1 &558207091
@@ -40254,8 +40291,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 9f3080141f1f64197825663e067f94f8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -45040,6 +45076,14 @@ PrefabInstance:
       propertyPath: continued
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11449050, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
+      propertyPath: destroyWhenFinished
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11449050, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
+      propertyPath: requiredButtonPress
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
 --- !u!4 &561269134 stripped
@@ -45707,8 +45751,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 9f3080141f1f64197825663e067f94f8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -50723,7 +50766,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9f3080141f1f64197825663e067f94f8, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -55616,6 +55659,14 @@ PrefabInstance:
       propertyPath: theText
       value: 
       objectReference: {fileID: 4900000, guid: ae225cbb782c1a145a65186b09cd229c, type: 3}
+    - target: {fileID: 11449050, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
+      propertyPath: destroyWhenFinished
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11449050, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
+      propertyPath: requiredButtonPress
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
 --- !u!4 &851505775 stripped
@@ -55643,8 +55694,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!136 &855124028
-CapsuleCollider:
+--- !u!64 &855124028
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -55653,10 +55704,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &855124029
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -55897,6 +55948,14 @@ PrefabInstance:
       propertyPath: continued
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11449050, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
+      propertyPath: destroyWhenFinished
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11449050, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
+      propertyPath: requiredButtonPress
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
 --- !u!4 &886725513 stripped
@@ -56003,8 +56062,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!136 &951422401
-CapsuleCollider:
+--- !u!64 &951422401
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -56013,10 +56072,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &951422402
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -56149,6 +56208,14 @@ PrefabInstance:
       propertyPath: theText
       value: 
       objectReference: {fileID: 4900000, guid: 48074222cb396be4d9ae022678ac33d2, type: 3}
+    - target: {fileID: 11449050, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
+      propertyPath: destroyWhenFinished
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11449050, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
+      propertyPath: requiredButtonPress
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
 --- !u!4 &978118681 stripped
@@ -56176,8 +56243,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!136 &986048462
-CapsuleCollider:
+--- !u!64 &986048462
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -56186,10 +56253,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &986048463
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -56383,6 +56450,14 @@ PrefabInstance:
       propertyPath: theText
       value: 
       objectReference: {fileID: 4900000, guid: f5c3c7eaff1b3fc4fa0057b39eb9d5db, type: 3}
+    - target: {fileID: 11449050, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
+      propertyPath: destroyWhenFinished
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11449050, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
+      propertyPath: requiredButtonPress
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
 --- !u!1 &1062159876
@@ -56436,8 +56511,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 9f3080141f1f64197825663e067f94f8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -61190,7 +61264,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9f3080141f1f64197825663e067f94f8, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -66067,6 +66141,14 @@ PrefabInstance:
       propertyPath: theText
       value: 
       objectReference: {fileID: 4900000, guid: 0715803cc0f3a544d88fe49f64dbff24, type: 3}
+    - target: {fileID: 11449050, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
+      propertyPath: destroyWhenFinished
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11449050, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
+      propertyPath: requiredButtonPress
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
 --- !u!4 &1177168570 stripped
@@ -71308,8 +71390,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 9f3080141f1f64197825663e067f94f8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -76118,8 +76199,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 9f3080141f1f64197825663e067f94f8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -80872,8 +80952,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 9f3080141f1f64197825663e067f94f8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86544,6 +86623,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1941313822, guid: 676634aef71734a46bfdb00b10bbf367, type: 3}
+      propertyPath: m_fontSize
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1941313822, guid: 676634aef71734a46bfdb00b10bbf367, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 24
+      objectReference: {fileID: 0}
     - target: {fileID: 78378555210706363, guid: 676634aef71734a46bfdb00b10bbf367,
         type: 3}
       propertyPath: player
@@ -86687,7 +86774,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 015c7e793a5ceef4ca523f431cbe6d48, type: 2}
+  - {fileID: 2100000, guid: 9f3080141f1f64197825663e067f94f8, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -91679,8 +91766,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 9f3080141f1f64197825663e067f94f8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -96858,7 +96944,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9f3080141f1f64197825663e067f94f8, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -101793,6 +101879,18 @@ PrefabInstance:
       propertyPath: endLine
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 11483486, guid: 132cc8cca825fe64581aa590a4d23646, type: 3}
+      propertyPath: destroyWhenFinished
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11483486, guid: 132cc8cca825fe64581aa590a4d23646, type: 3}
+      propertyPath: requiredButtonPress
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19988018, guid: 132cc8cca825fe64581aa590a4d23646, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9f3080141f1f64197825663e067f94f8, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 132cc8cca825fe64581aa590a4d23646, type: 3}
 --- !u!1001 &1642250285
@@ -101862,6 +101960,14 @@ PrefabInstance:
       propertyPath: theText
       value: 
       objectReference: {fileID: 4900000, guid: a295dcaf3b85fa24db2b9bdd390eea68, type: 3}
+    - target: {fileID: 11449050, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
+      propertyPath: destroyWhenFinished
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11449050, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
+      propertyPath: requiredButtonPress
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
 --- !u!1 &1673754557
@@ -101915,8 +102021,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 9f3080141f1f64197825663e067f94f8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -106669,8 +106774,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 9f3080141f1f64197825663e067f94f8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -111407,7 +111511,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -111521,8 +111625,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 9f3080141f1f64197825663e067f94f8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -116569,7 +116672,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1876065585}
   m_LocalRotation: {x: -0.6532815, y: -0.27059808, z: -0.27059808, w: 0.6532815}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.708, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0.5}
   m_Children: []
   m_Father: {fileID: 893723951}
@@ -116594,8 +116697,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 9f3080141f1f64197825663e067f94f8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -121626,6 +121728,14 @@ PrefabInstance:
       propertyPath: continued
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11449050, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
+      propertyPath: destroyWhenFinished
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11449050, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
+      propertyPath: requiredButtonPress
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
 --- !u!4 &2046690631 stripped
@@ -121716,6 +121826,14 @@ PrefabInstance:
     - target: {fileID: 11449050, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
       propertyPath: continued
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11449050, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
+      propertyPath: destroyWhenFinished
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11449050, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
+      propertyPath: requiredButtonPress
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
@@ -121919,6 +122037,14 @@ PrefabInstance:
       propertyPath: theText
       value: 
       objectReference: {fileID: 4900000, guid: 009b66279c4c9c04c8ed92160f1089f9, type: 3}
+    - target: {fileID: 11449050, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
+      propertyPath: destroyWhenFinished
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11449050, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
+      propertyPath: requiredButtonPress
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
 --- !u!1001 &2100408280

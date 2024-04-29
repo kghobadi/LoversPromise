@@ -1,12 +1,16 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class ActivateText : MonoBehaviour 
 {
     private TextBoxManager theTextBox;
     [SerializeField]
     private TextAsset theText;
+
+    [SerializeField] 
+    private ParticleSystem particles;
 
     public bool requiredButtonPress;
     private bool waitForPress;
@@ -15,10 +19,16 @@ public class ActivateText : MonoBehaviour
     
     public bool usesInteractable;
 
+    public bool loadsNextScene;
+
+    private bool hasActivated;
+    public bool HasActivated => hasActivated;
+
     public TextBoxManager TextBoxManager => theTextBox;
     void Start () 
     {
         theTextBox = FindObjectOfType<TextBoxManager>();
+        particles = GetComponentInChildren<ParticleSystem>();
     }
 	
 	void Update () 
@@ -61,6 +71,11 @@ public class ActivateText : MonoBehaviour
 
     public void TriggerDialogue()
     {
+        if (hasActivated)
+        {
+            return;
+        }
+        
         theTextBox.ReloadScript(theText);
 
         //only enable if not already active
@@ -68,10 +83,21 @@ public class ActivateText : MonoBehaviour
         {
             theTextBox.EnableTextBox();
         }
-        
+
+        if (particles)
+        {
+            particles.Stop();
+        }
         if (destroyWhenFinished)
         {
             Destroy(gameObject);
         }
+        if (loadsNextScene)
+        {
+            LoadingScreenManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        hasActivated = true;
     }
+    
+    
 }
