@@ -72,7 +72,7 @@ public class WriteThought : Interactable
     
     public void WriteStringToFile()
     {
-        string path = Application.persistentDataPath + fileName;
+        string path = Application.dataPath + fileName;
         string fullWrittenMessage = enterThought.text;
         string[] allLines = fullWrittenMessage.Split('\n');
         //Write some text to the test.txt file
@@ -98,7 +98,7 @@ public class WriteThought : Interactable
     public void ReadString(string file)
     {
         //get read path
-        string path = Application.persistentDataPath + file;
+        string path = Application.dataPath + file;
         //Read the text from directly from the test.txt file
         StreamReader reader = new StreamReader(path);
         Debug.Log(reader.ReadToEnd());
