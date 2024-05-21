@@ -47,8 +47,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float origJump;
 
         [SerializeField] private bool lockState;
+        public MouseLook MouseLook => m_MouseLook;
+        
 
-        // Use this for initialization
         private void Start()
         {
             m_CharacterController = GetComponent<CharacterController>();
