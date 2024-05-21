@@ -31839,7 +31839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   octaveBands: 050000000600000007000000
-  levelMin: 0.005
+  levelMin: 0.004
   showRhythm: 0
   particleFx:
   - {fileID: 1545097730}
