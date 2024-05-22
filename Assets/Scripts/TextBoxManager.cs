@@ -223,8 +223,12 @@ public class TextBoxManager : NonInstantiatingSingleton<TextBoxManager>
             }
             else
             {
-                QueueDialogue(activator);
-                Debug.Log("Queueing - Cannot reload text box script when active.");
+                //Don't bother to queue if it repeats
+                if (!activator.IsRepeatable)
+                {
+                    QueueDialogue(activator);
+                    Debug.Log("Queueing - Cannot reload text box script when active.");
+                }
             }
         }
     }

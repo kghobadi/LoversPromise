@@ -43,6 +43,7 @@ public class ActivateText : MonoBehaviour
     [SerializeField] private AnimationTrigger[] animTriggers;
     #region Properties
     public bool HasActivated => hasActivated;
+    public bool IsRepeatable => repeatable;
     public TextAsset DialogueAsset => theText;
     public bool TriggerOnStart => triggerOnStart;
     #endregion
