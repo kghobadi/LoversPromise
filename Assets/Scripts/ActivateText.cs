@@ -1,33 +1,53 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
+using TGS;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// This component handles Dialogue setup throughout the world.
+/// It triggers specific dialogue assets through our Text Box Manager.
+/// You can also set up triggers for dialogue start/end. 
+/// </summary>
 public class ActivateText : MonoBehaviour 
 {
-    private TextBoxManager theTextBox;
+    private TextBoxManager TextBoxManager => TextBoxManager.Instance;
     [SerializeField]
     private TextAsset theText;
 
+    [Tooltip("The floating dialogue particles should be set as the only particles in children of this object.")]
     [SerializeField] 
     private ParticleSystem particles;
-
+    
     public bool requiredButtonPress;
     private bool waitForPress;
 
-    public bool destroyWhenFinished;
+    [SerializeField]
+    private bool destroyWhenFinished;
     
-    public bool usesInteractable;
+    [SerializeField]
+    private bool usesInteractable;
 
-    public bool loadsNextScene;
+    [SerializeField]
+    private bool loadsNextScene;
 
     private bool hasActivated;
-    public bool HasActivated => hasActivated;
 
-    public TextBoxManager TextBoxManager => theTextBox;
+    [Header("Additional Triggers")] 
+    [Tooltip("By default, we will trigger all triggers on complete. Check true to trigger on start of dialogue instead.")]
+    [SerializeField]
+    private bool triggerOnStart;
+    [SerializeField] private EventTrigger[] eventTriggers;
+    [SerializeField] private ActivationTrigger[] activationTriggers;
+    [SerializeField] private AnimationTrigger[] animTriggers;
+    #region Properties
+    public bool HasActivated => hasActivated;
+    public TextAsset DialogueAsset => theText;
+    public bool TriggerOnStart => triggerOnStart;
+    #endregion
+    
     void Start () 
     {
-        theTextBox = FindObjectOfType<TextBoxManager>();
         particles = GetComponentInChildren<ParticleSystem>();
     }
 	
@@ -56,7 +76,7 @@ public class ActivateText : MonoBehaviour
                     return;
                 }
 
-                if (!theTextBox.isActive)
+                if (!TextBoxManager.isActive)
                 {
                     TriggerDialogue();
                 }
@@ -79,12 +99,12 @@ public class ActivateText : MonoBehaviour
             return;
         }
         
-        theTextBox.ReloadScript(theText);
+        TextBoxManager.LoadScript(this);
 
         //only enable if not already active
-        if (!theTextBox.isActive)
+        if (!TextBoxManager.isActive)
         {
-            theTextBox.EnableTextBox();
+            TextBoxManager.EnableTextBox();
         }
 
         if (particles)
@@ -99,8 +119,32 @@ public class ActivateText : MonoBehaviour
         {
             LoadingScreenManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
+
+        if (triggerOnStart)
+        {
+            SetAdditionalTriggers();
+        }
+        
+        //finally set has activated
         hasActivated = true;
     }
-    
-    
+
+    public void SetAdditionalTriggers()
+    {
+        //Event triggers first
+        foreach (var trigger in eventTriggers)
+        {
+            trigger.ActivateTriggerEffect();
+        }
+        //Activation triggers second
+        foreach (var trigger in activationTriggers)
+        {
+            trigger.ActivateTriggerEffect();
+        }
+        //Animation triggers last
+        foreach (var trigger in animTriggers)
+        {
+            trigger.ActivateTriggerEffect();
+        }
+    }
 }

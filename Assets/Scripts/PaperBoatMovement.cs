@@ -47,7 +47,7 @@ public class PaperBoatMovement : Interactable
 
     protected override void OnMouseOver()
     {
-        if (!activateText.TextBoxManager.isActive)
+        if (!TextBoxManager.Instance.isActive)
         {
             base.OnMouseOver();
         }

@@ -1,16 +1,21 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
 
-public class TextBoxManager : MonoBehaviour {
-
+public class TextBoxManager : NonInstantiatingSingleton<TextBoxManager> 
+{
+    protected override TextBoxManager GetInstance(){ return this; }
     public GameObject textBox;
 
     public TMP_Text theText;
 
+    private ActivateText currentActivator;
+    private List<ActivateText> dialogueQueue;
     public TextAsset textFile;
     public string[] textLines;
 
@@ -35,14 +40,23 @@ public class TextBoxManager : MonoBehaviour {
 
     [SerializeField] private bool disableCursor;
     private GameObject cursorObj;
-    
 
-    void Start()
+    #region Properties
+
+    public ActivateText Activator => currentActivator;
+
+    #endregion
+
+    private void Awake()
     {
+        //get component refs
         player = FindObjectOfType<FirstPersonController>();
         cursorObj = GameObject.FindGameObjectWithTag("Cursor");
         dialoguesTexts = FindObjectsOfType<ActivateText>();
+    }
 
+    void Start()
+    {
         if (textFile != null)
         {
             textLines = (textFile.text.Split('\n'));
@@ -66,6 +80,8 @@ public class TextBoxManager : MonoBehaviour {
         {
             CheckSceneTransition();
         }
+        
+        InvokeRepeating("CheckQueue", 5f, 5f);
     }
 
     void Update()
@@ -77,24 +93,32 @@ public class TextBoxManager : MonoBehaviour {
             //Press E or left click 
             if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
             {
-                if (!isTyping)
-                {
-                    currentLine += 1;
-
-                    if (currentLine >= endAtLine)
-                    {
-                        DisableTextBox();
-                    }
-                    else
-                    {
-                        StartCoroutine(TextScroll(textLines[currentLine]));
-                    }
-                }
-                else if(isTyping)
-                {
-                    skipLine = true;
-                }
+                AdvanceLine();
             }
+        }
+    }
+
+    /// <summary>
+    /// Advances the dialogue line or skips over the typing of the letters.
+    /// </summary>
+    void AdvanceLine()
+    {
+        if (!isTyping)
+        {
+            currentLine += 1;
+
+            if (currentLine >= endAtLine)
+            {
+                DisableTextBox();
+            }
+            else
+            {
+                StartCoroutine(TextScroll(textLines[currentLine]));
+            }
+        }
+        else if(isTyping)
+        {
+            skipLine = true;
         }
     }
 
@@ -161,6 +185,13 @@ public class TextBoxManager : MonoBehaviour {
         isActive = false;
         textBox.SetActive(false);
         
+        //set additional triggers?
+        if (!currentActivator.TriggerOnStart)
+        {
+            currentActivator.SetAdditionalTriggers();
+        }
+        
+        //disable cursor
         if (cursorObj && disableCursor)
         {
             cursorObj.SetActive(true);
@@ -173,43 +204,75 @@ public class TextBoxManager : MonoBehaviour {
         }
     }
 
-    public void ReloadScript(TextAsset _text)
+    /// <summary>
+    /// Loads dialogue script from an ActivateText component & its text asset.
+    /// Will Queue the dialogue for later if system is currently active.  
+    /// </summary>
+    /// <param name="activator"></param>
+    public void LoadScript(ActivateText activator)
     {
-        if(_text != null)
+        if(activator != null)
         {
             if (!isActive)
             {
-                theText.text = "";
-                textLines = new string[1];
-                textLines = _text.text.Split('\n');
-                currentLine = 0;
-                endAtLine = textLines.Length;
+                SetDialogueText(activator);
             }
             else
             {
-                Debug.Log("Cannot reload text box script when active.");
+                QueueDialogue(activator);
+                Debug.Log("Queueing - Cannot reload text box script when active.");
             }
         }
-        
     }
 
     /// <summary>
-    /// While active, we will wait to reload text script. 
+    /// Actually sets the dialogue system.
     /// </summary>
-    /// <param name="_text"></param>
-    /// <returns></returns>
-    IEnumerator WaitToReloadScript(TextAsset _text)
+    /// <param name="activator"></param>
+    void SetDialogueText(ActivateText activator)
     {
-        while (isActive)
-        {
-            yield return null;
-        }
-       
-        ReloadScript(_text);
-        
-        EnableTextBox();
+        currentActivator = activator;
+        theText.text = "";
+        textLines = new string[1];
+        textLines = activator.DialogueAsset.text.Split('\n');
+        currentLine = 0;
+        endAtLine = textLines.Length;
     }
 
+    /// <summary>
+    /// Adds this activator to our dialogue queue to be played later. 
+    /// </summary>
+    /// <param name="activator"></param>
+    void QueueDialogue(ActivateText activator)
+    {
+        dialogueQueue.Add(activator);
+    }
+
+    /// <summary>
+    /// Called invoke repeating at start. Will play next thing in dialogue queue and empty it over time.
+    /// </summary>
+    void CheckQueue()
+    {
+        //We should only empty queue when dialogue is currently inactive. 
+        if (!isActive)
+        {
+            if (dialogueQueue.Count > 0)
+            {
+                //Remove any null queue members
+                while (dialogueQueue[0] == null)
+                {
+                    dialogueQueue.RemoveAt(0);
+                }
+                //Plug into the dialogue system
+                SetDialogueText(dialogueQueue[0]);
+                dialogueQueue.RemoveAt(0);
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Checks if the scene transition is ready steady (all dialogues have been completed).
+    /// </summary>
     void CheckSceneTransition()
     {
         currentCount = 0;
