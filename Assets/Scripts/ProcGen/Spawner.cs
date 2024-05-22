@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Currently being used in the Bedroom Ocean to spawn objects with text components randomly assigned. 
+/// </summary>
 public class Spawner : MonoBehaviour 
 {
     [Header("Spawner Objects & Type")]

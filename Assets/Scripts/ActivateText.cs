@@ -62,6 +62,7 @@ public class ActivateText : MonoBehaviour
     public void AssignText(TextAsset textAsset)
     {
         theText = textAsset;
+        hasActivated = false;
     }
 
     void OnTriggerEnter(Collider other)
