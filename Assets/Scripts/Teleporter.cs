@@ -11,13 +11,21 @@ public class Teleporter : MonoBehaviour
     [SerializeField] private bool useFx = true;
     [SerializeField] private ParticleSystem teleportEffect;
     private ParticleSystem.MainModule teleportMain;
-
+    [SerializeField] private bool rotateObject;
+    private Quaternion newRotation;
     private void Awake()
     {
         teleportMain = teleportEffect.main;
     }
 
-    public void TeleportToTransform(Transform newPlace) => TeleportToPosition(newPlace.position);
+    public void TeleportToTransform(Transform newPlace)
+    {
+        if (rotateObject)
+        {
+            newRotation = newPlace.rotation;
+            TeleportToPosition(newPlace.position);
+        }
+    }
     
     public void TeleportToPosition(Vector3 newPosition)
     {
@@ -28,6 +36,8 @@ public class Teleporter : MonoBehaviour
         else
         {
             transform.position = newPosition;
+            if(rotateObject)
+                transform.rotation = newRotation;
         }
     }
 
@@ -43,7 +53,8 @@ public class Teleporter : MonoBehaviour
         yield return new WaitForSeconds(teleportMain.duration);
 
         transform.position = spot;
-        
+        if(rotateObject)
+            transform.rotation = newRotation;
         teleportEffect.Play();
     }
 }

@@ -15,7 +15,7 @@ public class TextBoxManager : NonInstantiatingSingleton<TextBoxManager>
     public TMP_Text theText;
 
     private ActivateText currentActivator;
-    private List<ActivateText> dialogueQueue;
+    private List<ActivateText> dialogueQueue = new List<ActivateText>();
     public TextAsset textFile;
     public string[] textLines;
 
@@ -47,8 +47,9 @@ public class TextBoxManager : NonInstantiatingSingleton<TextBoxManager>
 
     #endregion
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         //get component refs
         player = FindObjectOfType<FirstPersonController>();
         cursorObj = GameObject.FindGameObjectWithTag("Cursor");
@@ -186,9 +187,12 @@ public class TextBoxManager : NonInstantiatingSingleton<TextBoxManager>
         textBox.SetActive(false);
         
         //set additional triggers?
-        if (!currentActivator.TriggerOnStart)
+        if (currentActivator)
         {
-            currentActivator.SetAdditionalTriggers();
+            if (!currentActivator.TriggerOnStart)
+            {
+                currentActivator.SetAdditionalTriggers();
+            }
         }
         
         //disable cursor
@@ -237,6 +241,8 @@ public class TextBoxManager : NonInstantiatingSingleton<TextBoxManager>
         textLines = activator.DialogueAsset.text.Split('\n');
         currentLine = 0;
         endAtLine = textLines.Length;
+        
+        EnableTextBox();
     }
 
     /// <summary>

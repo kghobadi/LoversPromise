@@ -11,7 +11,6 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class ActivateText : MonoBehaviour 
 {
-    private TextBoxManager TextBoxManager => TextBoxManager.Instance;
     [SerializeField]
     private TextAsset theText;
 
@@ -22,6 +21,8 @@ public class ActivateText : MonoBehaviour
     public bool requiredButtonPress;
     private bool waitForPress;
 
+    [SerializeField]
+    private bool repeatable;
     [SerializeField]
     private bool destroyWhenFinished;
     
@@ -65,6 +66,11 @@ public class ActivateText : MonoBehaviour
         hasActivated = false;
     }
 
+    public void SetRepeatable(bool state)
+    {
+        repeatable = state;
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if(other.name == "Wanderer")
@@ -77,10 +83,7 @@ public class ActivateText : MonoBehaviour
                     return;
                 }
 
-                if (!TextBoxManager.isActive)
-                {
-                    TriggerDialogue();
-                }
+                TriggerDialogue();
             }
         }
     }
@@ -95,18 +98,12 @@ public class ActivateText : MonoBehaviour
 
     public void TriggerDialogue()
     {
-        if (hasActivated)
+        if (hasActivated && !repeatable)
         {
             return;
         }
         
-        TextBoxManager.LoadScript(this);
-
-        //only enable if not already active
-        if (!TextBoxManager.isActive)
-        {
-            TextBoxManager.EnableTextBox();
-        }
+        TextBoxManager.Instance.LoadScript(this);
 
         if (particles)
         {
@@ -126,8 +123,9 @@ public class ActivateText : MonoBehaviour
             SetAdditionalTriggers();
         }
         
-        //finally set has activated
-        hasActivated = true;
+        //finally set has 
+        if(!repeatable)
+            hasActivated = true;
     }
 
     public void SetAdditionalTriggers()
