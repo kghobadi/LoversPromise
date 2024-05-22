@@ -2,8 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
-public class DistanceTrigger : TriggerBase
+public class DistanceTrigger : MonoBehaviour
 {
     [Tooltip("We will check the distance from this object.")]
     [SerializeField] private Transform distTransform;
@@ -12,28 +13,51 @@ public class DistanceTrigger : TriggerBase
     [SerializeField] private float distance;
     [Tooltip("True for greater, false for less than")]
     [SerializeField] private bool greaterOrLess;
+    
+    [SerializeField] private TriggerBase[] triggersToActivate;
+    [SerializeField] private bool hasCompleted;
+    
     private void Start()
     {
-        InvokeRepeating("CheckDistance", 0f, 1f);
+        //Use player if no transform set 
+        if (distTransform == null)
+        {
+            distTransform = FindObjectOfType<FirstPersonController>().transform;
+        }
+        InvokeRepeating("CheckDistance", 1f, 1f);
     }
 
     void CheckDistance()
     {
+        if (hasCompleted)
+        {
+            return;
+        }
+        
         distFromObject = Vector3.Distance(distTransform.position, transform.position);
 
         if (greaterOrLess)
         {
             if (distFromObject > distance)
             {
-                ActivateTriggerEffect();
+                SetComplete();
             }
         }
         else
         {
             if (distFromObject < distance)
             {
-                ActivateTriggerEffect();
+                SetComplete();
             }
         }
+    }
+    
+    void SetComplete()
+    {
+        foreach (var trigger in triggersToActivate)
+        {
+            trigger.ActivateTriggerEffect();
+        }
+        hasCompleted = true;
     }
 }

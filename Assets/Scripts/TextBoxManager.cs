@@ -186,10 +186,10 @@ public class TextBoxManager : NonInstantiatingSingleton<TextBoxManager>
         isActive = false;
         textBox.SetActive(false);
         
-        //set additional triggers?
+        //set additional triggers? - cannot be trigger on start/repeatable
         if (currentActivator)
         {
-            if (!currentActivator.TriggerOnStart)
+            if (!currentActivator.TriggerOnStart && !currentActivator.IsRepeatable)
             {
                 currentActivator.SetAdditionalTriggers();
             }
