@@ -134,17 +134,17 @@ public class ActivateText : MonoBehaviour
         //Event triggers first
         foreach (var trigger in eventTriggers)
         {
-            trigger.ActivateTriggerEffect();
+            trigger.SetTrigger();
         }
         //Activation triggers second
         foreach (var trigger in activationTriggers)
         {
-            trigger.ActivateTriggerEffect();
+            trigger.SetTrigger();
         }
         //Animation triggers last
         foreach (var trigger in animTriggers)
         {
-            trigger.ActivateTriggerEffect();
+            trigger.SetTrigger();
         }
     }
 }
