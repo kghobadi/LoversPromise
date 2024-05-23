@@ -193,6 +193,8 @@ public abstract class TriggerBase : MonoBehaviour
         {
             resetTrigger.SetCoroutine(this, Reset());
         }
+        
+        Debug.LogFormat(gameObject.name + "was activated");
     }
 
     #region Coroutines (Wait & Reset)

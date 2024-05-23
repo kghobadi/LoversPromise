@@ -20275,6 +20275,27 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 629965951}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &187260217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187260215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0861dad0cb80c46449e6d3fc674e91c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animatorFlags:
+  - flagName: Ended
+    parameterState: 0
+--- !u!95 &187260218 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8452549462558707216, guid: 3f64ad6db1ef0f44e9f510ffb30469aa,
+    type: 3}
+  m_PrefabInstance: {fileID: 629965951}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &201423110 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 440932, guid: f8cc65c1a4dee834a9252b5e3a15b176,
@@ -20556,18 +20577,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8cc65c1a4dee834a9252b5e3a15b176, type: 3}
---- !u!114 &270209810 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 11483486, guid: 132cc8cca825fe64581aa590a4d23646,
-    type: 3}
-  m_PrefabInstance: {fileID: 1637670322}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9be0c9459a10f94ab1c0c83920a05ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &277362091
 GameObject:
   m_ObjectHideFlags: 0
@@ -30915,10 +30924,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9be0c9459a10f94ab1c0c83920a05ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theText: {fileID: 4900000, guid: 0630cee833b4f294ab0330c11ea2c553, type: 3}
+  theText: {fileID: 4900000, guid: ae225cbb782c1a145a65186b09cd229c, type: 3}
   particles: {fileID: 0}
   requiredButtonPress: 0
-  repeatable: 1
+  repeatable: 0
   destroyWhenFinished: 0
   usesInteractable: 0
   loadsNextScene: 0
@@ -30968,60 +30977,13 @@ GameObject:
   - component: {fileID: 483402566}
   - component: {fileID: 477721140}
   - component: {fileID: 483806060}
-  - component: {fileID: 483709287}
   m_Layer: 0
   m_Name: SharedAlienVoice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &483709287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 483709286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f27f94d3490c55d4386a57d933b61ef1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hasTriggered: 0
-  acceptedTags: []
-  specificObject: 0
-  specificObj: {fileID: 0}
-  delayOnTrigger: 0
-  delayTime: 5
-  automaticReset: 0
-  resetTime: 5
-  events:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 477721140}
-        m_MethodName: SetRepeatable
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 477721140}
-        m_MethodName: AssignText
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 4900000, guid: ae225cbb782c1a145a65186b09cd229c,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  m_IsActive: 0
 --- !u!135 &483806060
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -46010,17 +45972,17 @@ PrefabInstance:
     - target: {fileID: 8452549462558707220, guid: 3f64ad6db1ef0f44e9f510ffb30469aa,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 3.4740002
       objectReference: {fileID: 0}
     - target: {fileID: 8452549462558707220, guid: 3f64ad6db1ef0f44e9f510ffb30469aa,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.069
+      value: -2.0586
       objectReference: {fileID: 0}
     - target: {fileID: 8452549462558707220, guid: 3f64ad6db1ef0f44e9f510ffb30469aa,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 3.488
       objectReference: {fileID: 0}
     - target: {fileID: 8452549462558707220, guid: 3f64ad6db1ef0f44e9f510ffb30469aa,
         type: 3}
@@ -51855,7 +51817,7 @@ PrefabInstance:
     - target: {fileID: 2652080518249607108, guid: 782a7e6107de79046895a5328fbaf40f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 2652080518249607108, guid: 782a7e6107de79046895a5328fbaf40f,
         type: 3}
@@ -68007,7 +67969,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 7a1fc90d1e22acd48ba4e1e050d12139, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -68060,29 +68021,29 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1177477774}
   serializedVersion: 6
-  lengthInSec: 8
-  simulationSpeed: 1
+  lengthInSec: 1
+  simulationSpeed: 0.2
   stopAction: 0
   cullingMode: 1
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
-  useRigidbodyForVelocity: 1
+  useRigidbodyForVelocity: 0
   startDelay:
     serializedVersion: 2
     minMaxState: 0
-    scalar: 1
+    scalar: 0
     minScalar: 0
     maxCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -68091,7 +68052,7 @@ ParticleSystem:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 1
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -68135,7 +68096,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3.71
+      scalar: 2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -68188,7 +68149,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.13
+      scalar: 1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -68304,7 +68265,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.1
+      scalar: 0.75
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -68620,7 +68581,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 5000
+    maxNumParticles: 1000
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -69010,14 +68971,23 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.31034485
-          value: 0
+          time: 0.075478524
+          value: 0.28378275
           inSlope: 0
           outSlope: 0
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
           outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 0.21065374
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 0
@@ -69324,7 +69294,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 0
+    enabled: 1
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -69333,10 +69303,10 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 1}
-        key2: {r: 0, g: 0, b: 0, a: 0}
-        key3: {r: 0, g: 0, b: 0, a: 0}
-        key4: {r: 0, g: 0, b: 0, a: 0}
+        key1: {r: 1, g: 1, b: 1, a: 0.29411766}
+        key2: {r: 0, g: 0, b: 0, a: 1}
+        key3: {r: 0, g: 0, b: 0, a: 1}
+        key4: {r: 0, g: 0, b: 0, a: 0.7411765}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
@@ -69349,16 +69319,16 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 65535
-        atime2: 0
-        atime3: 0
-        atime4: 0
-        atime5: 0
+        atime1: 4819
+        atime2: 10023
+        atime3: 41249
+        atime4: 53777
+        atime5: 65535
         atime6: 0
         atime7: 0
         m_Mode: 0
         m_NumColorKeys: 2
-        m_NumAlphaKeys: 2
+        m_NumAlphaKeys: 6
       minGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -69513,7 +69483,7 @@ ParticleSystem:
     flipU: 0
     flipV: 0
   VelocityModule:
-    enabled: 0
+    enabled: 1
     x:
       serializedVersion: 2
       minMaxState: 0
@@ -69675,9 +69645,9 @@ ParticleSystem:
         m_RotationOrder: 4
     orbitalX:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0
-      minScalar: 0
+      minMaxState: 3
+      scalar: -1
+      minScalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -69728,9 +69698,9 @@ ParticleSystem:
         m_RotationOrder: 4
     orbitalY:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0
-      minScalar: 0
+      minMaxState: 3
+      scalar: -1
+      minScalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -69781,9 +69751,9 @@ ParticleSystem:
         m_RotationOrder: 4
     orbitalZ:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0
-      minScalar: 0
+      minMaxState: 3
+      scalar: -5
+      minScalar: 5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -70097,7 +70067,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    inWorldSpace: 0
+    inWorldSpace: 1
   InheritVelocityModule:
     enabled: 0
     m_Mode: 0
@@ -94116,7 +94086,7 @@ MonoBehaviour:
   - {fileID: 616012487}
   - {fileID: 1138003405}
   triggersToActivate:
-  - {fileID: 483709287}
+  - {fileID: 1523980469}
   hasCompleted: 0
 --- !u!114 &1523980467
 MonoBehaviour:
@@ -94283,6 +94253,52 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &1523980469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523980465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f27f94d3490c55d4386a57d933b61ef1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasTriggered: 0
+  acceptedTags: []
+  specificObject: 0
+  specificObj: {fileID: 0}
+  delayOnTrigger: 0
+  delayTime: 5
+  automaticReset: 0
+  resetTime: 5
+  events:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 483709286}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 477721140}
+        m_MethodName: AssignText
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4900000, guid: ae225cbb782c1a145a65186b09cd229c,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1524043607
 GameObject:
   m_ObjectHideFlags: 0
@@ -104637,7 +104653,7 @@ PrefabInstance:
     - target: {fileID: 5577516617002376431, guid: 1d5ca6293420fb34b92c72702f2c0183,
         type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 5577516617002376431, guid: 1d5ca6293420fb34b92c72702f2c0183,
         type: 3}
@@ -104817,12 +104833,12 @@ PrefabInstance:
     - target: {fileID: 2652080518249607111, guid: 782a7e6107de79046895a5328fbaf40f,
         type: 3}
       propertyPath: events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2652080518249607111, guid: 782a7e6107de79046895a5328fbaf40f,
         type: 3}
       propertyPath: events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2652080518249607111, guid: 782a7e6107de79046895a5328fbaf40f,
         type: 3}
@@ -104838,12 +104854,12 @@ PrefabInstance:
         type: 3}
       propertyPath: events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 483709286}
+      objectReference: {fileID: 187260218}
     - target: {fileID: 2652080518249607111, guid: 782a7e6107de79046895a5328fbaf40f,
         type: 3}
       propertyPath: events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 270209810}
+      objectReference: {fileID: 187260218}
     - target: {fileID: 2652080518249607111, guid: 782a7e6107de79046895a5328fbaf40f,
         type: 3}
       propertyPath: events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[3].m_Target
@@ -104877,12 +104893,12 @@ PrefabInstance:
     - target: {fileID: 2652080518249607111, guid: 782a7e6107de79046895a5328fbaf40f,
         type: 3}
       propertyPath: events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetActive
+      value: SetTrigger
       objectReference: {fileID: 0}
     - target: {fileID: 2652080518249607111, guid: 782a7e6107de79046895a5328fbaf40f,
         type: 3}
       propertyPath: events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: SetRepeatable
+      value: SetTrigger
       objectReference: {fileID: 0}
     - target: {fileID: 2652080518249607111, guid: 782a7e6107de79046895a5328fbaf40f,
         type: 3}
@@ -104916,8 +104932,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2652080518249607111, guid: 782a7e6107de79046895a5328fbaf40f,
         type: 3}
+      propertyPath: events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: end
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652080518249607111, guid: 782a7e6107de79046895a5328fbaf40f,
+        type: 3}
       propertyPath: events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652080518249607111, guid: 782a7e6107de79046895a5328fbaf40f,
+        type: 3}
+      propertyPath: events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
+      value: end
       objectReference: {fileID: 0}
     - target: {fileID: 2652080518249607111, guid: 782a7e6107de79046895a5328fbaf40f,
         type: 3}
