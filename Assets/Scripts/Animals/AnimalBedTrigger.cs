@@ -16,25 +16,30 @@ public class AnimalBedTrigger : MonoBehaviour
     public float randomRadius = 15f;
     public Transform[] bedSpots;
 
-    private void OnTriggerEnter(Collider other)
+    protected void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Animal"))
         {
-            Movement animalMove = other.GetComponent<Movement>();
-            if (animalMove)
+            SetAnimalGoToBed(other.gameObject);
+        }
+    }
+
+    void SetAnimalGoToBed(GameObject other)
+    {
+        Movement animalMove = other.GetComponent<Movement>();
+        if (animalMove)
+        {
+            //must be following
+            if (animalMove.currentBehavior.movementType == Movement.NPCMovementTypes.FOLLOWPLAYER ||
+                animalMove.currentBehavior.movementType == Movement.NPCMovementTypes.FOLLOWER)
             {
-                //must be following
-                if (animalMove.currentBehavior.movementType == Movement.NPCMovementTypes.FOLLOWPLAYER ||
-                    animalMove.currentBehavior.movementType == Movement.NPCMovementTypes.FOLLOWER)
+                //Is it the desired animal? GO TO BED
+                if (animalMove.animalType == animalType)
                 {
-                    //Is it the desired animal? GO TO BED
-                    if (animalMove.animalType == animalType)
-                    {
-                        //move to random radius within bed spot 
-                        Transform randomSpot = bedSpots[Random.Range(0, bedSpots.Length)];
-                        animalMove.SetRandomDestinationAtPosition(randomSpot.position, randomRadius);
-                        animalMove.ResetMovement(bedBehavior);
-                    }
+                    //move to random radius within bed spot 
+                    Transform randomSpot = bedSpots[Random.Range(0, bedSpots.Length)];
+                    animalMove.SetRandomDestinationAtPosition(randomSpot.position, randomRadius);
+                    animalMove.ResetMovement(bedBehavior);
                 }
             }
         }

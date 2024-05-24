@@ -665,7 +665,7 @@ PrefabInstance:
         type: 3}
       propertyPath: whistleBehavior
       value: 
-      objectReference: {fileID: 11400000, guid: bce5910866da0b645b4f7fef4491f2a3,
+      objectReference: {fileID: 11400000, guid: 56ffdac631786fd4cae366456b4f1ccf,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e3f2484d97b9ba4397b3c5c57b9bb45, type: 3}
@@ -700,21 +700,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 170508, guid: 132cc8cca825fe64581aa590a4d23646, type: 3}
+      propertyPath: m_Name
+      value: InitialThoughtDialogue
+      objectReference: {fileID: 0}
     - target: {fileID: 419884, guid: 132cc8cca825fe64581aa590a4d23646, type: 3}
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 419884, guid: 132cc8cca825fe64581aa590a4d23646, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 419884, guid: 132cc8cca825fe64581aa590a4d23646, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 419884, guid: 132cc8cca825fe64581aa590a4d23646, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 419884, guid: 132cc8cca825fe64581aa590a4d23646, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -54.063828
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 419884, guid: 132cc8cca825fe64581aa590a4d23646, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 22.4
       objectReference: {fileID: 0}
     - target: {fileID: 419884, guid: 132cc8cca825fe64581aa590a4d23646, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.016983
+      value: 13.2
       objectReference: {fileID: 0}
     - target: {fileID: 419884, guid: 132cc8cca825fe64581aa590a4d23646, type: 3}
       propertyPath: m_LocalRotation.w
@@ -732,7 +748,17 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11483486, guid: 132cc8cca825fe64581aa590a4d23646, type: 3}
+      propertyPath: theText
+      value: 
+      objectReference: {fileID: 4900000, guid: 8017f1620a9d429488648b554492ab3c, type: 3}
+    - target: {fileID: 11483486, guid: 132cc8cca825fe64581aa590a4d23646, type: 3}
+      propertyPath: requiredButtonPress
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2385010, guid: 132cc8cca825fe64581aa590a4d23646, type: 3}
+    - {fileID: 3328922, guid: 132cc8cca825fe64581aa590a4d23646, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 132cc8cca825fe64581aa590a4d23646, type: 3}
 --- !u!1 &160018990
 GameObject:
@@ -10641,6 +10667,15 @@ MonoBehaviour:
     followObject: {fileID: 1465757725}
     lookAt: {fileID: 0}
     checksAgainstPlayer: 0
+  - pathName: FollowCowLeader2
+    movementType: 6
+    movementPoints: []
+    moveRadius: 0
+    idleType: 0
+    moveType: 0
+    followObject: {fileID: 1504316985}
+    lookAt: {fileID: 0}
+    checksAgainstPlayer: 0
   - pathName: FollowGoatLeader
     movementType: 6
     movementPoints: []
@@ -10648,6 +10683,24 @@ MonoBehaviour:
     idleType: 0
     moveType: 0
     followObject: {fileID: 1100128687}
+    lookAt: {fileID: 0}
+    checksAgainstPlayer: 0
+  - pathName: FollowGoatLeader1
+    movementType: 6
+    movementPoints: []
+    moveRadius: 0
+    idleType: 0
+    moveType: 0
+    followObject: {fileID: 509841661}
+    lookAt: {fileID: 0}
+    checksAgainstPlayer: 0
+  - pathName: FollowCowLeader3
+    movementType: 6
+    movementPoints: []
+    moveRadius: 0
+    idleType: 0
+    moveType: 0
+    followObject: {fileID: 720635097}
     lookAt: {fileID: 0}
     checksAgainstPlayer: 0
   - pathName: FollowCowLeader1
@@ -10668,6 +10721,15 @@ MonoBehaviour:
     followObject: {fileID: 921837612}
     lookAt: {fileID: 0}
     checksAgainstPlayer: 0
+  - pathName: FollowPigLeader1
+    movementType: 6
+    movementPoints: []
+    moveRadius: 0
+    idleType: 0
+    moveType: 0
+    followObject: {fileID: 2026615700}
+    lookAt: {fileID: 0}
+    checksAgainstPlayer: 0
   - pathName: FollowChickenLeader
     movementType: 6
     movementPoints: []
@@ -10686,6 +10748,24 @@ MonoBehaviour:
     followObject: {fileID: 1163727308}
     lookAt: {fileID: 0}
     checksAgainstPlayer: 0
+  - pathName: FollowChickenLeader2
+    movementType: 6
+    movementPoints: []
+    moveRadius: 0
+    idleType: 0
+    moveType: 0
+    followObject: {fileID: 752615220}
+    lookAt: {fileID: 0}
+    checksAgainstPlayer: 0
+  - pathName: FollowChickenLeader3
+    movementType: 6
+    movementPoints: []
+    moveRadius: 0
+    idleType: 0
+    moveType: 0
+    followObject: {fileID: 1809492448}
+    lookAt: {fileID: 0}
+    checksAgainstPlayer: 0
   - pathName: FollowSheepLeader
     movementType: 6
     movementPoints: []
@@ -10695,6 +10775,15 @@ MonoBehaviour:
     followObject: {fileID: 3142319736003269065}
     lookAt: {fileID: 0}
     checksAgainstPlayer: 0
+  - pathName: FollowSheepLeader1
+    movementType: 6
+    movementPoints: []
+    moveRadius: 0
+    idleType: 0
+    moveType: 0
+    followObject: {fileID: 1103119975}
+    lookAt: {fileID: 0}
+    checksAgainstPlayer: 0
   - pathName: FollowDonkeyLeader
     movementType: 6
     movementPoints: []
@@ -10702,6 +10791,15 @@ MonoBehaviour:
     idleType: 0
     moveType: 0
     followObject: {fileID: 1634600868}
+    lookAt: {fileID: 0}
+    checksAgainstPlayer: 0
+  - pathName: FollowDonkeyLeader1
+    movementType: 6
+    movementPoints: []
+    moveRadius: 0
+    idleType: 0
+    moveType: 0
+    followObject: {fileID: 2082109848}
     lookAt: {fileID: 0}
     checksAgainstPlayer: 0
   - pathName: RandomCircleRun
@@ -10930,13 +11028,14 @@ MonoBehaviour:
   voices: []
   currentSound: 0
   whistleSounds:
-  - {fileID: 8300000, guid: 792b35798e37b9449b108235b046e500, type: 3}
-  - {fileID: 8300000, guid: f1cf82d8f0488f64c8da41473ac87489, type: 3}
-  - {fileID: 8300000, guid: 379d877577883614d88b0697672db9b8, type: 3}
+  - {fileID: 8300000, guid: 500d4cda6cd606942a14c4647e86e3bb, type: 3}
+  - {fileID: 8300000, guid: 0a227b284f538294f80ae9bd25a7967d, type: 3}
+  - {fileID: 8300000, guid: b6d69b0a90e683241be444956674f4d9, type: 3}
+  - {fileID: 8300000, guid: 2e2f64a543e1c3248bf5b96e423f44a6, type: 3}
   OnWhistle:
     m_PersistentCalls:
       m_Calls: []
-  whistleRange: 25
+  whistleRange: 75
   affectedLayers:
     serializedVersion: 2
     m_Bits: 1024
@@ -11567,7 +11666,7 @@ PrefabInstance:
         type: 3}
       propertyPath: whistleBehavior
       value: 
-      objectReference: {fileID: 11400000, guid: 4376e4597f9799d46ae18bc6ca2c7774,
+      objectReference: {fileID: 11400000, guid: 6bd3a23c3dd82a244bcb266bc027f7f4,
         type: 2}
     - target: {fileID: 7864948647172896299, guid: 3c77d3b982404e143942a0808ed1fc15,
         type: 3}
@@ -13113,7 +13212,7 @@ PrefabInstance:
         type: 3}
       propertyPath: whistleBehavior
       value: 
-      objectReference: {fileID: 11400000, guid: bce5910866da0b645b4f7fef4491f2a3,
+      objectReference: {fileID: 11400000, guid: 56ffdac631786fd4cae366456b4f1ccf,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff528f4f08a0eca4d862d49eb16988ae, type: 3}
@@ -18560,7 +18659,7 @@ PrefabInstance:
         type: 3}
       propertyPath: whistleBehavior
       value: 
-      objectReference: {fileID: 11400000, guid: 74f682c626407ce4391df9e8fe4de777,
+      objectReference: {fileID: 11400000, guid: f37c2a4e950b43b48b78771841dfd219,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9629c42775e22c042a1712c23b891b7c, type: 3}
@@ -19358,6 +19457,22 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1316900796}
+    - target: {fileID: 22426086, guid: 0f11040244a082c46912a405371409a7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22426086, guid: 0f11040244a082c46912a405371409a7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22426086, guid: 0f11040244a082c46912a405371409a7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22426086, guid: 0f11040244a082c46912a405371409a7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 22436968, guid: 0f11040244a082c46912a405371409a7, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -19434,6 +19549,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 22461612, guid: 0f11040244a082c46912a405371409a7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22461612, guid: 0f11040244a082c46912a405371409a7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22461612, guid: 0f11040244a082c46912a405371409a7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22461612, guid: 0f11040244a082c46912a405371409a7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f11040244a082c46912a405371409a7, type: 3}
 --- !u!1001 &720635096
@@ -19453,7 +19584,7 @@ PrefabInstance:
         type: 3}
       propertyPath: whistleBehavior
       value: 
-      objectReference: {fileID: 11400000, guid: 46f1f8dd9cf356e418e6321100c5d9a6,
+      objectReference: {fileID: 11400000, guid: f37c2a4e950b43b48b78771841dfd219,
         type: 2}
     - target: {fileID: 6910526367952547713, guid: b97e9ca7ea6e6e84998bee2f5a813472,
         type: 3}
@@ -20678,7 +20809,7 @@ PrefabInstance:
         type: 3}
       propertyPath: whistleBehavior
       value: 
-      objectReference: {fileID: 11400000, guid: 6d4dd67e1d85a124e908086b95d67bab,
+      objectReference: {fileID: 11400000, guid: f37c2a4e950b43b48b78771841dfd219,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e3f2484d97b9ba4397b3c5c57b9bb45, type: 3}
@@ -22865,7 +22996,7 @@ PrefabInstance:
         type: 3}
       propertyPath: whistleBehavior
       value: 
-      objectReference: {fileID: 11400000, guid: 74f682c626407ce4391df9e8fe4de777,
+      objectReference: {fileID: 11400000, guid: 070175f318e3d8f42aa1cc1b43a7f479,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9629c42775e22c042a1712c23b891b7c, type: 3}
@@ -25335,7 +25466,7 @@ PrefabInstance:
         type: 3}
       propertyPath: whistleBehavior
       value: 
-      objectReference: {fileID: 11400000, guid: 4376e4597f9799d46ae18bc6ca2c7774,
+      objectReference: {fileID: 11400000, guid: f37c2a4e950b43b48b78771841dfd219,
         type: 2}
     - target: {fileID: 7864948647172896299, guid: 3c77d3b982404e143942a0808ed1fc15,
         type: 3}
@@ -25948,7 +26079,7 @@ PrefabInstance:
         type: 3}
       propertyPath: whistleBehavior
       value: 
-      objectReference: {fileID: 11400000, guid: 77710d7e16bbe6d4f861802b8c3d3ba1,
+      objectReference: {fileID: 11400000, guid: a5cf314df9f95de46a8044e86839d69c,
         type: 2}
     - target: {fileID: 6910526367952547823, guid: b97e9ca7ea6e6e84998bee2f5a813472,
         type: 3}
@@ -26360,7 +26491,7 @@ PrefabInstance:
         type: 3}
       propertyPath: whistleBehavior
       value: 
-      objectReference: {fileID: 11400000, guid: 6386bac43fba9e548bb70453f600f3fb,
+      objectReference: {fileID: 11400000, guid: 16a9ee619eea5ce449a2cacce748c90f,
         type: 2}
     - target: {fileID: 6149793772180955747, guid: 4df2e49761b937f4fa67a6fec0e147c4,
         type: 3}
@@ -26794,7 +26925,7 @@ PrefabInstance:
         type: 3}
       propertyPath: whistleBehavior
       value: 
-      objectReference: {fileID: 11400000, guid: 4376e4597f9799d46ae18bc6ca2c7774,
+      objectReference: {fileID: 11400000, guid: 6bd3a23c3dd82a244bcb266bc027f7f4,
         type: 2}
     - target: {fileID: 7864948647172896299, guid: 3c77d3b982404e143942a0808ed1fc15,
         type: 3}
@@ -32610,7 +32741,7 @@ PrefabInstance:
         type: 3}
       propertyPath: whistleBehavior
       value: 
-      objectReference: {fileID: 11400000, guid: 9d27f083de2c7284f8d37a6d34079182,
+      objectReference: {fileID: 11400000, guid: 180307fd7c6e27647a1e748de2baecb1,
         type: 2}
     - target: {fileID: 1206365740307632219, guid: 003996017387cd04983db7b7c46bdd73,
         type: 3}
@@ -34725,7 +34856,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 458990, guid: ff28ff603fa04aa4f8913da1a85eb4c3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -17.6
       objectReference: {fileID: 0}
     - target: {fileID: 458990, guid: ff28ff603fa04aa4f8913da1a85eb4c3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -34733,7 +34864,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 458990, guid: ff28ff603fa04aa4f8913da1a85eb4c3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 100
+      value: 14.3
       objectReference: {fileID: 0}
     - target: {fileID: 458990, guid: ff28ff603fa04aa4f8913da1a85eb4c3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -34816,7 +34947,7 @@ PrefabInstance:
         type: 3}
       propertyPath: whistleBehavior
       value: 
-      objectReference: {fileID: 11400000, guid: 6386bac43fba9e548bb70453f600f3fb,
+      objectReference: {fileID: 11400000, guid: 16a9ee619eea5ce449a2cacce748c90f,
         type: 2}
     - target: {fileID: 6149793772180955747, guid: 4df2e49761b937f4fa67a6fec0e147c4,
         type: 3}
@@ -36285,19 +36416,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: d87cc6378eb8c41e3941696e60cc7466, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 163.2311
+      value: 171.8
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: d87cc6378eb8c41e3941696e60cc7466, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 27.947662
+      value: 27.56
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: d87cc6378eb8c41e3941696e60cc7466, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 87.20061
+      value: 91.2
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: d87cc6378eb8c41e3941696e60cc7466, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9922017
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: d87cc6378eb8c41e3941696e60cc7466, type: 3}
       propertyPath: m_LocalRotation.x
@@ -36305,11 +36436,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: d87cc6378eb8c41e3941696e60cc7466, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.124643415
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: d87cc6378eb8c41e3941696e60cc7466, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: d87cc6378eb8c41e3941696e60cc7466, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 14.320001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d87cc6378eb8c41e3941696e60cc7466, type: 3}
@@ -36649,7 +36784,7 @@ PrefabInstance:
         type: 3}
       propertyPath: whistleBehavior
       value: 
-      objectReference: {fileID: 11400000, guid: 46f1f8dd9cf356e418e6321100c5d9a6,
+      objectReference: {fileID: 11400000, guid: c2829bed15247c84e84b680ee6fa76d1,
         type: 2}
     - target: {fileID: 5371905011013052472, guid: d32b56c0c114f8046ae2e7ffbde22cb4,
         type: 3}
@@ -39994,7 +40129,7 @@ PrefabInstance:
         type: 3}
       propertyPath: whistleBehavior
       value: 
-      objectReference: {fileID: 11400000, guid: 77710d7e16bbe6d4f861802b8c3d3ba1,
+      objectReference: {fileID: 11400000, guid: f37c2a4e950b43b48b78771841dfd219,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31745cbd211b5444aa6042d3837f2955, type: 3}
@@ -40583,7 +40718,7 @@ PrefabInstance:
         type: 3}
       propertyPath: whistleBehavior
       value: 
-      objectReference: {fileID: 11400000, guid: 9d27f083de2c7284f8d37a6d34079182,
+      objectReference: {fileID: 11400000, guid: 180307fd7c6e27647a1e748de2baecb1,
         type: 2}
     - target: {fileID: 1206365740307632219, guid: 003996017387cd04983db7b7c46bdd73,
         type: 3}
@@ -42195,7 +42330,7 @@ PrefabInstance:
         type: 3}
       propertyPath: whistleBehavior
       value: 
-      objectReference: {fileID: 11400000, guid: 6d4dd67e1d85a124e908086b95d67bab,
+      objectReference: {fileID: 11400000, guid: a679631577eb6a44b82a7aaa4bfbfc5b,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13b13629a1557094f8d755e639a8546d, type: 3}
@@ -54751,7 +54886,7 @@ PrefabInstance:
         type: 3}
       propertyPath: whistleBehavior
       value: 
-      objectReference: {fileID: 11400000, guid: bce5910866da0b645b4f7fef4491f2a3,
+      objectReference: {fileID: 11400000, guid: f37c2a4e950b43b48b78771841dfd219,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13b13629a1557094f8d755e639a8546d, type: 3}
@@ -54919,7 +55054,7 @@ PrefabInstance:
         type: 3}
       propertyPath: whistleBehavior
       value: 
-      objectReference: {fileID: 11400000, guid: 6386bac43fba9e548bb70453f600f3fb,
+      objectReference: {fileID: 11400000, guid: 16a9ee619eea5ce449a2cacce748c90f,
         type: 2}
     - target: {fileID: 6149793772180955747, guid: 4df2e49761b937f4fa67a6fec0e147c4,
         type: 3}
@@ -56219,7 +56354,7 @@ PrefabInstance:
         type: 3}
       propertyPath: whistleBehavior
       value: 
-      objectReference: {fileID: 11400000, guid: 6d4dd67e1d85a124e908086b95d67bab,
+      objectReference: {fileID: 11400000, guid: a679631577eb6a44b82a7aaa4bfbfc5b,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff528f4f08a0eca4d862d49eb16988ae, type: 3}
@@ -56318,7 +56453,7 @@ PrefabInstance:
         type: 3}
       propertyPath: whistleBehavior
       value: 
-      objectReference: {fileID: 11400000, guid: 74f682c626407ce4391df9e8fe4de777,
+      objectReference: {fileID: 11400000, guid: 070175f318e3d8f42aa1cc1b43a7f479,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9629c42775e22c042a1712c23b891b7c, type: 3}
@@ -61471,7 +61606,7 @@ PrefabInstance:
         type: 3}
       propertyPath: whistleBehavior
       value: 
-      objectReference: {fileID: 11400000, guid: 6386bac43fba9e548bb70453f600f3fb,
+      objectReference: {fileID: 11400000, guid: f37c2a4e950b43b48b78771841dfd219,
         type: 2}
     - target: {fileID: 6149793772180955747, guid: 4df2e49761b937f4fa67a6fec0e147c4,
         type: 3}
@@ -61879,7 +62014,7 @@ PrefabInstance:
         type: 3}
       propertyPath: whistleBehavior
       value: 
-      objectReference: {fileID: 11400000, guid: 9d27f083de2c7284f8d37a6d34079182,
+      objectReference: {fileID: 11400000, guid: f37c2a4e950b43b48b78771841dfd219,
         type: 2}
     - target: {fileID: 1206365740307632219, guid: 003996017387cd04983db7b7c46bdd73,
         type: 3}
