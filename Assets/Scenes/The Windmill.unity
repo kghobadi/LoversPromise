@@ -10596,6 +10596,7 @@ MonoBehaviour:
   - {fileID: 2026615702}
   - {fileID: 2098824271}
   - {fileID: 3142319736003269066}
+  animalBufferDistance: 2
   pettedCount: 0
   sleepingCount: 0
   levelExit: {fileID: 1134006420}

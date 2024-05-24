@@ -15,6 +15,8 @@ public class AnimalMgr : NonInstantiatingSingleton<AnimalMgr>
     public FirstPersonController PlayerController => playerFarmer;
     
     public PetAnimal[] allAnimals;
+    //Distance value 
+    public float animalBufferDistance;
     public int pettedCount;
     public int sleepingCount;
     public GameObject levelExit;

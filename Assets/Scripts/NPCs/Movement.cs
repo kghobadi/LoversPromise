@@ -385,7 +385,7 @@ namespace NPC
         public void ResetMovement(MovementPath newMove)
         {
             //get the correct movement path data
-            Behavior behavior = movementManager.movementPaths[newMove.pathIndex];
+            Behavior behavior = movementManager.GetMovementPathByName(newMove.pathName);
 
             ResetMovement(behavior);
         }
@@ -631,8 +631,7 @@ namespace NPC
             {
                 GetDistFromPlayer();
                 //are we not yet at the player and still not moving?
-                if (distFromPlayer > myNavMesh.stoppingDistance + 5f
-                    && controller.npcState != Controller.NPCStates.MOVING)
+                if (distFromPlayer > myNavMesh.stoppingDistance + AnimalMgr.Instance.animalBufferDistance)
                 {
                     NavigateToPoint( AnimalMgr.Instance.PlayerController.transform.position);
                 }
