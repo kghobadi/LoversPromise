@@ -56,11 +56,7 @@ public class PetAnimal : Interactable
     public override void Interact()
     {
         base.Interact();
-
-        //play sound!
-        if(!animalAudio.myAudioSource.isPlaying)
-            animalAudio.PlayRandomSoundRandomPitch(animalAudio.animalSounds, animalAudio.myAudioSource.volume);
-
+        
         //if they are sleeping, return to Idle
         if (npcController.npcState == Controller.NPCStates.SLEEPING)
         {
@@ -69,6 +65,9 @@ public class PetAnimal : Interactable
         //otherwise, petted anim 
         else
         {
+            //play sound!
+            if(!animalAudio.myAudioSource.isPlaying)
+                animalAudio.PlayRandomSoundRandomPitch(animalAudio.animalSounds, animalAudio.myAudioSource.volume);
             p_Animator.SetTrigger(pettedTrigger);
         }
         
@@ -96,7 +95,7 @@ public class PetAnimal : Interactable
     IEnumerator WaitToPlayAudio()
     {
         //only loop while there are still animators in the list 
-        while (audioIdleSounds)
+        while (audioIdleSounds && npcController.npcState != Controller.NPCStates.SLEEPING)
         {
             float time =  Random.Range(audioIntervalRange.x,audioIntervalRange.y);
             yield return new WaitForSeconds(time);
