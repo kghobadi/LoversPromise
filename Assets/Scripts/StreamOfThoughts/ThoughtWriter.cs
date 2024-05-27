@@ -51,11 +51,13 @@ public class ThoughtWriter : NonInstantiatingSingleton<ThoughtWriter>
         string randomFile = GetRandomFile(Application.dataPath + textFolder);
         ReadStringFile(randomFile);
         
-        if (!enterThought.isFocused)
-            enterThought.ActivateInputField();
+        enterThought.ActivateInputField();
+        enterThought.MoveToEndOfLine(false, true);
 
         isWritingThought = true;
         fpc.enabled = false;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     /// <summary>
@@ -110,7 +112,10 @@ public class ThoughtWriter : NonInstantiatingSingleton<ThoughtWriter>
         if (isWritingThought)
         {
             if (!enterThought.isFocused)
+            {
                 enterThought.ActivateInputField();
+                enterThought.MoveToEndOfLine(false, false);
+            }
         }
     }
     
@@ -140,7 +145,8 @@ public class ThoughtWriter : NonInstantiatingSingleton<ThoughtWriter>
         
         isWritingThought = false;
         fpc.enabled = true;
-        
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         thoughtFinishedTrigger.ActivateTriggerEffect();
     }
 }

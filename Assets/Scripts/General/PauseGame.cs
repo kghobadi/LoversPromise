@@ -33,6 +33,11 @@ public class PauseGame : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            //No pausing while writing a thought. 
+            if (ThoughtWriter.Instance && ThoughtWriter.Instance.IsWritingThought)
+            {
+                return;
+            }
             TogglePause();
         }
         if (Input.GetKeyDown(KeyCode.Return))
