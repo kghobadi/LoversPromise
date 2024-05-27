@@ -414,7 +414,8 @@ namespace NPC
                 movementRadius = path.moveRadius;
             }
             //IDlE -- set new idle type?
-            else if (npcType == NPCMovementTypes.IDLE)
+            else if (npcType == NPCMovementTypes.IDLE 
+                     || npcType == NPCMovementTypes.FOLLOWPLAYER || npcType == NPCMovementTypes.FOLLOWER)
             {
                 SetIdle();
             }
