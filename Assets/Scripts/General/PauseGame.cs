@@ -14,7 +14,7 @@ public class PauseGame : MonoBehaviour
     public Button Quit;
 
     public Transform player;
-
+    private string lastScene = "The Bedroom Ocean";
 	void Awake ()
     {
         fpc = FindObjectOfType<FirstPersonController>();
@@ -59,7 +59,8 @@ public class PauseGame : MonoBehaviour
     }
     void NextScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if(SceneManager.GetActiveScene().name != lastScene)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     public void ExitGame()
     {
