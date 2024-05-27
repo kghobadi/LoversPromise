@@ -10,11 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5926539961123745737}
   - component: {fileID: 5926539961117826565}
-  - component: {fileID: 5926539961113870011}
   - component: {fileID: 5926539961124145131}
   - component: {fileID: 3496054429727787654}
   - component: {fileID: 3960322205948308442}
-  - component: {fileID: 3220697326380322161}
+  - component: {fileID: 8490650839620549459}
   m_Layer: 11
   m_Name: PaperBoat
   m_TagString: Boat
@@ -51,22 +50,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 2, z: 3}
   m_Center: {x: 0, y: 0, z: -1}
---- !u!114 &5926539961113870011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5926539961124052457}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9be0c9459a10f94ab1c0c83920a05ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  theText: {fileID: 4900000, guid: 4f5a77fc99fe06f45bdf7e404abc2745, type: 3}
-  requiredButtonPress: 0
-  destroyWhenFinished: 1
-  usesInteractable: 1
 --- !u!114 &5926539961124145131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,7 +95,7 @@ MonoBehaviour:
   transformToCheck: {fileID: 0}
   moveToObjOnStart: 1
   moveToThisObjectOnStart: {fileID: 0}
-  lookAtDest: 0
+  lookAtDest: 1
 --- !u!114 &3496054429727787654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,7 +127,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3220697326380322161
+--- !u!114 &8490650839620549459
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -153,16 +136,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5926539961124052457}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28f6c2f55b3f22d4bb39613831c335a3, type: 3}
+  m_Script: {fileID: 11500000, guid: a828aad85b062364b95e4c0ba3f6ee55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetToOrbit: {fileID: 0}
-  orbiting: 0
-  orbitAtStart: 1
-  orbitalSpeed: 1
-  xyOrzAxis: 1
-  randomAxis: 0
-  localOrWorld: 1
+  interactCursor: {fileID: 21300320, guid: 388e8eb6de557964999d88f8d42114db, type: 3}
+  withinClickDist: 10
+  enterThought: {fileID: 0}
+  isWritingThought: 0
 --- !u!1 &5926539961124239507
 GameObject:
   m_ObjectHideFlags: 0
