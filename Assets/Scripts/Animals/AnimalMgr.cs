@@ -50,7 +50,7 @@ public class AnimalMgr : NonInstantiatingSingleton<AnimalMgr>
         }
 
         sleepingCount = sleeping;
-        if (sleepingCount >= allAnimals.Length)
+        if (sleepingCount >= allAnimals.Length - 3)
         {
             ActivateLevelExit();
         }
